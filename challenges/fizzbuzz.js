@@ -27,7 +27,7 @@ function fizzbuzz(num) {
 		if(divisibleByFive) return 'buzz';
 	}
 
-	for(let i = 1; i < num + 1; i++) {
+	for(let i = 1; i <= num ; i++) {
 		output.push(test(i) || i);
 	}
 
