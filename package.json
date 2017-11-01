@@ -13,6 +13,13 @@
     "test": "export COHORT=18; node test/run-tests.js",
     "start": "export COHORT=18; node test/index.js"
   },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
+  },
   "dependencies": {
     "async": "^1.4.2",
     "aws-sdk": "^2.2.24",
