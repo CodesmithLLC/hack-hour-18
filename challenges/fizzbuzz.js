@@ -34,3 +34,14 @@ function fizzbuzz(num){
   }
 
 module.exports = fizzbuzz;
+
+function fizzbuzzES6(num){
+  let newArr = [];
+  for(let i=1;i<=num;i++){
+    i%3===0&&i%5===0 ? newArr.push("fizzbuzz") :
+    i%3===0 ? newArr.push("fizz") :
+    i%5===0 ? newArr.push("buzz") :
+    i%3!==0&&i%5!==0 ? newArr.push(i) : "error bad num"
+   }
+return newArr;
+}
