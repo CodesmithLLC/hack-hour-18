@@ -18,8 +18,8 @@ function drawStairs(n) {
 
 	const drawSpace = function(num) {
 		let output = '';
-		for(let i = 0; i < num; i++) {
-			output += '!'
+		for(let i = n; i > num; i--) {
+			output += '  '
 		}
 		return output;
 	}
@@ -33,12 +33,9 @@ function drawStairs(n) {
 	}
 
 	for(let i = 0; i <= n; i++) {
-		output += `${drawSpace(i)}` + `${drawStars(i)}` + '\n'
-		// console.log('output:  ', output);
+		output += `${drawSpace(i)} ${drawStars(i)} \n`
 	}
 	return output;
 }
-
-console.log(drawStairs(6));
 
 module.exports = drawStairs;
