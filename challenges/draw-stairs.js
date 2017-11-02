@@ -14,7 +14,23 @@
 */
 
 function drawStairs(n) {
+    let newArr = new Array(n);
+    let steps = newArr.map(item => {
+        item = ' ';
+    });
+    let str = '';
+    let i = n - 1;
 
+    for (let i=1; i <= n; i++) {
+        let str = '';
+        for (let k = 0; k < i; k++) {
+            str = '*' + str;
+        }
+        for (let j = n - i; j > 0; j--) {
+            str = ' ' + str;
+        }
+        console.log(str);
+    }
 }
 
 
