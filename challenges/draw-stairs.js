@@ -18,7 +18,7 @@ function drawStairs(n) {
 	for (let i = 1; i <= n; i++) {
 		s += " ".repeat(n - i) + "*".repeat(i) + "\n"
 	}
-	return s
+	console.log(n)
 }
 
 
