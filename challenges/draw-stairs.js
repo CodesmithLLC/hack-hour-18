@@ -14,8 +14,20 @@
 */
 
 function drawStairs(n) {
+  if (typeof n !== 'number') return;
 
+  let stairs = '';
+
+  for (let i = 1; i <= n; i += 1) {
+    const stars = '*'.repeat(i);
+    const space = ' '.repeat(n - i);
+    const level = `${space}${stars}\n`;
+    stairs += level;
+  }
+  console.log(stairs);
 }
 
+drawStairs(6);
+drawStairs(3);
 
 module.exports = drawStairs;
