@@ -14,7 +14,13 @@
 */
 
 function drawStairs(n) {
-
+  let str = "*"
+  let spacing = " ".repeat(n);
+  for(let i=1;i <= n;i++){
+    console.log(spacing + str);
+    str += "*";
+    spacing = spacing.slice(0, n-i);
+  }
 }
 
 
