@@ -17,7 +17,20 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
-}
+  let array = [];
+  for (let i=1; i<=num; i++){
+    array.push(i);
+  }
+  return array.map(element =>{
+    if (element%3===0 && element%5 !==0){
+      return "fizz";
+    } else if (element%5===0  && element%3 !==0){
+      return "buzz";
+    } else if (element%3===0 && element%5 ===0){
+      return "fizzbuzz";
+    } else {
+      return element;
+    }
+  });
 
 module.exports = fizzbuzz;
