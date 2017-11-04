@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+  
   function add(a, b) {
     return a + b;
   }
