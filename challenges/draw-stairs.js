@@ -14,22 +14,23 @@
 */
 
 function drawStairs(n) {
-    if (typeof n !== 'number') return;
-    n = Math.floor(n);
-    let str = '';
-    let x = n - 1;
-    let y = 1;
-    for (let i = 0; i < n; i++, x--, y++) {
-        str += ' '.repeat(x) + '*'.repeat(y) + '\n';
-    }
-    console.log(str);
-    return str;
+  if (typeof n !== 'number') return;
+  n = Math.floor(n);
+  let str = '';
+  let x = n - 1;
+  let y = 1;
+  for (let i = 0; i < n; i++, x--, y++) {
+    str += ' '.repeat(x) + '*'.repeat(y) + '\n';
+  }
+  console.log(str);
+  return str;
 }
 
-console.log(drawStairs(10));
-console.log(drawStairs(0));
-console.log(drawStairs(10.5));
-console.log(drawStairs('10.5'));
-console.log(drawStairs());
+// console.log(drawStairs(10));
+// console.log(drawStairs(0));
+// console.log(drawStairs(10.5));
+// console.log(drawStairs('10.5'));
+// console.log(drawStairs());
+// drawStairs(6);
 
 module.exports = drawStairs;
