@@ -23,12 +23,12 @@ function modemean(array) {
   // Get the key (number) and value (times) of most frequent number.
   // If there isn't one, it is null
   const modeArr = Object.entries(seen).reduce((mode, [num, times]) => {
-    //If there is no mode and times not greater than 1
-    if (mode === null && !(times > 1)) return null
+    // If there is no mode and times not greater than 1
+    if (mode === null && !(times > 1)) return null;
     // If there isn't a mode times > 1, save current to mode
     if (mode === null) return [num, times];
     // If there is a mode and current times > mode's times, save current
-    if (mode && times >= mode[1]) return [num, times];
+    if (times >= mode[1]) return [num, times];
     // Else, just return what we have
     return mode;
   }, null);
