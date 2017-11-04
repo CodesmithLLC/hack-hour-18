@@ -14,6 +14,7 @@
 */
 
 function drawStairs(n) {
+<<<<<<< HEAD
 	for(let i = 1; i <= n; i++){
 	  var str = "";
 		for (let j = n-i; j >= 0; j--){
@@ -40,3 +41,10 @@ function drawStairs(n){
 		console.log(spacing + str);
 	}
 }
+=======
+
+}
+
+
+module.exports = drawStairs;
+>>>>>>> 8e9e4b2f9b61581fd7fde4cdeb41f4d885d099fb

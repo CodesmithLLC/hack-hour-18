@@ -32,6 +32,27 @@ function fizzbuzz(num) {
 	}
 	return result;
 }
-}
+
 
 module.exports = fizzbuzz;
+
+//another way
+function fizzbuzz(num) {
+	const result = [];
+	for (var i = 1 ; i <= num; i++){result.push(i)}
+	var test = function(i){
+	  if (i%3===0 && i%5===0){
+	    return i = 'fizzbuzz'
+	  }
+	  else if (i%5===0){
+	    return i = "buzz"
+	  }
+	  else if (i%3 ===0){
+	    return i = 'fizz'
+	  }
+	  return i;
+	}
+	return result.map(function(i){
+	  return test(i); 
+	})
+}
