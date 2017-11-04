@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+  if (array.length === 0){return undefined;}
 	const length = array.length,
 	      sum = array.reduce((a,b) => a +b),
 	      mean = Math.floor(sum/length);
