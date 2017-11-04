@@ -22,7 +22,7 @@ function drawStairs(n) {
     for (let i = 0; i < n; i++, x--, y++) {
         str += ' '.repeat(x) + '*'.repeat(y) + '\n';
     }
-    // console.log(str);
+    console.log(str);
     return str;
 }
 
