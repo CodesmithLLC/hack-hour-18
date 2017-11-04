@@ -18,6 +18,6 @@ function modemean(array) {
     return mode === mean;
 }
 
-console.log(modemean([1, 2, 3, 4, 2, 3, 4, 4, 4]));
+// console.log(modemean([1, 2, 3, 4, 2, 3, 4, 4, 4]));
 
 module.exports = modemean;
