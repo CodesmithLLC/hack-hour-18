@@ -14,6 +14,7 @@
 */
 
 function drawStairs(n) {
+<<<<<<< HEAD
     if (typeof n !== 'number') {return 'Input is not a number.'}
     if (n < 1) {return 'Input is too small.'}
     if (n > 100) {return 'Input is too large'}
@@ -25,6 +26,9 @@ function drawStairs(n) {
             returnString += '*' 
         } if (i < n) {returnString += '\n'}
     } return returnString;
+=======
+
+>>>>>>> 4279cb36c11220dee95d613583620ce192dff701
 }
 
 
