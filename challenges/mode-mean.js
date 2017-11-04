@@ -21,9 +21,11 @@ function modemean(array) {
     if (typeof b !== 'number') throw new Error(`Element ${b} is not a number`);
     if (!(b in seen)) seen[b] = 0;
     seen[b] += 1;
-    if (seen[b] > 1 && mode === null) mode = b;
-    if (seen[b] > 1 && seen[b] > seen[mode]) mode = b;
-    if (seen[b] > 1 && seen[b] === seen[mode] && b > mode) mode = b;
+    if (seen[b] > 1) {
+      if (mode === null) mode = b;
+      if (seen[b] > seen[mode]) mode = b;
+      if (seen[b] === seen[mode] && b > mode) mode = b;
+    }
     return a + b;
   }, 0) / (array.length || 1)); // If length === 0, use 1 so we avoid NaN
   return mean === mode;
