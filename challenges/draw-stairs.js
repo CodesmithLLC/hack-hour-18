@@ -15,7 +15,7 @@
 
 function drawStairs(n) {
   if (n < 1 || n > 100) return;
-  Array(n).fill(Array(n).fill(' ')).map((el, i) => {
+  Array(n).fill(Array(n).fill(' ')).forEach((el, i) => {
     console.log(el.fill('*', n-i-1, n).join(''))
   })
 }
