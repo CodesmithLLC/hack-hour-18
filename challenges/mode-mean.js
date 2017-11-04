@@ -40,7 +40,7 @@ function modemean(array) {
 }
 
 const testArray1 = [1, 2, 3, 3, 4, 5];
-console.log('Should be true:', modemean(testArray1))
+console.log('Should be true:', modemean(testArray1));
 console.assert(modemean(testArray1) === true);
 
 const testArray2 = [1, 1, 2, 2, 3, 3];
