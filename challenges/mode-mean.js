@@ -28,6 +28,6 @@ function modemean(array) {
   // console.log(mean);
   return node == mean;
 }
-
+ 
 // console.log(modemean([4, 8,3, 2, 3,3, 45, 4, 8, 8]));
 module.exports = modemean;
