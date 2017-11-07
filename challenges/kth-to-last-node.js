@@ -33,18 +33,16 @@ function kthToLastNode(k = 0, head) {
   }
   // edge cases done
   let pastVals = [];
-  let keepGoing = true;
   let currentNode = head;
   while(currentNode.next != null){
     pastVals.push(currentNode.value)
     currentNode = currentNode.next;
     if(currentNode.next === null){
       pastVals.push(currentNode.value)
-      keepGoing = false;
     }
   }
   let value;
-  if(k > pastVals.length) return head.value;  //if k > length, just give them 1st element
+  if(k > pastVals.length) return head.value;
   for(let i = 0; i < k; i++){
     value = pastVals.pop();
   }
