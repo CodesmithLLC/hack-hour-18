@@ -23,13 +23,14 @@ function Node(val) {
 
 function kthToLastNode(k, head) {
   if (k < 1) throw new Error('Invalid k value');
-  const values = [];
+  const values = Array(k);
   let cur = head;
   while (cur) {
     values.push(cur.value);
+    if (values.length > k) values.shift();
     cur = cur.next;
   }
-  return values[values.length - k];
+  return values[0];
 }
 
 const a = new Node('A');
