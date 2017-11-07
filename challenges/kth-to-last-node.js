@@ -57,5 +57,9 @@ d.next = e;
 
 console.assert(kthToLastNode(1, a) === 'E');
 console.assert(kthToLastNode(2, a) === 'D');
+console.assert(kthToLastNode(3, a) === 'C');
+console.assert(kthToLastNode(4, a) === 'B');
+console.assert(kthToLastNode(5, a) === 'A');
+console.assert(kthToLastNode(6, a) === undefined);
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
