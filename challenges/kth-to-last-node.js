@@ -22,8 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  if (typeof k !== 'number') return head.value;
-  if (head !== Object(head)) return undefined;
+  if (typeof k !== 'number' || head !== Object(head)) return undefined;
   let current = head;
   let length = 0;
   let i = 0;
@@ -31,6 +30,7 @@ function kthToLastNode(k, head) {
     length += 1;
     current = current.next;
   }
+  if (length < k) return undefined;
   current = head;
   while (i < length - k) {
     i += 1;
@@ -39,7 +39,7 @@ function kthToLastNode(k, head) {
   return current.value;
 }
 
-const a = new Node('A');
+// const a = new Node('A');
 // const b = new Node('B');
 // const c = new Node('C');
 // const d = new Node('D');
