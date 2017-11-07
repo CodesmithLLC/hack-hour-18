@@ -12,9 +12,14 @@
 ******
 
 */
-
 function drawStairs(n) {
 
+    str = " ";
+
+    for (var row = 1; row <= n; row++) {
+        console.log(str.repeat(n-row) + "*".repeat(row));
+    }
+    
 }
 
 
