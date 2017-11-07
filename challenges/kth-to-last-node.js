@@ -27,6 +27,8 @@ function kthToLastNode(k, head) {
 
   if(head){
   totalnodes = 1;
+  }else{
+    return undefined;
   }
 
   let stepsforward = 0;
