@@ -28,7 +28,7 @@ function kthToLastNode(k, head) {
 		count++;
 		head = head.next; //the new head should now be the last node; 
 	}
-	if (k > count){
+	if (k > count || k < 0){
 		return undefined;
 	}
 	const last = count; //count is now the total number of nodes. for example, it should now be 5, and it is assigned to "last".
@@ -43,14 +43,14 @@ function kthToLastNode(k, head) {
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
 
-  const a = new Node('A');
-  const b = new Node('B');
-  const c = new Node('C');
- const d = new Node('D'); 
- const e = new Node('E');
-  a.next = b;
-b.next = c;
- c.next = d;
- d.next = e;
+//   const a = new Node('A');
+//   const b = new Node('B');
+//   const c = new Node('C');
+//  const d = new Node('D'); 
+//  const e = new Node('E');
+//   a.next = b;
+// b.next = c;
+//  c.next = d;
+//  d.next = e;
 
- console.log(kthToLastNode(6,a)); 
+//  console.log(kthToLastNode(6,a)); 
