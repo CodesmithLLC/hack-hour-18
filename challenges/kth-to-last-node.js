@@ -35,7 +35,7 @@ function kthToLastNode(k, head) {
 		first = first.next;
 		start++;
 	}
-	return first.value; //should return the value of node d --> D;
+	return first.value || undefined; //should return the value of node d --> D;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
