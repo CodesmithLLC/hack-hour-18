@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  if (k < 1 || !head) return undefined;
   let counter = 1,
       tail = head,
       storage = [];
