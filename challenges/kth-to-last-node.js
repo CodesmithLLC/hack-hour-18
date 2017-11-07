@@ -22,6 +22,20 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  const cache = [];
+  if (head === undefined) return undefined;
+  let cur = head;
+
+  while (cur) {
+    cache.push(cur.value);
+    cur = cur.next;
+  };
+
+  if (k > cache.length || k < 1) return undefined;
+
+  cache.reverse();
+
+  return cache[k - 1];
 
 }
 
