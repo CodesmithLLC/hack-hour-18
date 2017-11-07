@@ -12,11 +12,9 @@
 
 function modemean(array) {
   if (array.length === 0){return undefined;}
-	const length = array.length,
-	      sum = array.reduce((a,b) => a +b),
-	      mean = Math.floor(sum/length);
-	var mode; //find the number of counts of each number then return the key that has the highest value;
-	const counts = array.reduce(function(acc,start){
+	const sum = array.reduce((a,b) => a +b),
+	      mean = Math.floor(sum/array.length);
+	const counts = array.reduce(function(acc,start){ //find the number of counts of each number then return the key that has the highest value;
 		acc[start] = acc[start] + 1 || 1;
 		return acc;
 	},{})
@@ -27,7 +25,7 @@ function modemean(array) {
 			arrOfMode.push(key);
 		}
 	}
-	mode = Math.max.apply(this,arrOfMode);
+	var mode = Math.max.apply(this,arrOfMode);
 	return mean === mode;
 }
 
