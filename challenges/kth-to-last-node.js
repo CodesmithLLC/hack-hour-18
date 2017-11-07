@@ -27,12 +27,12 @@ function kthToLastNode(k, head) {
   let current = head;
   let counter = 0;
   let results = [];
-  while (current.next) {
+  while (current) {
     // console.log('test')
-  	current = current.next;
-  	results.push(current);
-  // 	console.log(current);
-  	counter++;
+    results.push(current);
+    current = current.next;
+  //  console.log(current);
+    counter++;
   }
   if (!results[counter - k]) {
     return undefined;
