@@ -28,6 +28,9 @@ function kthToLastNode(k, head) {
 		count++;
 		head = head.next; //the new head should now be the last node; 
 	}
+	if (k > count){
+		return undefined;
+	}
 	const last = count; //count is now the total number of nodes. for example, it should now be 5, and it is assigned to "last".
 	const order = last - k + 1; //let's say last === 5, and k === 2. The order is now 4. so we want the 4th node on the list. 
 	let start = 1; 
@@ -35,19 +38,19 @@ function kthToLastNode(k, head) {
 		first = first.next;
 		start++;
 	}
-	return first.value || undefined; //should return the value of node d --> D;
+	return first.value; //should return the value of node d --> D;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
 
-//   const a = new Node('A');
-//   const b = new Node('B');
-//   const c = new Node('C');
-//  const d = new Node('D'); 
-//  const e = new Node('E');
-//   a.next = b;
-// b.next = c;
-//  c.next = d;
-//  d.next = e;
+  const a = new Node('A');
+  const b = new Node('B');
+  const c = new Node('C');
+ const d = new Node('D'); 
+ const e = new Node('E');
+  a.next = b;
+b.next = c;
+ c.next = d;
+ d.next = e;
 
-//  console.log(kthToLastNode(2,a)); --> return D.
+ console.log(kthToLastNode(6,a)); 
