@@ -23,16 +23,24 @@ function Node(val) {
 
 function kthToLastNode(k, head) {
   if (k < 1) throw new Error('Invalid k value');
+  // Set an array of length === k (number of values we'll need to cache)
   const values = Array(k);
+  // Start at head and traverse list
   let cur = head;
   while (cur) {
-    values.push(cur.value);
-    if (values.length > k) values.shift();
+    // Shift all values one to left.
+    // Oldest value will be removed, and current will be added (LIFO).
+    for (let i = 0; i < k - 1; i += 1) {
+      values[i] = values[i + 1];
+    }
+    values[values.length - 1] = cur.value;
     cur = cur.next;
   }
+  // Return oldest value, or undefined if k > length of list
   return values[0];
 }
 
+console.log('starting tests');
 const a = new Node('A');
 console.assert(kthToLastNode(1, a) === 'A');
 console.assert(kthToLastNode(2, a) === undefined);
@@ -46,7 +54,7 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-console.log('starting tests');
+
 console.assert(kthToLastNode(1, a) === 'E');
 console.assert(kthToLastNode(2, a) === 'D');
 
