@@ -31,6 +31,7 @@ function kthToLastNode(k, head) {
       cur = cur.next;
   }
   
+  return cur.value;
 }
 
 const a = new Node('A');
