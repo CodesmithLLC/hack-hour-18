@@ -40,6 +40,7 @@ function kthToLastNode(k, head) {
   return values[0];
 }
 
+// Simple tests
 console.log('starting tests');
 const a = new Node('A');
 console.assert(kthToLastNode(1, a) === 'A');
@@ -54,7 +55,11 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-
+try {
+  kthToLastNode(0, a);
+} catch (error) {
+  console.assert(error.message === 'Invalid k value');
+}
 console.assert(kthToLastNode(1, a) === 'E');
 console.assert(kthToLastNode(2, a) === 'D');
 console.assert(kthToLastNode(3, a) === 'C');
