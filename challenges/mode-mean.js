@@ -11,6 +11,7 @@
 
 
 function modemean(array) {
+<<<<<<< HEAD
   if(!Array.isArray(array)) return;
   let mean = 0;
   let count = {};
@@ -32,6 +33,9 @@ function modemean(array) {
     }
   }
   return mean === parseInt(mode);
+=======
+
+>>>>>>> 5ccd7b8bc5ed636ddf4b402100947c0bb75eec2a
 }
 
 module.exports = modemean;
