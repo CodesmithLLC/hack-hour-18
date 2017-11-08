@@ -29,7 +29,7 @@ function kthToLastNode(k = 0, head) {
   }
   if(k === 0) k =1;
   if(head.next === null){
-    return val;
+    return undefined;
   }
   // edge cases done
   let pastVals = [];
@@ -42,7 +42,7 @@ function kthToLastNode(k = 0, head) {
     }
   }
   let value;
-  if(k > pastVals.length) return head.value;
+  if(k > pastVals.length) return undefined;
   for(let i = 0; i < k; i++){
     value = pastVals.pop();
   }
