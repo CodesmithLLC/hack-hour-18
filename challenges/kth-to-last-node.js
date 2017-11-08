@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+<<<<<<< HEAD
  //our parameter, k, points to the node at nth position in our linked list;
  //parameter head points to the head node;
   let current = head;
@@ -38,6 +39,9 @@ function kthToLastNode(k, head) {
     return undefined;
   }
   return results[counter - k].value;
+=======
+
+>>>>>>> cceeb485d237c261a73c05e9e239028b98272a8c
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
