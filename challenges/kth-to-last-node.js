@@ -21,13 +21,9 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k = 0, head) {
+function kthToLastNode(k, head) {
   // handling edge cases
-  if(arguments.length === 1){
-    head = k;
-    k = 0;
-  }
-  if(k === 0) k =1;
+  if(arguments.length === 1 || k === 0) return undefined
   if(head.next === null){
     return undefined;
   }
