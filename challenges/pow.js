@@ -2,6 +2,8 @@
  * Use recursion!
  */
 
+ //slight change to see if email for pull request is working
+
 function pow(base, power) {
   let counter = power;
   if (base === 0) return 0;
