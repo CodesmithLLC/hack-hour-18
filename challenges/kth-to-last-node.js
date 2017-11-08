@@ -21,8 +21,32 @@ function Node(val) {
   this.next = null;
 }
 
-function kthToLastNode(k, head) {
-
+function kthToLastNode(k = 0, head) {
+  // handling edge cases
+  if(arguments.length === 1){
+    head = k;
+    k = 0;
+  }
+  if(k === 0) k =1;
+  if(head.next === null){
+    return val;
+  }
+  // edge cases done
+  let pastVals = [];
+  let currentNode = head;
+  while(currentNode.next != null){
+    pastVals.push(currentNode.value)
+    currentNode = currentNode.next;
+    if(currentNode.next === null){
+      pastVals.push(currentNode.value)
+    }
+  }
+  let value;
+  if(k > pastVals.length) return head.value;
+  for(let i = 0; i < k; i++){
+    value = pastVals.pop();
+  }
+  return value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
