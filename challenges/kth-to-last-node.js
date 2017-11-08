@@ -22,6 +22,7 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+<<<<<<< HEAD
 	var first = head; //assign node A to "first" in the first place. saving it for later. 
 	let count = 1; //start counting from the 1st node. 
 	while (head.next){
@@ -54,3 +55,9 @@ module.exports = {Node: Node, kthToLastNode: kthToLastNode};
 //  d.next = e;
 
 //  console.log(kthToLastNode(6,a)); 
+=======
+
+}
+
+module.exports = {Node: Node, kthToLastNode: kthToLastNode};
+>>>>>>> cceeb485d237c261a73c05e9e239028b98272a8c
