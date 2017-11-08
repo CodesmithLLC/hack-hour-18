@@ -40,5 +40,5 @@ while(n>0){
   }
 }
 
-
+// drawStairs(1)
 module.exports = drawStairs;
