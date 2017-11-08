@@ -2,15 +2,20 @@
  * Use recursion!
  */
 
-function pow(base, power) {
-  if (typeof base !== 'number' || typeof power !== 'number') {
+function pow(base, power, value = 1) {
+  if (typeof base !== 'number'
+      || typeof power !== 'number'
+      || typeof value !== 'number') {
     throw new Error('Base and power must be numbers');
   }
-  if (power === 0) return 1;
+  let result = value;
+  if (power === 0) return result;
   if (power < 0) {
-    return 1 / pow(base, (-1 * power));
+    result *= (1 / base);
+    return pow(base, power + 1, result);
   }
-  return base * pow(base, power - 1);
+  result *= base;
+  return pow(base, power - 1, result);
 }
 
 console.log('starting tests');
