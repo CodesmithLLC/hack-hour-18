@@ -13,8 +13,25 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function reverseInPlace(array) {
+// function reverseInPlace(array) {
+// 	let newArray = []; //creating new object in memory
+// 	for (let i=array.length; i > 0; i--){
+// 		newArray.push(array[i]);
+// 	}
+// }
 
+function reverseInPlace(array){
+	let len = array.length-1;
+	let arrayMiddle = Math.floor(len/2);
+	let i = -1;
+
+	//still not sure, testing
+
+	while(i++ < arrayMiddle){
+		let swapPos = array[len-i];
+		array[len-i] = array[i];
+		array[i] = swapPos;
+	}
 }
 
 module.exports = reverseInPlace;
