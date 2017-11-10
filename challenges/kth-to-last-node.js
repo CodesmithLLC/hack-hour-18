@@ -22,7 +22,37 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+<<<<<<< HEAD
+  let length = 0;
+  let origin = head
+  let currentIndex = 0
+  let result = head.value
 
+  //Gets the length of the chain
+  while (origin !== null) {
+    if (origin.value) {
+      length++;
+      origin = origin.next
+    }
+  }
+
+  //Edge case: checks if k is bigger the length of the chain
+  if (length < k) {return null}
+  origin = head
+
+  //finds and returns the specified value
+  while (currentIndex !== length - k) {
+    currentIndex++
+    if (currentIndex === length - k) {
+      return origin.next.value
+    }
+    result = origin.next.value
+    origin = origin.next
+  }
+  return result
+=======
+
+>>>>>>> 0f6a8f50172c9a792500c914e92ddb30987ac4e7
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
