@@ -14,7 +14,29 @@
  */
 
 function reverseInPlace(array) {
-
+	for (let i = array.length - 2; i >= 0; i--) {
+		array.push(array.splice(i, 1)[0]);
+	}
+	return array;
 }
+
+// function reverseInPlace(array) {
+// 	const string = array.toString();
+// 	let item = '';
+// 	let newString = '';
+// 	for (let i = 0; i < string.length; i++) {
+// 		if (string.charAt(i) !== ',') {
+// 			if (i - 1 < string.length) {
+// 				item += string.charAt(i);
+// 			} else {
+// 				item += string.charAt(i);
+// 			}
+// 		} else {
+// 			newString = ',' + item + newString;
+// 			item = '';
+// 		}
+// 	}
+// 	return newString;
+// }
 
 module.exports = reverseInPlace;
