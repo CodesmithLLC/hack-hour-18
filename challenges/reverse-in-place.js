@@ -14,7 +14,20 @@
  */
 
 function reverseInPlace(array) {
-
-}
+    // debugger
+ 
+     var temp1, temp2;
+     for (var i = 0, j = array.length - 1; i < Math.floor(array.length/2); i++, j--) {
+             temp1 = array[i];
+             temp2 = array[j];
+             array[j] = temp1;
+             array[i] = temp2;
+     }
+     
+ }
 
 module.exports = reverseInPlace;
+
+[1, 2, 3, 4]
+
+temp = 4;
