@@ -3,6 +3,7 @@
  */
 
 function pow(base, power) {
+<<<<<<< HEAD
  if(typeof base !== 'number' || typeof power !== power || base === 0 || power === 0) return;
  let numArr = [];
  while(power !== 0){
@@ -14,6 +15,9 @@ function pow(base, power) {
    total *= numArr[i]
  }
  return total;
+=======
+
+>>>>>>> 0f6a8f50172c9a792500c914e92ddb30987ac4e7
 }
 
 module.exports = pow;
