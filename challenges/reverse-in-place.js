@@ -14,7 +14,17 @@
  */
 
 function reverseInPlace(array) {
-
+  if (!Array.isArray(array)) throw new Error('Must be an array');
+  // Reference the array parameter to abide by airbnb
+  const arr = array;
+  for (let i = 0; i < arr.length / 2; i += 1) {
+    [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
+  }
+  return arr;
 }
+
+// const arr = [1, 2, 3];
+// console.log(reverseInPlace(arr));
+// console.log(arr);
 
 module.exports = reverseInPlace;
