@@ -14,12 +14,13 @@
  */
 
 function reverseInPlace(array) {
+  if(!array) return undefined;
   return array.map((element, i) => {
     return array[array.length - 1 - i];
   })
 }
 
-//const arr = [1, 2, 3, 4, 5, 6, 7]
-//console.log(reverseInPlace(arr));
+const arr = [1, 2, 3, 4, 5, 6, 7]
+console.log(reverseInPlace(arr));
 
 module.exports = reverseInPlace;
