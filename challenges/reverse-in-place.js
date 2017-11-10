@@ -15,12 +15,18 @@
 
 function reverseInPlace(array) {
   if(!array) return undefined;
-  return array.map((element, i) => {
-    return array[array.length - 1 - i];
-  })
+  // return array.map((element, i) => { //can't use map bc returns a new array
+  //   return array[array.length - 1 - i];
+  // })
+  for(let i = 0; i < array.length / 2; i++){
+    let temp = array[i];
+    array[i] = array[array.length - i - 1]
+    array[array.length - i - 1] = temp;
+  }
+  return array;
 }
 
-const arr = [1, 2, 3, 4, 5, 6, 7]
-console.log(reverseInPlace(arr));
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// console.log(reverseInPlace(arr));
 
 module.exports = reverseInPlace;
