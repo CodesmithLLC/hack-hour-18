@@ -26,26 +26,26 @@ function stringRotation(s1, s2) {
   });
 }
 
-console.log('testing');
-console.log(stringRotation('hello', 'hello'));
-console.assert(stringRotation('hello', 'hello') === true);
-
-console.log(stringRotation('hello', 'llohe'));
-console.assert(stringRotation('hello', 'llohe') === true);
-
-console.log(stringRotation('hello', 'he'));
-console.assert(stringRotation('hello', 'he') === false);
-
-console.log(stringRotation('hello', 'llo'));
-console.assert(stringRotation('hello', 'llo') === false);
-
-console.log(stringRotation('hello', 'ollhe'));
-console.assert(stringRotation('hello', 'ollhe') === false);
-
-console.log(stringRotation('anna', 'nnaa'));
-console.assert(stringRotation('anna', 'nnaa') === true);
-
-console.log(stringRotation('hellohello', 'hellohello'));
-console.assert(stringRotation('hellohello', 'hellohello') === true);
+// console.log('testing');
+// console.log(stringRotation('hello', 'hello'));
+// console.assert(stringRotation('hello', 'hello') === true);
+//
+// console.log(stringRotation('hello', 'llohe'));
+// console.assert(stringRotation('hello', 'llohe') === true);
+//
+// console.log(stringRotation('hello', 'he'));
+// console.assert(stringRotation('hello', 'he') === false);
+//
+// console.log(stringRotation('hello', 'llo'));
+// console.assert(stringRotation('hello', 'llo') === false);
+//
+// console.log(stringRotation('hello', 'ollhe'));
+// console.assert(stringRotation('hello', 'ollhe') === false);
+//
+// console.log(stringRotation('anna', 'nnaa'));
+// console.assert(stringRotation('anna', 'nnaa') === true);
+//
+// console.log(stringRotation('hellohello', 'hellohello'));
+// console.assert(stringRotation('hellohello', 'hellohello') === true);
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
