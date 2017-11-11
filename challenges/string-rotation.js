@@ -8,7 +8,7 @@
  * For example: stringRotation("hello", "hello") -> true
  *              stringRotation("hello", "llohe") -> true
  *              stringRotation("hello", "he") -> false
- *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
+ *              stringRotation("hello", "ollheS") -> false (not a rotation, just an anagram)
  */
 
 function isSubstring(s1, s2) {
@@ -16,7 +16,34 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  for (var i=0; i<s2.length; i++){
+    var s2a = s2.slice(0, s2.length-1);
+    var s2b = s2.slice(s2.length-1);
+    s2 = s2b + s2a;
+    if (isSubstring(s1, s2) === true){
+      return true;
+    }
+  }
+  return false;
 }
+
+// var s1 = "hello";
+// var s2 = "elloh";
+// s2 = s2.slice(s2.length-1) + s2.slice(0, s2.length-1);
+// s2a = s2.slice(0, s2.length-1);
+// s2b = s2.slice(s2.length-1);
+// console.log(s2a);
+// console.log(s2b);
+// console.log(s2b+s2a);
+// stringRotation(s1, s2);
+
+//1x isSubstring call
+//need to take two strings
+//run them through
+//return boolean
+	
+//rotate string s2 by attaching end char to front char using string methods (charAt, splice, substr, substring) one at a time
+//each time rotate, call isSubstring
+//s2 = s2.splice(1, 0)
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
