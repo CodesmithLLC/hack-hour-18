@@ -14,3 +14,6 @@ function pow(base, power) {
 }
 
 module.exports = pow;
+
+console.log(pow(5,-2));
+console.log(Math.pow(5,-2));
