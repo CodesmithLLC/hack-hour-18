@@ -14,12 +14,16 @@
  */
 
 function reverseInPlace(array) {
+<<<<<<< HEAD
   let index = array.length-1; 
   for (let i = index; i >= 0; i--) {
     array.push(array[i])
   }
   array.splice(0,index+1);
   return array;
+=======
+
+>>>>>>> d6c76ac91cde613eeccdbd7c4117277c4b6b316b
 }
 
 module.exports = reverseInPlace;
