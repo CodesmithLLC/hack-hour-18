@@ -12,11 +12,22 @@
  */
 
 function isSubstring(s1, s2) {
-  return s1.indexOf(s2) >= 0;
+ if (s1.length !== s2.length) return false;
+ if (typeof s1 !== 'string' || typeof s2 !== 'string') return false;
+ 
+ s2 = s2.split('')
+ for (let i = 0 ; i < s1.length; i++) {
+   if (s1[0] === s2[i]) {
+     if (s1 === s2.slice(i).concat(s2.slice(0,i)).join('')) {
+       return true
+     }
+   }
+ }
+ return false
 }
 
 function stringRotation(s1, s2) {
-
+ return isSubstring(s1 , s2)
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
