@@ -16,7 +16,33 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if (typeof s1 !== 'string' || typeof s2 !== 'string') throw new Error('Must pass string');
+  return s2.split('').some((curLetter, i, letterArr) => {
+    if (curLetter === s1[0]) {
+      const newStr = letterArr.slice(i).concat(letterArr.slice(0, i)).join('');
+      if (newStr === s1) return true;
+    }
+    return false;
+  });
 }
+
+// console.log('testing');
+// console.log(stringRotation('hello', 'hello'));
+// console.assert(stringRotation('hello', 'hello') === true);
+//
+// console.log(stringRotation('hello', 'llohe'));
+// console.assert(stringRotation('hello', 'llohe') === true);
+//
+// console.log(stringRotation('hello', 'he'));
+// console.assert(stringRotation('hello', 'he') === false);
+//
+// console.log(stringRotation('hello', 'ollhe'));
+// console.assert(stringRotation('hello', 'ollhe') === false);
+//
+// console.log(stringRotation('anna', 'nnaa'));
+// console.assert(stringRotation('anna', 'nnaa') === true);
+//
+// console.log(stringRotation('hellohello', 'hellohello'));
+// console.assert(stringRotation('hellohello', 'hellohello') === true);
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
