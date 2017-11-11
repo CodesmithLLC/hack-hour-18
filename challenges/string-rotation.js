@@ -23,6 +23,7 @@ x = y;
 let c = x.toString().replace(/,/g, "")
 if (c == s1){return isSubstring(c, s1)}
 }
+return false;
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
