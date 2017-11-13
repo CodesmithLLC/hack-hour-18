@@ -13,4 +13,14 @@ console.log(pow(2, 3)); // -> 8
 console.log(pow(2, 0)); // -> 1
 console.log(pow(2, -3)); // 0.125
 
-module.exports = pow;
+// module.exports = pow;
+
+
+/*
+ * SOLUTION
+* function pow(base, power) {
+* if (!power) return 1;
+*
+* return base * pow(base, power - 1);
+* }
+*/
