@@ -14,7 +14,10 @@
  */
 
 function reverseInPlace(array) {
+    // loop through array forward and backward
+    // once i is less than j the loop has reach the middle of the array and can stop looping
     for (let i = 0, j = array.length - 1; i < j; i++, j--) {
+        // destructure array to move the values from the first half of the array to the second half of the array and vice versa
         [array[i], array[j]] = [array[j], array[i]]
     }
 }
