@@ -58,4 +58,4 @@ function balancedParens(input) {
 // console.log(balancedParens(7)); // undefined
 
 
-module.exports = { balancedParens, isOpenBrace, isCloseBrace };
+module.exports = { balancedParens: balancedParens, isOpenBrace: isOpenBrace, isCloseBrace: isCloseBrace };
