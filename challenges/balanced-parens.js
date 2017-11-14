@@ -25,11 +25,13 @@
  */
 
 function balancedParens(input) {
-  for (let i = 0; i < input.length; i += 1) {
-    if ('({['.indexOf(input[i]) > -1) {
-      const result = isBalanced(input, i);
+  for (let pos = 0; pos < input.length; pos += 1) {
+    if ('({['.indexOf(input[pos]) > -1) {
+      const result = isBalanced(input, pos);
       if (result === false) return false;
-      i = result;
+      pos = result;
+    } else if (')}]'.indexOf(input[pos]) > -1) {
+      return false;
     }
   }
   return true;
@@ -39,7 +41,7 @@ function isBalanced(input, initPos) {
   const startChar = '({[';
   const endChar = ')}]';
   const charI = startChar.indexOf(input[initPos]);
-  if (charI === -1) return false;
+  // if (charI === -1) return false;
   for (let pos = initPos + 1; pos < input.length; pos += 1) {
     const curChar = input[pos];
     // Reached closing paren
@@ -57,18 +59,18 @@ function isBalanced(input, initPos) {
   return false;
 }
 
-console.assert(balancedParens('(') === false);  // false
-console.assert(balancedParens('()') === true); // true
-console.assert(balancedParens(')(') === false);  // false
-console.assert(balancedParens('(())') === true);  // true
-console.assert(balancedParens('(()') === false);  // false
-
-console.assert(balancedParens('[](){}') === true); // true
-console.assert(balancedParens('[}') === false); // false
-console.assert(balancedParens('[({})]') === true);   // true
-console.assert(balancedParens('[(]{)}') === false); // false
-
-console.assert(balancedParens(' var wow  = { yo: thisIsAwesome() }') === true); // true
-console.assert(balancedParens(' var hubble = function() { telescopes.awesome();') === false); // false
+// console.assert(balancedParens('(') === false);  // false
+// console.assert(balancedParens('()') === true); // true
+// console.assert(balancedParens(')(') === false);  // false
+// console.assert(balancedParens('(())') === true);  // true
+// console.assert(balancedParens('(()') === false);  // false
+//
+// console.assert(balancedParens('[](){}') === true); // true
+// console.assert(balancedParens('[}') === false); // false
+// console.assert(balancedParens('[({})]') === true);   // true
+// console.assert(balancedParens('[(]{)}') === false); // false
+//
+// console.assert(balancedParens(' var wow  = { yo: thisIsAwesome() }') === true); // true
+// console.assert(balancedParens(' var hubble = function() { telescopes.awesome();') === false); // false
 
 module.exports = balancedParens;
