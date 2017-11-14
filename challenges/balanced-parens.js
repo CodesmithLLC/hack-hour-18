@@ -26,30 +26,33 @@
 
 
 function balancedParens(input){
-    //    let array = input.split("");
-        let newOpening = [], newClosing = [];
-        let parenOpening = /[{[(]/gi,
-            parenClosing = /[})\]]/gi;
-        
-        for (let i = 0; i < input.length; i++) {
-           if (input[i].match(parenOpening)) {
-              newOpening.push(input[i]);
-           }
-           //console.log("]".match(parenClosing));
-          if(input[i].match(parenClosing)) {
-              newClosing.push(input[i]);
-          }
-        }
-        
-        for (let j = 0; j < newOpening.length; j++ ) {
-       //   console.log(newOpening[j].match('[\[]'))
-       
-          if (newOpening[j].match('[\[]') && newClosing[j].match('[\]]'))
+    let newOpening = [], 
+        newClosing = [];
+        parenOpening = /[{[(]/gi,
+        parenClosing = /[})\]]/gi
+        flag = true;
             
-          ;
+    if (input.length === 0)    
+        return flag;
+        
+    for (let i = 0; i < input.length; i++) {
+        if (input[i].match(parenOpening)) {
+            newOpening.push(input[i]);
+        }
+        if(input[i].match(parenClosing)) {
+            newClosing.push(input[i]);
         }
     }
+        
+    for (let j = 0; j < newOpening.length; j++ ) {
+        if ((newOpening[j] == '[' && newClosing[j] == ']') || 
+            (newOpening[j] == '{' && newClosing[j] == '}') || 
+            (newOpening[j] == '(' && newClosing[j] == ')'))
+             ;
+        else 
+            flag = false;
+    }   
+    return flag;
+}
     
-    balancedParens('[](){}');
-
 module.exports = balancedParens;
