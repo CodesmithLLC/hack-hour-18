@@ -25,7 +25,14 @@
  */
 
 function balancedParens(input) {
-  return isBalanced(input, 0) > 0;
+  for (let i = 0; i < input.length; i += 1) {
+    if ('({['.indexOf(input[i]) > -1) {
+      const result = isBalanced(input, i);
+      if (result === false) return false;
+      i = result;
+    }
+  }
+  return true;
 }
 
 function isBalanced(input, initPos) {
@@ -35,13 +42,16 @@ function isBalanced(input, initPos) {
   if (charI === -1) return false;
   for (let pos = initPos + 1; pos < input.length; pos += 1) {
     const curChar = input[pos];
+    // Reached closing paren
     if (curChar === endChar[charI]) return pos;
+    // Reached another opening paren
     if (startChar.indexOf(curChar) > -1) {
       pos = isBalanced(input, pos);
       if (pos === false) return false;
     }
-    else if (')}]'.indexOf(curChar) !== 0) {
-      break;
+    // Reached a closing paren that doesn't match the current type
+    else if (')}]'.indexOf(curChar) !== -1) {
+      return false;
     }
   }
   return false;
@@ -58,6 +68,7 @@ console.assert(balancedParens('[}') === false); // false
 console.assert(balancedParens('[({})]') === true);   // true
 console.assert(balancedParens('[(]{)}') === false); // false
 
-// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+console.assert(balancedParens(' var wow  = { yo: thisIsAwesome() }') === true); // true
+console.assert(balancedParens(' var hubble = function() { telescopes.awesome();') === false); // false
 
 module.exports = balancedParens;
