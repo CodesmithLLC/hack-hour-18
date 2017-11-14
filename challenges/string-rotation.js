@@ -12,13 +12,17 @@
  */
 
 function isSubstring(s1, s2) {
+<<<<<<< HEAD
   if(s1.length > s2.length){
     return false;
   }
+=======
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
   return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
+<<<<<<< HEAD
   if(typeof s1 !== 'string' || typeof s2 !== 'string' || s1.length === 0 || s2.length === 0){
     return '';
   }
@@ -32,6 +36,9 @@ function stringRotation(s1, s2) {
     }
   }
   return isSubstring(s1,s2);
+=======
+
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
