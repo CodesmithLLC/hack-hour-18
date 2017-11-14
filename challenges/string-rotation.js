@@ -16,6 +16,7 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+<<<<<<< HEAD
   //first check for length of input strings (both strings should be the same length, otherwise it's an automatic false);
   //else if the call to isSubstring returns true, return true;
   //else check to see if the string divided in half and then, when the second half is concated with the first half, is equal to s2. 
@@ -29,6 +30,9 @@ function stringRotation(s1, s2) {
       let rotated = s1.slice(Math.floor((s1.length/2))).concat(firstSlice);
       return rotated === s2;
   }
+=======
+
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
