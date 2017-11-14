@@ -23,11 +23,7 @@ function reverseInPlace(array) {
              array[j] = temp1;
              array[i] = temp2;
      }
-     
+     return array;
  }
 
 module.exports = reverseInPlace;
-
-[1, 2, 3, 4]
-
-temp = 4;
