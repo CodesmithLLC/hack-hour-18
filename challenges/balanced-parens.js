@@ -24,8 +24,27 @@
  *
  */
 
-function balancedParens(input){
-
+function balancedParens(input) {
+  return isBalanced(input, 0) > 0;
 }
+
+function isBalanced(input, initPos) {
+  if (input[initPos] === '(') {
+    for (let pos = initPos + 1; pos < input.length; pos += 1) {
+      const curChar = input[pos];
+      if (curChar === ')') return pos;
+      if (curChar === '(') {
+        pos = isBalanced(input, pos);
+      }
+    }
+  }
+  return false;
+}
+
+console.assert(balancedParens('(') === false);  // false
+console.assert(balancedParens('()') === true); // true
+console.assert(balancedParens(')(') === false);  // false
+console.assert(balancedParens('(())') === true);  // true
+console.assert(balancedParens('(()') === false);  // false
 
 module.exports = balancedParens;
