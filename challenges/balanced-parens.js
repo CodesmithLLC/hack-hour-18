@@ -25,57 +25,35 @@
  */
 
 function balancedParens(input){
-    let begin = 0;
-    let end = input.length -1;
-    const brackets = ['[', ']', '(', ')'];
-    let found = false;
-
+    let queue = [];
+    const begB = ['(', '[', '{'];
+    const endB = [')', ']', '}'];
+    
     for (let i=0; i< input.length; i++) {
-        if (input[i] === '(') {
-            let j = i + 1;
-            let finished = false;
-            while (!finished) {
-                if (j = input.length) return false;
-                if (input[j] === ')') {
-                    i = j;
-                    finished = true;
-                } else if (input[j] === ']' || input[j] === '}') {
-                    return false;
-                }
-                j++;
-            }
-            
+      if (endB.indexOf(input[i]) > -1) {
+        console.log('end check ' + queue);
+        let char = begB[endB.indexOf(input[i])];
+        let temp = queue.indexOf(char);
+        console.log(temp);
+        if (temp > -1) {
+          queue.splice(temp, 1);
+          console.log(queue);
+        } else {
+          return false;
         }
-        if (input[i] === '[') {
-            let j = i + 1;
-            let finished = false;
-            while (!finished) {
-                if (j = input.length) return false;
-                if (input[j] === ']') {
-                    i = j;
-                    finished = true;
-                } else if (input[j] === ')' || '}') {
-                    return false;
-                }
-                j++;
-            }
-        }
-        if (input[i] === '{') {
-            let j = i + 1;
-            let finished = false;
-            while (!finished) {
-                if (j = input.length) return false;
-                if (input[j] === '}') {
-                    i = j;
-                    finished = true;
-                } else if (input[j] === ')' || ']') {
-                    return false;
-                }
-                j++;
-            }
-        }
+        
+      }
+      if (begB.indexOf(input[i]) > -1) {
+        queue.push(input[i]);
+        console.log(queue);
+      }
     }
-    return true;
+    
+    if (queue === []) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 module.exports = balancedParens;
