@@ -24,55 +24,56 @@
  *
  */
 
-// function balancedParens(input) {
-//   for (let pos = 0; pos < input.length; pos += 1) {
-//     if ('({['.indexOf(input[pos]) > -1) {
-//       const result = isBalanced(input, pos);
-//       if (result === false) return false;
-//       pos = result;
-//     } else if (')}]'.indexOf(input[pos]) > -1) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-//
-// function isBalanced(input, initPos) {
-//   const startChar = '({[';
-//   const endChar = ')}]';
-//   const charI = startChar.indexOf(input[initPos]);
-//   // if (charI === -1) return false;
-//   for (let pos = initPos + 1; pos < input.length; pos += 1) {
-//     const curChar = input[pos];
-//     // Reached closing paren
-//     if (curChar === endChar[charI]) return pos;
-//     // Reached another opening paren
-//     if (startChar.indexOf(curChar) > -1) {
-//       pos = isBalanced(input, pos);
-//       if (pos === false) return false;
-//     }
-//     // Reached a closing paren that doesn't match the current type
-//     else if (')}]'.indexOf(curChar) !== -1) {
-//       return false;
-//     }
-//   }
-//   return false;
-// }
-
 function balancedParens(input) {
-  const parens = { '(': ')', '{': '}', '[': ']' };
-  const parensStack = [];
-  for (let i = 0; i < input.length; i += 1) {
-    const cur = input[i];
-    if (cur in parens) {
-      parensStack.push(parens[cur]);
-    }
-    if (cur === parensStack[parensStack.length - 1]) {
-      parensStack.pop();
+  const openParens = '({[';
+  const closeParens = ')}]';
+  for (let pos = 0; pos < input.length; pos += 1) {
+    const curChar = input[pos];
+    if (openParens.indexOf(curChar) > -1) {
+      const result = isBalanced(input, pos);
+      if (result === false) return false;
+      pos = result;
+    } else if (closeParens.indexOf(curChar) > -1) {
+      return false;
     }
   }
-  return parensStack.length === 0;
+  return true;
 }
+
+function isBalanced(input, initPos) {
+  const parens = { '(': ')', '{': '}', '[': ']' };
+  const closing = parens[input[initPos]];
+  for (let pos = initPos + 1; pos < input.length; pos += 1) {
+    const curChar = input[pos];
+    // Reached closing paren
+    if (curChar === closing) return pos;
+    // Reached another opening paren
+    if (curChar in parens) {
+      pos = isBalanced(input, pos);
+      if (pos === false) return false;
+    }
+    // Reached a closing paren that doesn't match the current type
+    else if (Object.entries(parens).indexOf(curChar) !== -1) {
+      return false;
+    }
+  }
+  return false;
+}
+
+// function balancedParens(input) {
+//   const parens = { '(': ')', '{': '}', '[': ']' };
+//   const parensStack = [];
+//   for (let i = 0; i < input.length; i += 1) {
+//     const cur = input[i];
+//     if (cur in parens) {
+//       parensStack.push(parens[cur]);
+//     }
+//     if (cur === parensStack[parensStack.length - 1]) {
+//       parensStack.pop();
+//     }
+//   }
+//   return parensStack.length === 0;
+// }
 
 console.assert(balancedParens('(') === false);  // false
 console.assert(balancedParens('()') === true); // true
