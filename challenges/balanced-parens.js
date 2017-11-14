@@ -25,7 +25,55 @@
  */
 
 function balancedParens(input){
+    let holder = input.split("");
 
+    let parens = 0;
+    let curlys = 0;
+    let angles = 0;
+
+    let first = undefined;
+    let last = undefined;
+    
+    let validsyntax = false;
+    
+    for(let i=0; i<holder.length;i++){
+       if(holder[i]==="(" || holder[i] === ")"){
+          parens++;
+            if(first===undefined){
+              first = holder[i];
+            }else{
+              last = holder[i];
+            }
+       }else if(holder[i]==="{" || holder[i] === "}"){
+           curlys++;
+            if(first===undefined){
+              first = holder[i];
+            }else{
+              last = holder[i];
+            }
+       }else if(holder[i]==="[" || holder[i] === "]"){
+           angles++;
+           if(first===undefined){
+            first = holder[i];
+          }else{
+            last = holder[i];
+          }
+       }
+    }
+  
+  if(first==="(" && last === ")"){
+    validsyntax = true;
+  }else if(first === "{" && last === "}"){
+    validsyntax = true;
+  }else if(first === "[" && last === "]"){
+    validsyntax = true;
+  }
+
+    if((parens%2===0) && (curlys%2===0) && (angles%2===0) && validsyntax){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 module.exports = balancedParens;
