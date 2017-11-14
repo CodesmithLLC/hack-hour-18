@@ -23,6 +23,6 @@ function stringRotation(s1, s2) {
 
 // leelo eeloleelol
 
-console.log(stringRotation('hello', 'llohe'));
+// console.log(stringRotation('hello', 'llohe'));
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
