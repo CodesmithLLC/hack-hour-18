@@ -29,13 +29,19 @@ function balancedParens(input) {
 }
 
 function isBalanced(input, initPos) {
-  if (input[initPos] === '(') {
-    for (let pos = initPos + 1; pos < input.length; pos += 1) {
-      const curChar = input[pos];
-      if (curChar === ')') return pos;
-      if (curChar === '(') {
-        pos = isBalanced(input, pos);
-      }
+  const startChar = '({[';
+  const endChar = ')}]';
+  const charI = startChar.indexOf(input[initPos]);
+  if (charI === -1) return false;
+  for (let pos = initPos + 1; pos < input.length; pos += 1) {
+    const curChar = input[pos];
+    if (curChar === endChar[charI]) return pos;
+    if (startChar.indexOf(curChar) > -1) {
+      pos = isBalanced(input, pos);
+      if (pos === false) return false;
+    }
+    else if (')}]'.indexOf(curChar) !== 0) {
+      break;
     }
   }
   return false;
@@ -46,5 +52,12 @@ console.assert(balancedParens('()') === true); // true
 console.assert(balancedParens(')(') === false);  // false
 console.assert(balancedParens('(())') === true);  // true
 console.assert(balancedParens('(()') === false);  // false
+
+console.assert(balancedParens('[](){}') === true); // true
+console.assert(balancedParens('[}') === false); // false
+console.assert(balancedParens('[({})]') === true);   // true
+console.assert(balancedParens('[(]{)}') === false); // false
+
+// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
 
 module.exports = balancedParens;
