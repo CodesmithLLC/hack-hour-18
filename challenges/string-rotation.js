@@ -16,6 +16,7 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+<<<<<<< HEAD
   if (s1.length !== s2.length) return false;
   let counter = 0;
   let notYetFoundCounter = s1.length;
@@ -32,3 +33,9 @@ function stringRotation(s1, s2) {
 module.exports = { isSubstring, stringRotation };
 
 // console.log(stringRotation('hids', 'idsh'));
+=======
+
+}
+
+module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
