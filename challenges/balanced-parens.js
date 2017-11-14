@@ -27,7 +27,7 @@
 const braces = { '{': '}', '[': ']', '(': ')' };
 
 function isOpenBrace(element) {
-  return braces[element];
+  return braces[element] ? true : false;
 }
 
 function isCloseBrace(element) {
@@ -37,21 +37,25 @@ function isCloseBrace(element) {
 function balancedParens(input) {
   if (typeof input !== 'string') return undefined;
   const braceStack = [];
-  const inputArr = input.split('');
-  for (let i = 0; i < inputArr.length; i++) {
-    if (isOpenBrace(inputArr[i])) braceStack.push(inputArr[i]);
-    else if (braceStack.length !== 0 && inputArr[i] === braces[braceStack[braceStack.length - 1]]) braceStack.pop();
-    else if (isCloseBrace(inputArr[i])) return false;
+  // const inputArr = input.split('');
+  for (let i = 0; i < input.length; i++) {
+    if (isOpenBrace(input[i])) braceStack.push(input[i]);
+    else if (braceStack.length !== 0 && input[i] === braces[braceStack[braceStack.length - 1]]) braceStack.pop();
+    else if (isCloseBrace(input[i])) return false;
   }
   return braceStack.length === 0;
 }
 
-// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')) // true
-// console.log(balancedParens(' var hubble = function() { telescopes.awesome();')) // false
+// console.log(balancedParens('('));  // false
+// console.log(balancedParens('()')); // true
+// console.log(balancedParens(')('));  // false
+// console.log(balancedParens('(())'));  // true
+// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+// console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
 // console.log(balancedParens('[](){}')); // true
 // console.log(balancedParens('[({})]')); // true
 // console.log(balancedParens('[(]{)}')); // false
-// console.log(balancedParens(7)); // false
+// console.log(balancedParens(7)); // undefined
 
 
-module.exports = balancedParens;
+module.exports = { balancedParens, isOpenBrace, isCloseBrace };
