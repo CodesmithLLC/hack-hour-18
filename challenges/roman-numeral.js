@@ -34,10 +34,10 @@ const romans = {
 };
 
 function romanNumeral(n) {
-  if (typeof n !== 'number') return 0;
+  if (typeof n !== 'number') return '';
   if (romans[n]) return romans[n];
-  const keyArr = Object.keys(romans).reverse();
-  for (let i = 0; i < keyArr.length; i++) {
+  const keyArr = Object.keys(romans);
+  for (let i = keyArr.length - 1; i >= 0; --i) {
     if (keyArr[i] <= n) {
       return romans[keyArr[i]] + romanNumeral(n - keyArr[i]);
     }
