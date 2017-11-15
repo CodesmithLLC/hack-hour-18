@@ -22,12 +22,12 @@
    const ones = ',I,II,III,IV,V,VI,VII,VIII,IX'.split(',')
    const tens = ',X,XX,XXX,XL,L,LX,LXX,LXXX,XC'.split(',')
    const hundreds = ',C,CC,CCC,CD,D,DC,DCC,DCCC,CM'.split(',')
-   const thousands = ',M,MM,MMM'
+   const thousands = ',M,MM,MMM'.split(',')
    const numerals = [ones, tens, hundreds, thousands]
 
    return numArr.reduce((acc, el, i) => {
-     acc.unshift(numerals[i][el])
-     return acc
-   },[]).join('')
+     return numerals[i][el]+acc
+   },'')
  }
+ 
 module.exports = romanNumeral;
