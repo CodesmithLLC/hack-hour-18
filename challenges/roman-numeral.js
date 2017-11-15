@@ -17,8 +17,39 @@
  * 
  */
 
-function romanNumeral(n) {
+const romans = {
+  1000: 'M',
+  900: 'CM',
+  500: 'D',
+  400: 'CD',
+  100: 'C',
+  90: 'XC',
+  50: 'L',
+  40: 'XL',
+  10: 'X',
+  9: 'IX',
+  5: 'V',
+  4: 'IV',
+  1: 'I',
+};
 
+function romanNumeral(n) {
+  if (typeof n !== 'number') return 0;
+  if (romans[n]) return romans[n];
+  const keyArr = Object.keys(romans).reverse();
+  for (let i = 0; i < keyArr.length; i++) {
+    if (keyArr[i] <= n) {
+      return romans[keyArr[i]] + romanNumeral(n - keyArr[i]);
+    }
+  }
 }
+
+// console.log(romanNumeral(10)); // X
+// console.log(romanNumeral(39)); // XXXIX
+// console.log(romanNumeral(932)); // CMXXXII
+// console.log(romanNumeral(145)); // CXLV
+// console.log(romanNumeral(11)); // XI
+// console.log(romanNumeral(14)); // XIV
+// console.log(romanNumeral(777)); // DCCLXXVII
 
 module.exports = romanNumeral;
