@@ -20,7 +20,8 @@
      if (el[1] > big[1] || el[1] === big[1] && el[0] > big[0]) big = el
      return big
    })
-   return Math.floor(mean/array.length) === mode[1]
+   return Math.floor(mean/array.length).toString() === mode[0]
  }
+
 
 module.exports = modemean;
