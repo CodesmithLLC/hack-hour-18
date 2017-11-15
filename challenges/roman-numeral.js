@@ -14,11 +14,20 @@
  *      500   ->    D
  *      900   ->    CM
  *      1000  ->    M
- * 
+ *
  */
 
-function romanNumeral(n) {
+ function romanNumeral(n) {
+   const numArr = n.toString().split('').reverse()
+   const ones = ',I,II,III,IV,V,VI,VII,VIII,IX'.split(',')
+   const tens = ',X,XX,XXX,XL,L,LX,LXX,LXXX,XC'.split(',')
+   const hundreds = ',C,CC,CCC,CD,D,DC,DCC,DCCC,CM'.split(',')
+   const thousands = ',M,MM,MMM'
+   const numerals = [ones, tens, hundreds, thousands]
 
-}
-
+   return numArr.reduce((acc, el, i) => {
+     acc.unshift(numerals[i][el])
+     return acc
+   },[]).join('')
+ }
 module.exports = romanNumeral;
