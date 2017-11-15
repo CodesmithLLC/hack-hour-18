@@ -37,9 +37,9 @@ function balancedParens(input){
         }
     });
 
-    const curlyBrackets = inputObj['{'] === inputObj['}'];
-    const parens = inputObj['('] === inputObj[')'];
-    const squareBrackets = inputObj['['] === inputObj[']'];
+    const curlyBrackets = inputObj['{'] === inputObj['}'] && inputArr.indexOf('{') < inputArr.indexOf('}');
+    const parens = inputObj['('] === inputObj[')'] && inputArr.indexOf('(') < inputArr.indexOf(')');
+    const squareBrackets = inputObj['['] === inputObj[']'] && inputArr.indexOf('[') < inputArr.indexOf(']');
 
     return curlyBrackets && parens && squareBrackets;
 }
