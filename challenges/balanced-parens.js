@@ -31,13 +31,13 @@ function balancedParens(input){
     
     for (let i=0; i< input.length; i++) {
       if (endB.indexOf(input[i]) > -1) {
-        console.log('end check ' + queue);
+        // console.log('end check ' + queue);
         let char = begB[endB.indexOf(input[i])];
         let temp = queue.indexOf(char);
-        console.log(temp);
+        // console.log(temp);
         if (temp > -1) {
           queue.splice(temp, 1);
-          console.log(queue);
+          // console.log(queue);
         } else {
           return false;
         }
@@ -49,7 +49,7 @@ function balancedParens(input){
       }
     }
     
-    if (queue === []) {
+    if (queue.length === 0) {
       return true;
     } else {
       return false;
