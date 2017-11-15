@@ -30,7 +30,9 @@ const convert = {
 const amount = Object.keys(convert);
 
 function romanNumeral(n, pos = (amount.length - 1)) {
-  debugger
+  if (amount[pos] % 10 === 0
+      && amount[pos] - amount[pos - 2] === n)
+    return convert[amount[pos - 2]] + convert[amount[pos]];
   if (amount[pos] > n) return romanNumeral(n, pos - 1);
 
   if (n in convert) {
@@ -53,15 +55,15 @@ console.assert(romanNumeral(1) === 'I');
 console.assert(romanNumeral(3) === 'III');
 console.assert(romanNumeral(4) === 'IV');
 console.assert(romanNumeral(5) === 'V');
-// console.log(romanNumeral(9) === 'IX');
+console.assert(romanNumeral(9) === 'IX');
 console.assert(romanNumeral(10) === 'X');
 console.assert(romanNumeral(40) === 'XL');
 console.assert(romanNumeral(50) === 'L');
-// console.log(romanNumeral(90));     XC
+console.assert(romanNumeral(90) === 'XC');
 console.assert(romanNumeral(100) === 'C');
 console.assert(romanNumeral(400) === 'CD');
 console.assert(romanNumeral(500) === 'D');
-// console.log(romanNumeral(900));    CM
+console.assert(romanNumeral(900) === 'CM');
 console.assert(romanNumeral(1000) === 'M');
 
 module.exports = romanNumeral;
