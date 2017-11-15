@@ -26,51 +26,43 @@ const convert = {
   500: 'D',
   1000: 'M',
 };
+const amounts = Object.keys(convert);
 
-const amount = Object.keys(convert);
-
-function romanNumeral(n, pos = (amount.length - 1)) {
+function romanNumeral(n) {
   if (typeof n !== 'number') throw new Error('Must be a number');
-  if (amount[pos] % 10 === 0
-      && amount[pos] - amount[pos - 2] === n) {
-    return convert[amount[pos - 2]] + convert[amount[pos]];
-  }
-  // if (amount[pos] % 10 !== 0
-  //     && amount[pos] % 5 === 0
-  //     && amount[pos] - amount[pos - 1] === n) {
-  //   return convert[amount[pos - 1]] + convert[amount[pos]];
-  // }
-  if (amount[pos] > n) return romanNumeral(n, pos - 1);
 
-  if (n in convert) {
-    return convert[n];
-  }
+  if (n in convert) return convert[n];
 
-  let total = n;
+  let remaining = n;
   let result = '';
-  let count = 0;
-  while (total > 0) {
-    if (count === 3) return convert[amount[pos]] + convert[amount[pos + 1]];
-    total -= amount[pos];
-    result += convert[amount[pos]];
-    count ++;
+
+  for (let i = amounts.length - 1; i >= 0 && remaining > 0; i -= 1) {
+    const curAmount = Number(amounts[i]);
+    const numeral = convert[curAmount];
+    if (curAmount - amounts[i - 1] === n) return convert[amounts[i - 1]] + numeral;
+    if (curAmount - amounts[i - 2] === n) return convert[amounts[i - 2]] + numeral;
+    while (remaining >= curAmount) {
+      remaining -= curAmount;
+      result += numeral;
+    }
   }
   return result;
 }
 
-console.assert(romanNumeral(1) === 'I');
-console.assert(romanNumeral(3) === 'III');
-console.assert(romanNumeral(4) === 'IV');
-console.assert(romanNumeral(5) === 'V');
-console.assert(romanNumeral(9) === 'IX');
-console.assert(romanNumeral(10) === 'X');
-console.assert(romanNumeral(40) === 'XL');
-console.assert(romanNumeral(50) === 'L');
-console.assert(romanNumeral(90) === 'XC');
-console.assert(romanNumeral(100) === 'C');
-console.assert(romanNumeral(400) === 'CD');
-console.assert(romanNumeral(500) === 'D');
-console.assert(romanNumeral(900) === 'CM');
-console.assert(romanNumeral(1000) === 'M');
+// console.log('testing');
+// console.assert(romanNumeral(1) === 'I');
+// console.assert(romanNumeral(3) === 'III');
+// console.assert(romanNumeral(4) === 'IV');
+// console.assert(romanNumeral(5) === 'V');
+// console.assert(romanNumeral(9) === 'IX');
+// console.assert(romanNumeral(10) === 'X');
+// console.assert(romanNumeral(40) === 'XL');
+// console.assert(romanNumeral(50) === 'L');
+// console.assert(romanNumeral(90) === 'XC');
+// console.assert(romanNumeral(100) === 'C');
+// console.assert(romanNumeral(400) === 'CD');
+// console.assert(romanNumeral(500) === 'D');
+// console.assert(romanNumeral(900) === 'CM');
+// console.assert(romanNumeral(1000) === 'M');
 
 module.exports = romanNumeral;
