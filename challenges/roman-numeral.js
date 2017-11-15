@@ -30,6 +30,7 @@ const convert = {
 const amount = Object.keys(convert);
 
 function romanNumeral(n, pos = (amount.length - 1)) {
+  if (typeof n !== 'number') throw new Error('Must be a number');
   if (amount[pos] % 10 === 0
       && amount[pos] - amount[pos - 2] === n)
     return convert[amount[pos - 2]] + convert[amount[pos]];
