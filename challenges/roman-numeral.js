@@ -18,7 +18,18 @@
  */
 
 function romanNumeral(n) {
+	const decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+	const romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+	let romanNumResult = "";
 
+	for (let i=0; i<decimalValue.length; i++){
+		while(decimalValue[i]<=n){ //if decimalValue < n, enter while loop and increment back up until exact 
+			romanNumResult += romanNumeral[i]; //add corresponding romNum
+			n -= decimalValue[i];
+		}
+	}
+
+	return romanNumResult;
 }
 
 module.exports = romanNumeral;
