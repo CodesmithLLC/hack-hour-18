@@ -46,16 +46,16 @@ function balancedParens(input) {
   return braceStack.length === 0;
 }
 
-// console.log(balancedParens('('));  // false
-// console.log(balancedParens('()')); // true
-// console.log(balancedParens(')('));  // false
-// console.log(balancedParens('(())'));  // true
-// console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
-// console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
-// console.log(balancedParens('[](){}')); // true
-// console.log(balancedParens('[({})]')); // true
-// console.log(balancedParens('[(]{)}')); // false
-// console.log(balancedParens(7)); // undefined
+// console.assert(balancedParens('(') === false, 'why u no work');  // false
+// console.assert(balancedParens('()') === true, 'why u no work'); // true
+// console.assert(balancedParens(')(') === false, 'why u no work');  // false
+// console.assert(balancedParens('(())') === true, 'why u no work');  // true
+// console.assert(balancedParens(' var wow  = { yo: thisIsAwesome() }') === true, 'why u no work'); // true
+// console.assert(balancedParens(' var hubble = function() { telescopes.awesome();') === false, 'why u no work'); // false
+// console.assert(balancedParens('[](){}') === true, 'why u no work'); // true
+// console.assert(balancedParens('[({})]') === true, 'why u no work'); // true
+// console.assert(balancedParens('[(]{)}') === false, 'why u no work'); // false
+// console.assert(balancedParens(7) === undefined, 'why u no work'); // undefined
 
 
-module.exports = { balancedParens: balancedParens, isOpenBrace: isOpenBrace, isCloseBrace: isCloseBrace };
+module.exports = balancedParens;
