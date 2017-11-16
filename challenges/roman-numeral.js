@@ -18,6 +18,7 @@
  */
 
 function romanNumeral(n) {
+<<<<<<< HEAD
   if(typeof n !== 'number' || n < 0) return;
   
   let values = {
@@ -62,5 +63,9 @@ function romanNumeral(n) {
   
   return convert(n);
 };
+=======
+
+}
+>>>>>>> eecff8fee2f92487161d86b4a3dbf8bb953a6daf
 
 module.exports = romanNumeral;
