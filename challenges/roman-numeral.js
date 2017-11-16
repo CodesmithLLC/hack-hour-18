@@ -16,6 +16,7 @@
  *      1000  ->    M
  * 
  */
+<<<<<<< HEAD
 // Letters of the alphabet used in ancient Rome to represent numbers: I = 1; V = 5; X = 10; L = 50; C = 100; D = 500; M = 1000. 
 // The numbers one through ten are written I, II, III, IV, V, VI, VII, VIII, IX, and X
 
@@ -59,4 +60,11 @@ console.log(romanNumeral(10)); // X
 
 // console.log(romanNumeral(1000)); // M
 
+=======
+
+function romanNumeral(n) {
+
+}
+
+>>>>>>> eecff8fee2f92487161d86b4a3dbf8bb953a6daf
 module.exports = romanNumeral;
