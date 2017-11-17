@@ -17,7 +17,7 @@
  *
  */
 
-function romanNumeral(n) {
+function romanNumeral(n) { //this is a bad approach
   if (n < 4) {
     return "I".repeat(n);
   } else if (n === 4) {
