@@ -12,7 +12,6 @@ function subsetSum(array, target) {
     let initial = array[0];
     let result = false;
     for (let i = 1; i < array.length; i++) {
-        console.log(initial + array[i]);
         if (initial + array[i] !== target) {
             continue;
         } else if (initial + array[i] === target) {
