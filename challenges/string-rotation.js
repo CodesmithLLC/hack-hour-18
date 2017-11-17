@@ -16,7 +16,19 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if (s1.length !== s2.length) return false;
+  let counter = 0;
+  let notYetFoundCounter = s1.length;
+  while (notYetFoundCounter) {
+    const end = s1.slice(counter);
+    const beginning = s1.slice(0, counter);
+    if (end + beginning === s2) return isSubstring(end + beginning, s2); //would be cleaner to use return true here;
+    counter += 1;
+    notYetFoundCounter -= 1;
+  }
+  return false;
 }
 
-module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
+module.exports = { isSubstring, stringRotation };
+
+// console.log(stringRotation('hids', 'idsh'));
