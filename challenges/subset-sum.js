@@ -11,14 +11,15 @@
 function subsetSum(array, target, total = 0) {
   if (target === total) return true;
   for (let i = 0; i < array.length; i += 1) {
-    const cur = array[i];
-    const result = subsetSum(array.slice(i + 1), target, total + cur);
-    if (result) return true;
+    if (subsetSum(array.slice(i + 1), target, total + array[i])) {
+      return true;
+    }
   }
   return false;
 }
 
 console.assert(subsetSum([3], 3) === true);
+console.assert(subsetSum([0, -1, 5, 2], 3) === false);
 console.assert(subsetSum([3, 5], 3) === true);
 console.assert(subsetSum([3, 5], 2) === false);
 console.assert(subsetSum([3, 5], 8) === true);
