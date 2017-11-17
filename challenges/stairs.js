@@ -32,6 +32,6 @@ function drawStairs(n) {
         console.log(str);
     }
 }
-
-
+    
+    
 module.exports = drawStairs;
