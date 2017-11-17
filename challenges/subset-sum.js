@@ -18,16 +18,16 @@ function subsetSum(array, target) {
   return false;
 }
 
-console.assert(subsetSum([3], 3) === true);
-console.assert(subsetSum([0, -1, 5, 2], 3) === false);
-console.assert(subsetSum([3, 5], 3) === true);
-console.assert(subsetSum([3, 5], 2) === false);
-console.assert(subsetSum([3, 5], 8) === true);
-console.assert(subsetSum([3, 7, 4, 2], 5) === true);
-console.assert(subsetSum([3, 34, 4, 12, 5, 12], 32) === true);
-console.assert(subsetSum([8, 2, 4, 12], 13) === false);
-console.assert(subsetSum([8, -2, 1, -3], 6) === true);
-console.assert(subsetSum([8, 8, 8, 8], 24) === true);
-console.assert(subsetSum([8, 8, 8, 8], 23) === false);
+// console.assert(subsetSum([3], 3) === true);
+// console.assert(subsetSum([0, -1, 5, 2], 3) === false);
+// console.assert(subsetSum([3, 5], 3) === true);
+// console.assert(subsetSum([3, 5], 2) === false);
+// console.assert(subsetSum([3, 5], 8) === true);
+// console.assert(subsetSum([3, 7, 4, 2], 5) === true);
+// console.assert(subsetSum([3, 34, 4, 12, 5, 12], 32) === true);
+// console.assert(subsetSum([8, 2, 4, 12], 13) === false);
+// console.assert(subsetSum([8, -2, 1, -3], 6) === true);
+// console.assert(subsetSum([8, 8, 8, 8], 24) === true);
+// console.assert(subsetSum([8, 8, 8, 8], 23) === false);
 
 module.exports = subsetSum;
