@@ -8,10 +8,10 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target, total = 0) {
-  if (target === total) return true;
+function subsetSum(array, target) {
+  if (target === 0) return true;
   for (let i = 0; i < array.length; i += 1) {
-    if (subsetSum(array.slice(i + 1), target, total + array[i])) {
+    if (subsetSum(array.slice(i + 1), target - array[i])) {
       return true;
     }
   }
