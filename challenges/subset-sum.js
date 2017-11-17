@@ -9,7 +9,24 @@
  */
 
 function subsetSum(array, target) {
+  if (!Array.isArray(array) || typeof target !== 'number') return;
 
+  for (let i = 0; i < array.length; i += 1) {
+    for (let j = 0; j < array.length; j += 1) {
+      if (array[i] + array[j] === target) return true;
+    }
+    return false;
+  }
+
+  // return array.reduce((acc, cur, i, array) => {
+  //   for (let j = 0; j < array.length; j += 1) {
+  //     if (acc + array[j] === target) {
+  //       return true;
+  //     }
+  //   }
+  //   acc += cur;
+  // });
+  // // return false;
 }
 
 module.exports = subsetSum;
