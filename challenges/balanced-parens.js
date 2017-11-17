@@ -24,6 +24,7 @@
  *
  */
 
+<<<<<<< HEAD
 
  //() [] {} 
  
@@ -63,3 +64,10 @@ module.exports = balancedParens;
 
 
 
+=======
+function balancedParens(input){
+
+}
+
+module.exports = balancedParens;
+>>>>>>> eecff8fee2f92487161d86b4a3dbf8bb953a6daf
