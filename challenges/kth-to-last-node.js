@@ -22,6 +22,17 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let temp = head
+  while (k-- > 1) {
+    if (!temp.next) return;
+    temp = temp.next
+  }
+
+  while (temp.next) {
+    head = head.next
+    temp = temp.next
+  }
+  return head.value
 
 }
 
