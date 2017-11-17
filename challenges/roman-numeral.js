@@ -36,4 +36,4 @@ function romanNumeral(n) {
 
 console.log(romanNumeral(2011));
 
-// module.exports = romanNumeral;
+module.exports = romanNumeral;
