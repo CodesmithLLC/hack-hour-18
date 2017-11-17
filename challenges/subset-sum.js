@@ -9,7 +9,35 @@
  */
 
 function subsetSum(array, target) {
+    let result = false;
 
+    if (array.length === 0) return false; 
+    
+    function adder(arr) {
+        let sum = 0;
+        for (let i=0; i<arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+    }
+    
+    function helper(tArr) {
+        if (adder(tArr) === target) {
+            result = true;
+        } else if (tArr.length === 0) {
+            return result;
+        } else {
+            for (let i=0; i<tArr.length; i++) {
+                let tempArr = tArr.slice();
+                tempArr.splice(i, 1);
+                helper(tempArr);
+            }
+        }   
+    }
+
+    helper(array);
+
+    return result;
 }
 
 module.exports = subsetSum;
