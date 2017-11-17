@@ -8,7 +8,26 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
+// possibly some recursion or reduce involved
+// try: if statement, array reduce starting from entire length of array
+// else, decrement length, and use recursion
+// actually it would have to be base case if reduce of length 1 
+
+// generate all combinations, including single elements, and push to an array
+
 function subsetSum(array, target) {
+	let combinations = [[]];
+
+	for (let i=0; i<array.length; i++){
+		for (let j=0; j<combinations.length; j++){
+			let result = combinations[j].concat(array[i]); //produce combos as arrays
+			combinations.push(result); //push combo arrays to main combo array
+		}
+	}
+	//once we have all the combinations, use reduce to sum
+	return array.reduce((prev,curr)=>{
+
+	})
 
 }
 
