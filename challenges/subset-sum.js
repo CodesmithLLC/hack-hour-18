@@ -24,9 +24,9 @@ function subsetSum(array, target) {
 // var array = [3, 34, 4, 12, 5, 12];
 // var i = 2;
 // console.log([array.slice(i), array.slice(i)]);
-console.log(subsetSum([3, 7, 4, 2], 5)); // true
-console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // true
-console.log(subsetSum([8, 2, 4, 12], 13)); // false
-console.log(subsetSum([8, -2, 1, -3], 6)); // true
+// console.log(subsetSum([3, 7, 4, 2], 5)); // true
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // true
+// console.log(subsetSum([8, 2, 4, 12], 13)); // false
+// console.log(subsetSum([8, -2, 1, -3], 6)); // true
 
 module.exports = subsetSum;
