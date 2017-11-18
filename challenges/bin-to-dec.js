@@ -15,7 +15,6 @@
 
 function binToDec(binary) {
     let result = 0;
-    let pos = binary.length - 1;
 
     for (let i = binary.length -1, pos = 0; i >= 0; i--, pos++) {
         if (binary[i] === '1') {
@@ -26,7 +25,21 @@ function binToDec(binary) {
     }
     return result;
 }
-console.log(binToDec('0'));
-console.log(binToDec('11'));
-console.log(binToDec('101'));
+
+function hexToDec(hex) {
+    let result = 0;
+    const keys = ['a', 10, 'b', 11, 'c', 12, 'd', 13, 'e', 14, 'f', 15];
+    for (let i = hex.length -1, pos=0; i>=0; i--, pos++) {
+        if (keys.indexOf(hex[i]) > -1) {
+            result += keys[1 + keys.indexOf(hex[i])] * Math.pow(16, pos);
+        } else if (typeof parseInt(hex[i]) === 'number') {
+            result += parseInt(hex[i]) * Math.pow(16, pos);
+        } else {
+            return undefined;
+        }
+
+    }
+    return result;
+}
+
 module.exports = binToDec;
