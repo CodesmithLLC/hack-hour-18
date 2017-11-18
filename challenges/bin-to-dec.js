@@ -14,7 +14,16 @@
  */
 
 function binToDec(binary) {
-
+  let totalDigits = binary.length
+  let binArr = binary.split('');
+  let total = Number(binArr[binArr.length-1]);
+  for(let i = 0; i < totalDigits-1; i++){
+    let currentDigit = (totalDigits - 1) - i
+    if(Number(binArr[i]) === 1){
+      total += Math.pow(2, currentDigit);
+    }
+  }
+  return total;
 }
 
 module.exports = binToDec;
