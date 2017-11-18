@@ -9,6 +9,7 @@
  */
 
 function subsetSum(array, target) {
+<<<<<<< HEAD
 	for (let i = 0 ; i < array.length; i++) {
 		var sum = 0; 
 		for (let j = 1; j < array.length; j++) {
@@ -20,6 +21,9 @@ function subsetSum(array, target) {
 		}
 	}
 	return false;
+=======
+
+>>>>>>> 2e641a2fecfb26af1092d54b04c05f115099de0b
 }
 
 module.exports = subsetSum;
