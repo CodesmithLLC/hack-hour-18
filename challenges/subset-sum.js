@@ -9,23 +9,64 @@
  */
 
 function subsetSum(array, target) {
+    if (target === 0) return true;
+    if (!array.length) return false;
+    return subsetSum(array.slice(1), target - array[0]) || subsetSum(array.slice(1), target);
+  }
 
-if (array.reduce( (prev,curr) => prev + curr) === target) return true;
+// if (array.reduce( (prev,curr) => prev + curr) === target) return true;
 
-    for(let i=0,j=array.length-1;i<array.length,j>=0;i++,j--){
-      if(array[i]+array[j]===target){
-          return true;
-      }else if(array[i]+array[i+1]+array[j]===target){
-          return true;
-      }else if(array[i]+array[j]+array[j-1]===target){
-          return true;
-      }
-    }
-return false;
+//     for(let i=0,j=array.length-1;i<array.length,j>=0;i++,j--){
+//       if(array[i]+array[j]===target){
+//           return true;
+//       }else if(array[i]+array[i+1]+array[j]===target){
+//           return true;
+//       }else if(array[i]+array[j]+array[j-1]===target){
+//           return true;
+//       }
+//     }
+// return false;
 
-}
+// }
 
 //doesn't work for more than two added... :(
+
+// function subsetSum(array, target) {
+
+// if (array.reduce( (prev,curr) => prev + curr) === target) return true;
+
+//     for(let i=0,j=array.length-1;i<array.length,j>=0;i++,j--){
+//       if(array[i]+array[j]===target){
+//           return true;
+//       }else if(array[i]+array[i+1]+array[j]===target){
+//           return true;
+//       }else if(array[i]+array[j]+array[j-1]===target){
+//           return true;
+//       }
+//     }
+// return false;
+
+// }
+
+// / function subsetSum(array, target) {
+
+//     newArr = array.sort((a,b) => a-b);
+    
+// 	if (newArr.reduce( (prev,curr) => prev + curr) === target) return true
+//     if (target < Math.max.apply(null,array)) return false;
+    
+// 	for (var num of newArr){
+// 		if (newArr.indexOf(target - num) !== -1) return true;
+// 	for (var num2 of newArr){
+// 		if (newArr.indexOf(target - num2) !== -1) return true;
+// 		subsetSum(array,target-num)
+// 		subsetSum(array,target-num-num2)
+// 		}
+// 	}
+	
+	
+// return false
+// }
 
 
 module.exports = subsetSum;
