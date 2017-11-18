@@ -16,20 +16,21 @@
 // would be nice to have a more elegant solution, but I can't think of one
 
 function subsetSum(array, target) {
-  for(let x = 0; x < array.length; x+=1){
-    if(x === target) return true;
+  for (let x = 0; x < array.length; x += 1) {
+    if (array[x] === target) return true;
   }
-  for(let x = 0; x < array.length; x+=1){
-    arrayMinusCurrentElement = array.slice(0, x).concat(array.slice(x + 1, array.length));
-    if (subsetSum(arrayMinusCurrentElement, target - array[x]) === true) return true; // if statement so continues looping/trying to find if not true for a specific case
+  for (let x = 0; x < array.length; x += 1) {
+    const arrayMinusCurrentElement = array.slice(0, x).concat(array.slice(x + 1, array.length));
+    if (subsetSum(arrayMinusCurrentElement, target - array[x]) === true || subsetSum(arrayMinusCurrentElement, target) === true) return true; // if statement so continues looping/trying to find if not true for a specific case, **before ||: including the current number to try to reach target sum
+    // after ||: **not including the current number to try to reach target sum
   }
   return false;
 }
 
 //module.exports = subsetSum;
 
-// console.log(subsetSum([3, 7, 4, 2], 5)); // T
-// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // T
-// console.log(subsetSum([8, 2, 4, 12], 13)); // F !!UGH DOSEN"T WORK FOR THIS!!
-// console.log(subsetSum([8, -2, 1, -3], 6)); // T
-// console.log(subsetSum([1, -3], 10)); // F
+console.log(subsetSum([3, 7, 4, 2], 5)); // T
+console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // T
+console.log(subsetSum([8, 2, 4, 12], 13)); // F
+console.log(subsetSum([8, -2, 1, -3], 6)); // T
+console.log(subsetSum([1, -3], 10)); // F
