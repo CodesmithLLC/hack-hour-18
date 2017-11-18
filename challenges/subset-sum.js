@@ -10,6 +10,22 @@
 
 function subsetSum(array, target) {
 
+if (array.reduce( (prev,curr) => prev + curr) === target) return true;
+
+    for(let i=0,j=array.length-1;i<array.length,j>=0;i++,j--){
+      if(array[i]+array[j]===target){
+          return true;
+      }else if(array[i]+array[i+1]+array[j]===target){
+          return true;
+      }else if(array[i]+array[j]+array[j-1]===target){
+          return true;
+      }
+    }
+return false;
+
 }
+
+//doesn't work for more than two added... :(
+
 
 module.exports = subsetSum;
