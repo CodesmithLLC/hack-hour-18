@@ -13,8 +13,8 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
-
+function binToDec(binary) { 
+    return parseInt(binary,2);
 }
 
 module.exports = binToDec;
