@@ -32,10 +32,10 @@ function subsetSum(array, target) {
       }
     }
     
-    array = array.sort((prev,curr)=> )
+    // array = array.sort((prev,curr)=> )
     // return total
     // return array
 }
-console.log(subsetSum([3, 34, 4, 12, 5, 12], 32))
+// console.log(subsetSum([3, 34, 4, 12, 5, 12], 32))
 
 module.exports = subsetSum;
