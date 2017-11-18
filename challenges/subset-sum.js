@@ -15,10 +15,9 @@
        for (let j = i; j < array.length; j++) {
          sum = array[i] + array[j]
          if (sum === target) return true
-         sumArr.push(sum)
+         if (sum < target) sumArr.push(sum)
        }
      }
-   sumArr = sumArr.filter(num => num < target)
    return sumArr.length ? subsetSum(sumArr, target) : false
  }
 
