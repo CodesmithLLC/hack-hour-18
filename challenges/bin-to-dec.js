@@ -13,8 +13,32 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
+// binary -> decimal
+// split binary into array
+// iterate through each element in the array
+// for each element take starting from 1*2^(length-1)
+// or reverse and 
+// use reduce or recursion
 
+function binToDec(binary) {
+	let binArray = binary.split('').reverse().map(function(num){
+		return parseInt(num, 10);
+	});
+	// 111001
+	// (1*(2^5))+(1*(2^4))+(1*(2^3))+(0*(2^2))+(0*(2^1))+(1*(2^0))
+	return binArray.reduce(function(prev, curr, index){
+		if (curr === 1){
+			prev + Math.pow(2, index);
+		} else {
+			prev;
+		}
+	})
 }
+
+// let decimal = parseInt(binary, 2)
+
+// decimal -> binary
+// divide by 2 until it's 1/2, keep track of the remainder each time
+// then append all the remainders in reverse
 
 module.exports = binToDec;
