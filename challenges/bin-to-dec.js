@@ -14,7 +14,16 @@
  */
 
 function binToDec(binary) {
-	return parseInt(binary, 2)
+	var arr = binary.toString().split("");
+	console.log(arr)
+	var result = 0; 
+	for (let i = arr.length-1; i >= 0; i--) {
+	  result += (Math.pow(2,i)*arr[i])
+	}
+	return result;
 }
 
+
 module.exports = binToDec;
+
+
