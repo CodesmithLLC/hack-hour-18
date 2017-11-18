@@ -30,5 +30,6 @@ function subsetSum(array, target) {
 
 // console.log(subsetSum([3, 7, 4, 2], 5)); // T
 // console.log(subsetSum([3, 34, 4, 12, 5, 12], 32)); // T
-console.log(subsetSum([8, 2, 4, 12], 13)); // F
+// console.log(subsetSum([8, 2, 4, 12], 13)); // F !!UGH DOSEN"T WORK FOR THIS!!
 // console.log(subsetSum([8, -2, 1, -3], 6)); // T
+// console.log(subsetSum([1, -3], 10)); // F
