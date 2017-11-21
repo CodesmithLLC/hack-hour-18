@@ -12,14 +12,17 @@
 
 // going to try to push on a queue
 function matchWord(str) {
+    debugger;
     const splitWords = str.toLowerCase().split(/\W+/).join('').split('_'); //splitting by spaces and punctuation
 
     const queue = [];
     for (i = 0; i < splitWords.length; i+=1) {
-        const reversedWord = splitWords[i].split('').reverse().join('');
-        if(splitWords.indexOf(reversedWord) !== -1) {
-            if(queue.slice(-1) === reversedWord) queue.pop();
-            else queue.push(reversedWord);
+        if(splitWords[i] !== ""){
+            const reversedWord = splitWords[i].split('').reverse().join('');
+            if(splitWords.indexOf(reversedWord) !== -1) {
+                if(queue.slice(-1) === splitWords[i]) queue.pop();
+                else queue.push(reversedWord);
+            }
         }
     }
     return queue.length === 0;
