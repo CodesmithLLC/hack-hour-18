@@ -23,22 +23,21 @@ function matchWord(str) {
     const firstTerm = [...termArr].splice(0, halfLength);
     const lastTerm = [...termArr].splice(halfLength, termArr.length - 1);
 
-    // if(firstTerm[firstTerm.length - 1] === '+') {
-    //     firstTerm.pop();
-    // }
+    if(firstTerm[firstTerm.length - 1] === '+') {
+        firstTerm.pop();
+    } else {
+        return false;
+    }
 
     const firstTermOutput = firstTerm.join('').toLowerCase();
     const lastTermOutput = lastTerm.reverse().join('').toLowerCase();
-    
-    console.log('firstTermOutput:  ', firstTermOutput);
-    console.log('lastTermOutput:  ', lastTermOutput);
 
     return firstTermOutput === lastTermOutput;
     
 }
 
-console.log(matchWord('__END_DNE-----')); //  -> true
-console.log(matchWord('__ENDDNE__')); //  -> false       (not separated by a space)
+// console.log(matchWord('__END_DNE-----')); //  -> true
+// console.log(matchWord('__ENDDNE__')); //  -> false       (not separated by a space)
 // console.log(matchWord('IF()()fi[]')); //  -> true        (should be case-insensitive)
 // console.log(matchWord('for__if__rof__fi')); //  -> false     not properly closed. like ( [) ] 
 // console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw')); //  -> true
