@@ -33,21 +33,17 @@
 
 function binToDec(binary) {
     const binaryArr = binary.split('');
-    let output;
-    // console.log('binaryArr:  ', binaryArr);
-    // console.log('binaryArr.length:  ', binaryArr.length);
+    let output = 0;
     for (let i = 0, j = binaryArr.length - 1; i < binaryArr.length; i++, j--) {
-        // console.log('binaryArr[i]:  ', binaryArr[i]);
-        // console.log('i:  ', i);
-        // console.log('j:  ', j);
-        // console.log('binaryArr[i] * (2**j):  ', binaryArr[i] * (2**j));
-        output = binaryArr[i] * (2 ** j);
-        console.log('output:  ', output);
+        output = output + binaryArr[i] * (2 ** j);
     }
     return output;
 }
 
-console.log(binToDec('100')); // -> 4
-console.log(binToDec('101')); // -> 5
+// console.log(binToDec('0')); // -> 0
+// console.log(binToDec('11')); // -> 3
+// console.log(binToDec('100')); // -> 4
+// console.log(binToDec('101')); // -> 5
+// console.log(binToDec('0101')); // -> 5
 
 module.exports = binToDec;
