@@ -14,6 +14,7 @@
  */
 
 function binToDec(binary) {
+<<<<<<< HEAD
   if(typeof binary !== 'string' || binary === 0) return;
   let binaryArr = binary.split("").reverse();
   let double = 1;
@@ -27,6 +28,9 @@ function binToDec(binary) {
     }
   }
   return total;
+=======
+
+>>>>>>> b33238c32b6c7063099b69a3bf4b45f56137d11f
 }
 
 module.exports = binToDec;
