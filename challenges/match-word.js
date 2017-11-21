@@ -11,7 +11,22 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  if (str.length === 0) return true;
+  const newStr = str.replace(/\W|_/g, ' ').replace(/\s+/g, ' ').toLowerCase().split('');
+  const charStack = [];
+  for (let i = 0; i < newStr.length; i++) {
+    if (newStr[i] !== ' ') {
+      if (charStack[charStack.length - 1] === newStr[i] && charStack[charStack.length - 1] !== newStr[i - 1]) charStack.pop();
+      else charStack.push(newStr[i]);
+    }
+  }
+  return charStack.length === 0;
 }
+
+// console.log(matchWord('__END_DNE-----')); // true
+// console.log(matchWord('IF()()fi[]')); // true
+// console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw')); // true
+// console.log(matchWord('for__if__rof__fi')); // false
+// console.log(matchWord('__ENDDNE__')); // false
 
 module.exports = matchWord;
