@@ -24,6 +24,23 @@ function binToDec(binary) {
   return numArr.reduce((acc, val) => {return acc + val}, 0);
 }
 
+
+function decToBin(num) {
+  if (num === 0) {return '0'}
+  let binLength = 0;
+  while (num >= Math.pow(2, binLength)) {
+    binLength ++;
+  }
+  let binArray = [];
+  for (let i = binLength - 1; i >= 0; i--) {
+    if (num >= Math.pow(2, i)) {
+      binArray.push('1');
+      num -= Math.pow(2, i);
+    } else binArray.push('0');
+  }
+  return binArray.join('');
+}
+
 // console.log(binToDec('0'))   //-> 0
 // console.log(binToDec('11'))  //-> 3
 // console.log(binToDec('100')) //-> 4
