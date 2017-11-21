@@ -26,20 +26,35 @@ function binToDec(binary) {
     return result;
 }
 
-function hexToDec(hex) {
-    let result = 0;
-    const keys = ['a', 10, 'b', 11, 'c', 12, 'd', 13, 'e', 14, 'f', 15];
-    for (let i = hex.length -1, pos=0; i>=0; i--, pos++) {
-        if (keys.indexOf(hex[i]) > -1) {
-            result += keys[1 + keys.indexOf(hex[i])] * Math.pow(16, pos);
-        } else if (typeof parseInt(hex[i]) === 'number') {
-            result += parseInt(hex[i]) * Math.pow(16, pos);
-        } else {
-            return undefined;
-        }
+// function hexToDec(hex) {
+//     let result = 0;
+//     const keys = ['a', 10, 'b', 11, 'c', 12, 'd', 13, 'e', 14, 'f', 15];
+//     for (let i = hex.length -1, pos=0; i>=0; i--, pos++) {
+//         if (keys.indexOf(hex[i]) > -1) {
+//             result += keys[1 + keys.indexOf(hex[i])] * Math.pow(16, pos);
+//         } else if (typeof parseInt(hex[i]) === 'number') {
+//             result += parseInt(hex[i]) * Math.pow(16, pos);
+//         } else {
+//             return undefined;
+//         }
 
-    }
-    return result;
-}
+//     }
+//     return result;
+// }
+
+// function decToHex(num) {
+//     if (typeof num !== 'number') return undefined;
+//     if (num === 0) return 0;
+//     let pos = 1;
+//     let result = '';
+
+//     while (num % Math.pow(16, pos) > Math.pow(16, pos)) {
+//         pos++;
+//     }
+
+//     for (let i = pos; ; i--) {
+        
+//     }
+// }
 
 module.exports = binToDec;
