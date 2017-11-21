@@ -11,7 +11,39 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    str = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    
+    let oldArray = [];
 
+    if (str.length === 0)
+        return true;
+    else {
+        oldArray.push(str.charAt());
+        
+        for (let i = 1; i < str.length; i++) {
+            for (let j = oldArray.length; j > 0; )
+                if (oldArray[j] == str.charAt(i)) {
+                    oldArray.pop();
+                    j--
+                }
+                else {
+                    oldArray.push(str.charAt(i));            
+                    break;
+                   // console.log(oldArray);
+                }
+        }
+    }    
 }
 
+// put a word into a stack
+// the popout should be similar to the next word
+
+matchWord('__END_DNE-----');
+//matchWord('');
+
+// put a word into a stack
+// the popout should be similar to the next word
+
+//matchWord('__END_DNE-----');
+matchWord('');
 module.exports = matchWord;
