@@ -23,6 +23,6 @@ function binToDec(binary) {
   }, 0);
 }
 
-console.log(binToDec('0101'));
+// console.log(binToDec('0101'));
 
 module.exports = binToDec;
