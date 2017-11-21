@@ -3,15 +3,29 @@
 //takes a string and returns true if every word is closed by its backwards counterpart. Words must be separated by space or 
 //punctuation.
 
-// matchWord('__END_DNE-----');  -> true
-// matchWord('__ENDDNE__');  -> false       (not separated by a space)
-// matchWord('IF()()fi[]');  -> true        (should be case-insensitive)
-// matchWord('for__if__rof__fi');  -> false     not properly closed. like ( [) ] 
-// matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
-// matchWord('');  -> true
-
 function matchWord(str) {
-
+  const arr = str.match(/[a-z]+/ig);
+  if (!arr.length) return false;
+  const stack = [];
+  let currentWord = '';
+  for (let i = 0; i < arr.length; i++) {
+  	currentWord = arr[i].split('').reverse().join('');
+  	console.log(stack);
+  	if (!stack.length || stack[stack.length - 1].toLowerCase() !== currentWord.toLowerCase()) {
+  		stack.push(arr[i]);
+  	} else {
+  		stack.shift();
+  	}
+  }
+  if (stack.length === 0) return true;
+  else return false;
 }
 
-module.exports = matchWord;
+console.log(matchWord('__END_DNE-----')); // -> true
+console.log(matchWord('__ENDDNE__')); // -> false       (not separated by a space)
+console.log(matchWord('IF()()fi[]')); // -> true        (should be case-insensitive)
+console.log(matchWord('for__if__rof__fi')); // -> false     not properly closed. like ( [) ] 
+console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw')); // -> true
+console.log(matchWord('')); // -> true
+
+// module.exports = matchWord;
