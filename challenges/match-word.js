@@ -19,11 +19,21 @@ function matchWord(str) {
     if (termArr[termArr.length - 1] === '+') termArr.splice(termArr.length - 1, 1);
 
     const halfLength = Math.ceil(termArr.length / 2);
-    const firstTerm = termArr.splice(0, halfLength);
-    const lastTerm = termArr.splice(halfLength, termArr.length - 1);
+
+    const firstTerm = [...termArr].splice(0, halfLength);
+    const lastTerm = [...termArr].splice(halfLength, termArr.length - 1);
+
+    // if(firstTerm[firstTerm.length - 1] === '+') {
+    //     firstTerm.pop();
+    // }
+
+    const firstTermOutput = firstTerm.join('').toLowerCase();
+    const lastTermOutput = lastTerm.reverse().join('').toLowerCase();
     
-    console.log('firstTerm:  ', firstTerm);
-    console.log('lastTerm:  ', lastTerm);
+    console.log('firstTermOutput:  ', firstTermOutput);
+    console.log('lastTermOutput:  ', lastTermOutput);
+
+    return firstTermOutput === lastTermOutput;
     
 }
 
