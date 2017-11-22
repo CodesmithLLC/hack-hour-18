@@ -3,12 +3,14 @@
  */
 
 function highestProduct(array) {
-  if (array.length === 0) return 0;
+  if (array.constructor !== Array || array.length < 3) return 0;
   const tempArr = [...array].sort((a, b) => a < b);
-  if (tempArr.length < 3) tempArr.push(1, 1, 1);
+  const j = tempArr.length - 1;
+  if (tempArr[j] < 0 && tempArr[j - 1] < 0 && Math.abs(tempArr[j]) > tempArr[1]) {
+    tempArr[1] = tempArr[j];
+    tempArr[2] = tempArr[j - 1];
+  }
   return tempArr[0] * tempArr[1] * tempArr[2];
 }
-
-// console.log(highestProduct([1, 2]));
 
 module.exports = highestProduct;
