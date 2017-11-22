@@ -3,8 +3,11 @@
  */
 
 function highestProduct(array) {
-
-}
-
+  if (!array.length) return;
+  return array.sort((a, b) => b - a).reduce((product, num, index) => {
+    if (index < 3) return product * num;
+    else return product;
+  });
+};
 
 module.exports = highestProduct;
