@@ -3,8 +3,9 @@
  */
 
 function highestProduct(array) {
-    if (array.length < 3) return 0;
+    console.log(array);
     if (!(Array.isArray(array))) return 0;
+    if (array.length < 3) return 0;
     let highestNumber = Number.NEGATIVE_INFINITY;
 
     function recursive(array, i, n, f) {
