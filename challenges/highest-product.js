@@ -3,7 +3,16 @@
  */
 
 function highestProduct(array) {
-  return array.sort((a,b)=> b-a).reduce((acc,curr,i)=> i < 3 ? acc * curr : acc)
+    if (array.constructor !== Array || array.length < 3) {return 0}
+    const pos = []
+    const neg = []
+    for (let i=0; i<array.length; i++) {
+      if (array[i] > 0) {
+        pos.push(array[i])
+      } else {neg.push(array[i])}
+    }
+    array = pos.sort((a,b)=> b-a).concat(neg.sort((a,b)=> b-a))
+    return array[0] * array[1] * array[2]
 }
 
 
