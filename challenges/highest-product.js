@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-  if (! (array.length >= 3) || !Array.isArray(array)) return null;
+  if (!(array.length >= 3) || !Array.isArray(array)) return null;
   let largestSoFar = -Infinity;
   array.forEach((firstMult, i) => {
     // console.log('First', firstMult);
@@ -24,6 +24,7 @@ console.assert(highestProduct([1, 2, 3, 4]) === 24);
 console.assert(highestProduct([4, 2, 1, 3]) === 24);
 console.assert(highestProduct([4, 2, 1, 3, 5]) === 60);
 console.assert(highestProduct([4, 2, 10, 3, 5]) === 200);
+console.assert(highestProduct([4, 2, -10, 3, -5]) === 200);
 
 
 module.exports = highestProduct;
