@@ -3,10 +3,9 @@
  */
 
 function highestProduct(array) {
-    console.log('tests: array');
     if (array.length < 3) return 0;
-    if (!Array.isArray(array)) return 0;
-    let highestNumber = 0;
+    if (!(Array.isArray(array))) return 0;
+    let highestNumber = Number.NEGATIVE_INFINITY;
 
     function recursive(array, i, n, f) {
         if ((array[i] * array[n] * array[f]) > highestNumber) highestNumber = array[i] * array[n] * array[f];
@@ -20,6 +19,6 @@ function highestProduct(array) {
     return highestNumber;
 }
 
-// console.log(highestProduct([1,2,3,4,5,9,29]));
+console.log(highestProduct(1));
 module.exports = highestProduct;
 
