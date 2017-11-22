@@ -3,15 +3,15 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) {
-    throw new Error ('Need at least three integers!')
+  if (array.length < 3 || !Array.isArray(array)) {
+    return 0;
   }
   const sorted = array.sort((a, b) => {
     return a - b;
   });
   const threeNums = sorted.slice(sorted.length-3);
   return threeNums.reduce(function(accum, val) {
-    return accum * val;
+    return Math.abs(accum) * Math.abs(val);
   })
 }
 
