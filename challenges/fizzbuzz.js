@@ -17,7 +17,21 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+	let output = [];
 
+	const test = function(x) {
+		const divisibleByThree = x % 3 === 0;
+		const divisibleByFive = x % 5 === 0;
+		if(divisibleByThree && divisibleByFive) return 'fizzbuzz';
+		if(divisibleByThree) return 'fizz';
+		if(divisibleByFive) return 'buzz';
+	}
+
+	for(let i = 1; i <= num ; i++) {
+		output.push(test(i) || i);
+	}
+
+	return output;
 }
 
 module.exports = fizzbuzz;

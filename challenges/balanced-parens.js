@@ -24,8 +24,49 @@
  *
  */
 
-function balancedParens(input){
 
+// REFACTOR
+// save each opening bracket to a hash map 
+// if a matching closing bracket is found in the rest of the string return true
+
+function balancedParens(input){
+    // input type string
+    // return boolean
+    if(input.constructor !== String) return false;
+    const cleanInput = input.replace(/([A-Z])\w+/ig, ''); // remove all non bracket characters from input string
+    console.log('cleanInput:  ', cleanInput);
+    for (let i = 0; i < cleanInput.length; i++) {
+        switch (cleanInput[i]) {
+            case '(':
+                // console.log('cleanInput[i]:  ', cleanInput[i], '  cleanInput[i + 1]:  ', cleanInput[i + 1], "cleanInput[i + 1] === ')':  ", cleanInput[i + 1] === ')');
+                if (cleanInput[i + 1] === ')') return true;
+                break;
+            case '[':
+                // console.log('cleanInput[i]:  ', cleanInput[i], '  cleanInput[i + 1]:  ', cleanInput[i + 1], "cleanInput[i + 1] === ']':  ", cleanInput[i + 1] === ')');
+                if (cleanInput[i + 1] === ']') return true;
+                break;
+            case '{':
+                // console.log('cleanInput[i]:  ', cleanInput[i], '  cleanInput[i + 1]:  ', cleanInput[i + 1], "cleanInput[i + 1] === '}':  ", cleanInput[i + 1] === ')');
+                if (cleanInput[i + 1] === '}') return true;
+                break;
+            default:
+                break;
+        }
+    }
+    return false;
 }
+
+// console.log(balancedParens(11));  // false
+// console.log(balancedParens('('));  // false
+// console.log(balancedParens('()')); // true
+// console.log(balancedParens(')('));  // false
+// console.log(balancedParens('(())'));  // true
+
+//  console.log(balancedParens('[](){}')); // true
+//  console.log(balancedParens('[({})]'));  // true
+//  console.log(balancedParens('[(]{)}')); // false
+
+//  console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }')); // true
+ console.log(balancedParens(' var hubble = function() { telescopes.awesome();')); // false
 
 module.exports = balancedParens;

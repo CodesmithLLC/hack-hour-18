@@ -11,7 +11,36 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    if(str === '') return true;
+    const term = str.replace(/[^a-z0-9+]+/gi, '+');
+    const termArr = term.split('');
 
+    if (termArr[0] === '+') termArr.splice(0, 1);
+    if (termArr[termArr.length - 1] === '+') termArr.splice(termArr.length - 1, 1);
+
+    const halfLength = Math.ceil(termArr.length / 2);
+
+    const firstTerm = [...termArr].splice(0, halfLength);
+    const lastTerm = [...termArr].splice(halfLength, termArr.length - 1);
+
+    if(firstTerm[firstTerm.length - 1] === '+') {
+        firstTerm.pop();
+    } else {
+        return false;
+    }
+
+    const firstTermOutput = firstTerm.join('').toLowerCase();
+    const lastTermOutput = lastTerm.reverse().join('').toLowerCase();
+
+    return firstTermOutput === lastTermOutput;
+    
 }
+
+// console.log(matchWord('__END_DNE-----')); //  -> true
+// console.log(matchWord('__ENDDNE__')); //  -> false       (not separated by a space)
+// console.log(matchWord('IF()()fi[]')); //  -> true        (should be case-insensitive)
+// console.log(matchWord('for__if__rof__fi')); //  -> false     not properly closed. like ( [) ] 
+// console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw')); //  -> true
+// console.log(matchWord('')); //  -> true
 
 module.exports = matchWord;
