@@ -4,9 +4,8 @@
 
 function highestProduct(array) {
     const prods = [];
-    if (array.length < 3) return 0;
     if (!Array.isArray(array)) return 0;
-    if (array.length === 0) return undefined;
+    if (array.length < 3) return 0;
 
     function helper(arr, count, prod) {
         if (arr.length === 0) {
@@ -27,5 +26,5 @@ function highestProduct(array) {
     return Math.max(...prods);
 }
 
-console.log(highestProduct([2, 3, 4, 5, 5, -11]));
+// console.log(highestProduct([2, 3, 4, 5, 5, -11]));
 module.exports = highestProduct;
