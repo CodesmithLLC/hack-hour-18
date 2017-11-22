@@ -15,11 +15,17 @@ function highestProduct(array) {
       negs.push(threeNums[i]);
     }
   }
+  
   if (negs.length % 3 === 0) {
     return negs.reduce(function(accum, val) {
-    return (accum) * (val);
-  })
+      return (accum) * (val);
+    })
+  } else if (negs.length === 1) {
+    return threeNums.reduce(function(accum, val) {
+      return accum * val;
+    })
   }
+  
   return threeNums.reduce(function(accum, val) {
     return Math.abs(accum) * Math.abs(val);
   })
