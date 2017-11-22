@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-  if (array.constructor !== Array) return 0;
+  if (!Array.isArray(array)) return 0;
   else if (array.length < 3) return 0;
   const tempArr = [...array].sort((a, b) => a < b);
   const j = tempArr.length - 1;
@@ -15,4 +15,5 @@ function highestProduct(array) {
 }
 
 // console.log(highestProduct([1, -2, -3, -4, -5]));
+// console.log(highestProduct(null));
 module.exports = highestProduct;
