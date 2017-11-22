@@ -24,9 +24,6 @@ function highestProduct(array) {
   if (array[array.length - 1] < 0 && array[array.length - 2] < 0) {
     array[array.length - 1] *= -1;
     array[array.length - 2] *= -1;
-    // const final = -1 * array.pop();
-    // const seclast = -1 * array.pop();
-    // array.push(final, seclast);
     array.sort((a, b) => b - a);
   }
   return array.slice(0, 3).reduce((a, c) => a * c);
