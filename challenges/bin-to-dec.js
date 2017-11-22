@@ -19,13 +19,13 @@ function binToDec(binary) {
   }, 0);
 }
 
-console.log(binToDec('0'))   // -> 0
-console.log(binToDec('11'))  // -> 3
-console.log(binToDec('100')) // -> 4
-console.log(binToDec('101')) // -> 5
-console.log(binToDec('0101')) // -> 5
-console.log(binToDec('10101')) // -> 21
-console.log(binToDec('110101')) // -> 53
-console.log(binToDec('11111111')) // -> 255
+// console.log(binToDec('0'))   // -> 0
+// console.log(binToDec('11'))  // -> 3
+// console.log(binToDec('100')) // -> 4
+// console.log(binToDec('101')) // -> 5
+// console.log(binToDec('0101')) // -> 5
+// console.log(binToDec('10101')) // -> 21
+// console.log(binToDec('110101')) // -> 53
+// console.log(binToDec('11111111')) // -> 255
 
 module.exports = binToDec;
