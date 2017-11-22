@@ -3,9 +3,8 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3 || !Array.isArray(array)) {
-    return 0;
-  }
+  if (array.length < 3 || !Array.isArray(array)) return 0;
+  
   const sorted = array.sort((a, b) => {
     return a - b;
   });
@@ -14,6 +13,7 @@ function highestProduct(array) {
     return Math.abs(accum) * Math.abs(val);
   })
 }
+
 
 
 module.exports = highestProduct;
