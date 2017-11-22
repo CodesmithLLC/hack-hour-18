@@ -23,10 +23,10 @@ function highestProduct(array) {
 // 	return max;
   var sort = array.sort((a,b) => (b - a))
   if (sort[sort.length-1]  < 0 && sort[sort.length-2] < 0) {
-    return sort[sort.length-1] * sort[sort.length-1] * sort[0];
+    return sort[sort.length-1] * sort[sort.length-2] * sort[0];
   }
   else {
-    return sort[0] * sort[1] * sort[2]
+    return sort[0] * sort[1] * sort[2];
   }
 }
 
