@@ -19,7 +19,7 @@
 // }
 
 function highestProduct(array) {
-  if (!(array.length >= 3) || !Array.isArray(array)) return 0;
+  if (array.length < 3 || !Array.isArray(array)) return 0;
   array.sort((a, b) => b - a);
   if (array[array.length - 1] < 0 && array[array.length - 2] < 0) {
     array[array.length - 1] *= -1;
@@ -29,7 +29,8 @@ function highestProduct(array) {
   return array.slice(0, 3).reduce((a, c) => a * c);
 }
 
-// console.assert(highestProduct([]) === null);
+// console.assert(highestProduct([]) === 0);
+// console.assert(highestProduct([1,2]) === 0);
 // console.assert(highestProduct([1, 2, 3]) === 6);
 // console.assert(highestProduct([1, 2, 3, 4]) === 24);
 // console.assert(highestProduct([4, 2, 1, 3]) === 24);
