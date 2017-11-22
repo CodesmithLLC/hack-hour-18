@@ -12,15 +12,13 @@
 
 // going to try to push on a queue
 function matchWord(str) {
-    debugger;
-    const splitWords = str.toLowerCase().split(/\W+/).join('').split('_'); //splitting by spaces and punctuation
-
+    const splitWords = str.match(/[a-zA-Z]+/g);  //using regex to split
     const queue = [];
     for (i = 0; i < splitWords.length; i+=1) {
         if(splitWords[i] !== ""){
             const reversedWord = splitWords[i].split('').reverse().join('');
             if(splitWords.indexOf(reversedWord) !== -1) {
-                if(queue.slice(-1) === splitWords[i]) queue.pop();
+                if(queue[queue.length - 1] === splitWords[i]) queue.pop();
                 else queue.push(reversedWord);
             }
         }
@@ -28,7 +26,9 @@ function matchWord(str) {
     return queue.length === 0;
 }
 
-matchWord('__END_DNE-----');
+// matchWord('__END_DNE-----');
+// matchWord('IF()()fi[]'); 
+matchWord('for__if__rof__fi');
 module.exports = matchWord;
 
 
