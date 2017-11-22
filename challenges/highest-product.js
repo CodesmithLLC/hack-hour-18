@@ -3,14 +3,14 @@
  */
 
 function highestProduct(array) {
-  if (!array.length) return 0;
+  if (array.length < 3) return 0;
   return array.reduce((acc, num) => {
     if (acc.length < 3) {
       acc.push(num);
       return acc;
     } else {
     	for (let i = 0; i < acc.length; i++) {
-      	if (num > acc[i]) {
+      	if (Math.abs(num) > Math.abs(acc[i])) {
         	acc[i] = num;
         	break;
       	}
