@@ -3,7 +3,8 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 4) return array.reduce((accum, num) => accum * num);
+  if (array.length < 3) return 0;
+  if (!Array.isArray(array)) return 0;
   const maxes = [];
   while (maxes.length < 3) {
     let max = findMax(array);
