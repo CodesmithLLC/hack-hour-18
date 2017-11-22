@@ -19,7 +19,7 @@
 // }
 
 function highestProduct(array) {
-  if (!(array.length >= 3) || !Array.isArray(array)) return null;
+  if (!(array.length >= 3) || !Array.isArray(array)) return 0;
   array.sort((a, b) => b - a);
   if (array[array.length - 1] < 0 && array[array.length - 2] < 0) {
     array[array.length - 1] *= -1;
