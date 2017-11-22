@@ -35,4 +35,24 @@ function matchWord(str) {
   return status;
 }
 
+/*
+
+const matchWord = str => {
+  // strip punctuation or return empty array if no letters found
+  const words = str.match(/[a-zA-Z]+/g) || [];
+  // declare cache to keep track of values
+  const wordStack = [];
+  // loop through words and start checking to see if the sentence is closed
+  words.forEach(word => {
+    // grab first cached element
+    const cached = (wordStack[0] || '').toLowerCase();
+    // grab reversed version of current word
+    const reversed = word.split('').reverse().join('').toLowerCase();
+    // if the words match up, we'll remove it from our cache, if not we'll add it to the cache
+    cached === reversed ? wordStack.shift() : wordStack.unshift(word);
+  })
+  // if everything was closed properly, we shouldn't have anything left in the stack
+  return !wordStack.length;
+}
+*/
 module.exports = matchWord;
