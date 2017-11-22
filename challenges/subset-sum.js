@@ -16,5 +16,3 @@ function subsetSum(array, target) {
 }
 
 module.exports = subsetSum;
-
-console.log(subsetSum([8, -2, 1, -3], 6));
