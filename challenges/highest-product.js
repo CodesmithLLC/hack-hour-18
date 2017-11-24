@@ -3,34 +3,15 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3 || !Array.isArray(array)) return 0;
+  if (!Array.isArray(array)) return 0;
+  else if (array.length < 3) return 0;
   
-  const sorted = array.sort((a, b) => {
-    return a - b;
-  });
-  const threeNums = sorted.slice(sorted.length-3);
-  const negs = [];
-  for (let i = 0; i < threeNums.length; i++) {
-    if (threeNums[i] < 0) {
-      negs.push(threeNums[i]);
-    }
-  }
+  const sorted = array.sort((a, b) => a - b);
   
-  if (negs.length % 3 === 0) {
-    return negs.reduce(function(accum, val) {
-      return (accum) * (val);
-    })
-  } else if (negs.length === 1) {
-    return threeNums.reduce(function(accum, val) {
-      return accum * val;
-    })
-  }
-  
-  return threeNums.reduce(function(accum, val) {
-    return Math.abs(accum) * Math.abs(val);
-  })
+  const negPosProd = sorted[0] * sorted[2] * sorted[sorted.length - 1];
+  const posProd = sorted[sorted.length - 1] * sorted[sorted.length - 2] * sorted[sorted.length - 3];
+  return Math.max(negPosProd, posProd);
 }
-
 
 
 module.exports = highestProduct;
