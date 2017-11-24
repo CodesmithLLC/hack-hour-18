@@ -8,7 +8,7 @@ function highestProduct(array) {
   
   const sorted = array.sort((a, b) => a - b);
   
-  const negPosProd = sorted[0] * sorted[2] * sorted[sorted.length - 1];
+  const negPosProd = sorted[0] * sorted[1] * sorted[sorted.length - 1];
   const posProd = sorted[sorted.length - 1] * sorted[sorted.length - 2] * sorted[sorted.length - 3];
   return Math.max(negPosProd, posProd);
 }
