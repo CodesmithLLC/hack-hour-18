@@ -3,16 +3,13 @@
  */
 
 function highestProduct(array) {
-    if (array.constructor !== Array || array.length < 3) {return 0}
-    const pos = []
-    const neg = []
-    for (let i=0; i<array.length; i++) {
-      if (array[i] > 0) {
-        pos.push(array[i])
-      } else {neg.push(array[i])}
-    }
-    array = pos.sort((a,b)=> b-a).concat(neg.sort((a,b)=> b-a))
-    return array[0] * array[1] * array[2]
+  if (array.constructor !== Array) return 0;
+  if (array.length < 3) return 0;
+
+  const sorted = array.sort((a,b)=> a - b)
+  const prod1 = sorted[0] * sorted[1] * sorted[array.length-1]
+  const prod2 = sorted[array.length-1] * sorted[array.length-2] * sorted[array.length-3]
+  return Math.max(prod1,prod2)
 }
 
 
