@@ -31,7 +31,20 @@ function zip(l1, l2) {
       turn = 1;
     }
   }
-
+  return l1;
 };
+
+let nList1 = new Node(1);
+nList1.next = new Node(3);
+nList1.next.next = new Node(5);
+nList1.next.next.next = new Node(7);
+
+let nList2 = new Node(2);
+nList2.next = new Node(4);
+nList2.next.next = new Node(6);
+
+zip(nList1, nList2);
+
+console.log(nList1.next.next.next.value);
 
 module.exports = {Node: Node, zip: zip};
