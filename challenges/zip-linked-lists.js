@@ -18,7 +18,7 @@ function zip(l1, l2) {
   let tmp;
   let turn = 1;
 
-  while (list !== null && list !== null) {
+  while (list1 !== null && list2 !== null) {
     if (turn === 1) {
       tmp = list1.next;
       list1.next = list2;
