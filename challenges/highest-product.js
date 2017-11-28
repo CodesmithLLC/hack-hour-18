@@ -18,10 +18,10 @@ function highestProduct(array) {
             helper(arr.slice(), count, prod);
         }
     }
-    let temp = array.shift();
+    let temp = array.slice().shift();
  
-    helper(array, 1, temp);
-    helper(array, 0, 1); 
+    helper(array.slice(1), 1, temp);
+    helper(array.slice(1), 0, 1); 
 
     return Math.max(...prods);
 }
