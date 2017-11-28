@@ -15,17 +15,13 @@ function zip(l1, l2) {
   let cur = head;
   let cur1 = l1.next;
   let cur2 = l2;
-  let useL2 = true;
   while (cur1 && cur2) {
-    if (useL2) {
-      cur.next = cur2;
-      cur2 = cur2.next;
-    } else {
-      cur.next = cur1;
-      cur1 = cur1.next;
-    }
+    cur.next = cur2;
+    cur2 = cur2.next;
     cur = cur.next;
-    useL2 = !useL2;
+    cur.next = cur1;
+    cur1 = cur1.next;
+    cur = cur.next;
   }
   if (cur1) {
     cur.next = cur1;
