@@ -11,7 +11,6 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-<<<<<<< HEAD
   str = str.replace(/[^A-Za-z0-9]/g, ' ').toLowerCase();
   const strArr = str.split(' ');
   const wordArr = [];
@@ -46,9 +45,7 @@ console.log(matchWord('for__if__rof__fi')); // -> //false     not properly close
 console.log(matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw')); // -> true
 console.log(matchWord('')); // -> true
 
-=======
 
 }
 
->>>>>>> c1ccae33ed66dda976cb62dfd5e9918bc6d43844
 module.exports = matchWord;
