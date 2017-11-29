@@ -14,6 +14,7 @@ function Node(value) {
 function Stack() {
   this.head = null;
   this.length = 0;
+  this.max = null;
 }
 
 Stack.prototype.push = function push(value) {
@@ -25,6 +26,7 @@ Stack.prototype.push = function push(value) {
     this.head.next = tmp;
   }
   this.length += 1;
+  if (value > this.max) this.max = value;
   return this.length;
 };
 
@@ -33,10 +35,11 @@ Stack.prototype.pop = function pop() {
   const removedNode = this.head;
   this.head = this.head.next;
   this.length -= 1;
+  if (removedNode.value === this.max) this.max = this.getMaxSearch();
   return removedNode.value;
 };
 
-Stack.prototype.getMax = function getMax() {
+Stack.prototype.getMaxSearch = function getMaxSearch() {
   if (!this.length) return null;
   let max = -Infinity;
   let cur = this.head;
@@ -47,6 +50,12 @@ Stack.prototype.getMax = function getMax() {
   return max;
 };
 
+Stack.prototype.getMax = function getMax() {
+  return this.max;
+}
+
+
+console.log('Running tests');
 // Tests
 const s = new Stack();
 
@@ -81,5 +90,7 @@ s2.pop();
 s2.pop();
 s2.pop();
 console.assert(s2.getMax() === 0);
+s2.pop();
+console.assert(s2.getMax() === null);
 
 module.exports = Stack;
