@@ -11,7 +11,7 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(l1, l2) { 
+function zip(l1, l2) { // I like this solution, but prob could be shorter
   if(l1 === undefined) return l2;
   if(l2 === undefined) return l1;
 
