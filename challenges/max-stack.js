@@ -51,8 +51,9 @@ Stack.prototype.getMaxSearch = function getMaxSearch() {
 };
 
 Stack.prototype.getMax = function getMax() {
+  if (!this.length) return undefined;
   return this.max;
-}
+};
 
 
 // console.log('Running tests');
@@ -81,10 +82,12 @@ Stack.prototype.getMax = function getMax() {
 // console.assert(s2.getMax() === 10);
 //
 // s2.push(100);
-// s2.push(-500);
+// s2.push(100);
 // console.assert(s2.getMax() === 100);
 //
 // s2.pop();
+// console.assert(s2.getMax() === 100);
+//
 // s2.pop();
 // s2.pop();
 // s2.pop();
