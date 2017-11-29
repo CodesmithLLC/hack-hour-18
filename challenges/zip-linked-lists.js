@@ -38,26 +38,26 @@ function zip(l1, l2) { // I like this solution, but prob could be shorter
 
 };
 
-// module.exports = {Node: Node, zip: zip};
+module.exports = {Node: Node, zip: zip};
 
 
 
-const one = new Node(1);
-const three = new Node(1);
-const five = new Node(1);
-const seven = new Node(1);
+// const one = new Node(1);
+// const three = new Node(1);
+// const five = new Node(1);
+// const seven = new Node(1);
 
-const two = new Node(2);
-const four = new Node(2);
-const six = new Node(2);
-const eight = new Node(2);
+// const two = new Node(2);
+// const four = new Node(2);
+// const six = new Node(2);
+// const eight = new Node(2);
 
-one.next = three;
-one.next.next = five;
-one.next.next.next = seven;
+// one.next = three;
+// one.next.next = five;
+// one.next.next.next = seven;
 
-two.next = four;
-two.next.next = six;
-two.next.next.next = eight;
+// two.next = four;
+// two.next.next = six;
+// two.next.next.next = eight;
 
-console.log(JSON.stringify(zip(one, two)));
+// console.log(JSON.stringify(zip(one, two)));
