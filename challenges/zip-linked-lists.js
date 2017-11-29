@@ -3,6 +3,7 @@
  * Implement the linked list using only a Node class. No need for a wrapper LinkedList class
  *
  * BONUS: Do this in place 
+ * BONUS: Do this in place
  */
 
 function Node(val) {
@@ -51,5 +52,6 @@ while(currentNode) {
   console.log(currentNode);
   currentNode = currentNode.next;
 }
+};
 
 module.exports = {Node: Node, zip: zip};
