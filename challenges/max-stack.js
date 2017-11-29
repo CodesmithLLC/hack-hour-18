@@ -8,6 +8,29 @@
 
 function Stack() {
   // body...
+  this.count = 0;
+  this.memory = {};
+}
+
+Stack.prototype.push = function(val){
+  this.memory[this.count] = val;
+  this.count++;
+}
+
+Stack.prototype.pop = function(){
+  let popped = this.memory[this.count];
+  this.count--;
+  return popped;
+}
+
+Stack.prototype.getMax = function(){
+  let madmax = 0;
+  for(var key in this.memory){
+    if(this.memory[key]>madmax){
+      madmax = this.memory[key];
+    }
+  }
+  return madmax;
 }
 
 module.exports = Stack;
