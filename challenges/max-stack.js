@@ -19,14 +19,10 @@ Stack.prototype.push = function(val){
 
 Stack.prototype.pop = function(){
   if(this.index === 0) return undefined;
-  let removed = this.storage[this.index--]
-  let tempStorage = {};   // should be able to do this without a temp, I think..
-  for(let i = 0; i < this.index; i++){
-    tempStorage[i] = this.storage[i];
-  }
-  this.storage = tempStorage;
-  // this.index--;
-  return removed
+  this.index--;  
+  let removed = this.storage[this.index]
+  delete this.storage[this.index];
+  return removed;
 }
 
 Stack.prototype.getMax = function(){
@@ -39,14 +35,5 @@ Stack.prototype.getMax = function(){
   }
   return max;
 }
-
-var stackTest = new Stack();
-
-stackTest.push(1);
-stackTest.push(2);
-stackTest.pop();
-stackTest.push(3);
-stackTest.push(4);
-stackTest.push(5);
 
 module.exports = Stack;
