@@ -8,26 +8,40 @@
 
 function Stack() {
   // body...
-  this.array = [];
+  this.store = {};
   this.index = 0;
+  this.length = 0;
 }
 
 Stack.prototype.push = function(el) {
-  this.array[index] = el;
+  this.store[this.index] = el;
   this.index += 1;
-  return this.array.length;
+  this.length += 1;
+  return this.length;
 };
 
-Stack.prototype.pop = function(el) {
+Stack.prototype.pop = function() {
   this.index -= 1;
-  return this.array.splice(index, 1);
+  this.length -= 1;
+  const removed = this.store[this.index];
+  delete this.store[this.index];
+  return removed;
 };
 
-Stack.prototype.getMax = function(el) {
-  return array.reduce((greatest, el) => {
-    if (el > greatest) acc = el;
+Stack.prototype.getMax = function() {
+  const values = Object.values(this.store);
+  return values.reduce((greatest, el) => {
+    if (el > greatest) greatest = el;
     return greatest;
-  })
+  });
 };
 
 module.exports = Stack;
+
+// const stack = new Stack();
+// console.log(stack.push(1));
+// console.log(stack.push(5));
+// console.log(stack.pop());
+// console.log(stack.push(3));
+// console.log(stack.getMax());
+// console.log(stack.store);
