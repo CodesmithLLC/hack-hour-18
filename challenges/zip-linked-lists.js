@@ -11,6 +11,23 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+ if(l1.head !== null && l2.head !== null){
+   let firstNode = Node(l1.head);
+   firstNode.next = Node(l2.head);
+   while(l1.head.next !== null && l2.head.next !== null){
+     firstNode.next.next = Node(l1.head.next);
+     firstNode.next.next.next = Node(l2.head.next);
+     firstNode.next.next.next.next = Node(l1.head.next.next);
+     firstNode.next.next.next.next.next = Node(l2.head.next.next);
+     firstNode.next.next.next.next.next.next = Node(l1.head.next.next.next);
+     firstNode.next.next.next.next.next.next.next = Node(l2.head.next.next.next);
+
+   }
+
+ }
+
+
+
 };
 
 module.exports = {Node: Node, zip: zip};
