@@ -14,7 +14,12 @@
  */
 
 function binToDec(binary) {
-
+  let output = 0;
+  for (i = binary.length - 1, j = 0; i >= 0; i--, j++) {
+    output += parseInt(binary[i]) * Math.pow(2, j)
+  }
+  return output;
 }
 
 module.exports = binToDec;
+
