@@ -3,8 +3,8 @@
  */
 
 function highestProduct(array) {
-    if(array.length<3){
-        return "invalid array";
+    if(array.length<3 || Array.isArray(array)){
+        return 0;
     }
 
     let largestproduct = 0;
