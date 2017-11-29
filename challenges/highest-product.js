@@ -3,6 +3,7 @@
  */
 
 function highestProduct(array) {
+<<<<<<< HEAD
 	if (!Array.isArray(array)) {
 		return 0;
 	}
@@ -31,4 +32,10 @@ function highestProduct(array) {
 }
 
 //this solution does not work for negative numbers
+=======
+
+}
+
+
+>>>>>>> c1ccae33ed66dda976cb62dfd5e9918bc6d43844
 module.exports = highestProduct;

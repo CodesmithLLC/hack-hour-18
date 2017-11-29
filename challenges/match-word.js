@@ -11,6 +11,7 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+<<<<<<< HEAD
   if (str === '') {return true};
   var clone = "";
   var letters = str.replace(/[^a-zA-Z]+/g, '');
@@ -55,4 +56,9 @@ const matchWord = str => {
   return !wordStack.length;
 }
 */
+=======
+
+}
+
+>>>>>>> c1ccae33ed66dda976cb62dfd5e9918bc6d43844
 module.exports = matchWord;
