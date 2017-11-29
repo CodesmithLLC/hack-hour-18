@@ -45,6 +45,7 @@ class Stack {
 // console.log('max', st.getMax());
 // console.log(st);
 // console.log(st.pop());
+// console.log(st);
 // console.log(st.pop());
 // console.log('max', st.getMax());
 // console.log(st);
