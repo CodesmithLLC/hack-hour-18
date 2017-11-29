@@ -30,6 +30,7 @@ Stack.prototype.pop = function() {
 
 Stack.prototype.getMax = function() {
   const values = Object.values(this.store);
+  if (!values.length) return undefined;
   return values.reduce((greatest, el) => {
     if (el > greatest) greatest = el;
     return greatest;
@@ -38,10 +39,11 @@ Stack.prototype.getMax = function() {
 
 module.exports = Stack;
 
-// const stack = new Stack();
-// console.log(stack.push(1));
-// console.log(stack.push(5));
-// console.log(stack.pop());
-// console.log(stack.push(3));
-// console.log(stack.getMax());
-// console.log(stack.store);
+const stack = new Stack();
+console.log(stack.push(1));
+console.log(stack.push(5));
+console.log(stack.pop());
+console.log(stack.push(6));
+console.log(stack.push(4));
+console.log(stack.getMax());
+console.log(stack.store);
