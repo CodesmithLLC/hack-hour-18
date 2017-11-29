@@ -19,6 +19,10 @@ Stack.prototype.push = function(val){
 }
 
 Stack.prototype.pop = function(){
+  if(this.memory[this.count] === undefined){
+    return undefined
+  }
+  
   this.count--;
   let popped = this.memory[this.count];
   delete this.memory[this.count];
@@ -26,6 +30,10 @@ Stack.prototype.pop = function(){
 }
 
 Stack.prototype.getMax = function(){
+  if(this.memory[this.count] === undefined){
+    return undefined
+  }
+
   let madmax = 0;
   for(var key in this.memory){
     if(this.memory[key]>madmax){
