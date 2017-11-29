@@ -6,8 +6,26 @@
  * BONUS: The getMax method should retrieve the maximum value from the stack in O(1) time.
  */
 
-function Stack() {
-  // body...
-}
+ class Stack {
+   constructor() {
+   this.stack = {}
+   this.length = 0
+   }
+
+   push(input) {
+     this.stack[this.length++] = input
+     return this.length
+   }
+   pop() {
+     if (!this.length) return 'already empty'
+     let value = this.stack[--this.length]
+     delete this.stack[this.length]
+     return value
+   }
+   getMax() {
+     if (!this.length) return 'stack is empty'
+     return Object.values(this.stack).reduce((acc, val) => Math.max(acc, val))
+   }
+ }
 
 module.exports = Stack;

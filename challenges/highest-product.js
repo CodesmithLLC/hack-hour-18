@@ -12,7 +12,7 @@
    let positives = 0
    let negatives = 0
    array.forEach(num => {
-     if (!num) zeroes ++
+     if (!num) zeroes++
      if (num < 0) negatives++
      if (num > 0) positives++
    })
