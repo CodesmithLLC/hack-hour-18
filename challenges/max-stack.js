@@ -11,11 +11,6 @@ function Stack() {
   this.index = 0;
 }
 
-function Stack() {
-  this.storage = {};
-  this.index = 0;
-}
-
 Stack.prototype.push = function(val){
   this.storage[this.index] = val;
   this.index++;
@@ -23,6 +18,7 @@ Stack.prototype.push = function(val){
 }
 
 Stack.prototype.pop = function(){
+  if(this.index === 0) return undefined;
   let removed = this.storage[this.index--]
   let tempStorage = {};   // should be able to do this without a temp, I think..
   for(let i = 0; i < this.index; i++){
@@ -34,6 +30,7 @@ Stack.prototype.pop = function(){
 }
 
 Stack.prototype.getMax = function(){
+  if(this.index === 0) return undefined;
   let max = -Infinity;
   for(let i = 0; i<this.index; i++){
     if(this.storage[i] > max){
@@ -43,13 +40,13 @@ Stack.prototype.getMax = function(){
   return max;
 }
 
-// var stackTest = new Stack();
+var stackTest = new Stack();
 
-// stackTest.push(1);
-// stackTest.push(2);
-// stackTest.pop();
-// stackTest.push(3);
-// stackTest.push(4);
-// stackTest.push(5);
+stackTest.push(1);
+stackTest.push(2);
+stackTest.pop();
+stackTest.push(3);
+stackTest.push(4);
+stackTest.push(5);
 
 module.exports = Stack;
