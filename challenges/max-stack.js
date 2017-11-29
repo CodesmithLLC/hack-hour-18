@@ -24,6 +24,7 @@ Stack.prototype.pop = function(value) {
 	this.index--;
 	const item = this.storage[this.index];
 	delete this.storage[this.index];
+	this.length--;
 	return item;
 }
 
@@ -35,3 +36,14 @@ Stack.prototype.getMax = function() {
 }
 
 module.exports = Stack;
+
+
+var stack = new Stack();
+stack.push(0);
+stack.push(1);
+stack.pop(1);
+stack.push(1);
+stack.push(100);
+stack.push(3);
+console.log(stack.push(500))
+console.log(stack)
