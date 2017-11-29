@@ -36,3 +36,6 @@ function fizzbuzz(num) {
     
     return newArray.reverse();
 }
+
+
+console.log(fizzbuzz(32));
