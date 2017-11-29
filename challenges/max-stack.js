@@ -55,42 +55,42 @@ Stack.prototype.getMax = function getMax() {
 }
 
 
-console.log('Running tests');
-// Tests
-const s = new Stack();
-
-console.assert(s.length === 0);
-console.assert(s.push(1) === 1);
-console.assert(s.push(2) === 2);
-console.assert(s.push(3) === 3);
-
-console.assert(s.pop() === 3);
-console.assert(s.pop() === 2);
-console.assert(s.pop() === 1);
-console.assert(s.pop() === null);
-console.assert(s.pop() === null);
-
-// Test max
-const s2 = new Stack();
-
-console.assert(s2.getMax() === null);
-s2.push(0);
-s2.push(10);
-s2.push(-5);
-s2.push(-100);
-console.assert(s2.getMax() === 10);
-
-s2.push(100);
-s2.push(-500);
-console.assert(s2.getMax() === 100);
-
-s2.pop();
-s2.pop();
-s2.pop();
-s2.pop();
-s2.pop();
-console.assert(s2.getMax() === 0);
-s2.pop();
-console.assert(s2.getMax() === null);
+// console.log('Running tests');
+// // Tests
+// const s = new Stack();
+//
+// console.assert(s.length === 0);
+// console.assert(s.push(1) === 1);
+// console.assert(s.push(2) === 2);
+// console.assert(s.push(3) === 3);
+//
+// console.assert(s.pop() === 3);
+// console.assert(s.pop() === 2);
+// console.assert(s.pop() === 1);
+// console.assert(s.pop() === null);
+// console.assert(s.pop() === null);
+//
+// // Test max
+// const s2 = new Stack();
+//
+// console.assert(s2.getMax() === null);
+// s2.push(0);
+// s2.push(10);
+// s2.push(-5);
+// s2.push(-100);
+// console.assert(s2.getMax() === 10);
+//
+// s2.push(100);
+// s2.push(-500);
+// console.assert(s2.getMax() === 100);
+//
+// s2.pop();
+// s2.pop();
+// s2.pop();
+// s2.pop();
+// s2.pop();
+// console.assert(s2.getMax() === 0);
+// s2.pop();
+// console.assert(s2.getMax() === null);
 
 module.exports = Stack;
