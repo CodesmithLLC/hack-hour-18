@@ -14,7 +14,7 @@ function Stack() {
 
   this.push = (value) => {
     this.array.push(value);
-    if (value > maxNumber) {
+    if (value > this.maxNumber) {
       this.maxNumber = value;
       this.maxIndex = array.length - 1;
     }
