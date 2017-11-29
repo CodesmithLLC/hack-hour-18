@@ -7,7 +7,26 @@
  */
 
 function Stack() {
-  // body...
+    this.storage = [];
+    this.index = 0;
 }
+
+Stack.prototype.push = function(value) {
+  this.storage[this.index] = value;
+  this.index ++;
+  return this.index;
+};
+
+Stack.prototype.pop = function() {
+  this.index --;
+  let temp = this.storage[this.index];
+  this.storage.splice(this.index, 1);
+  return temp;
+};
+
+Stack.prototype.getMax = function() {
+  this.storage.sort();
+  return this.storage[this.index - 1];
+};
 
 module.exports = Stack;
