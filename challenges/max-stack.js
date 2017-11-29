@@ -15,11 +15,13 @@ function Stack() {
 Stack.prototype.push = function(val){
   this.memory[this.count] = val;
   this.count++;
+  return this.count;
 }
 
 Stack.prototype.pop = function(){
-  let popped = this.memory[this.count];
   this.count--;
+  let popped = this.memory[this.count];
+  delete this.memory[this.count];
   return popped;
 }
 
