@@ -26,6 +26,7 @@ function Stack() {
     this.storage[this.length - 1] = undefined;
     this.length--;
     if (tmp === this.max) {
+      this.max = -Infinity;
       for (let i=0; i < this.length; i++) {
         if (this.storage[i] > this.max) {
           this.max = this.storage[i];
@@ -36,7 +37,12 @@ function Stack() {
   };
 
   this.getMax = () => {
-    return this.max;
+    if (this.length > 0) {
+      return this.max;
+    } else {
+      return undefined;
+    }
+    
   };
 }
 
