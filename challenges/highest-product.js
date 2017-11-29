@@ -3,7 +3,7 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) return 0;
+  if (!Array.isArray(array) || array.length < 3) return 0;
   return array.reduce((acc, num) => {
     if (acc.length < 3) {
       acc.push(num);
@@ -24,10 +24,12 @@ function highestProduct(array) {
 }
 
 
-console.log(highestProduct([1,2,3]));
+console.log(highestProduct([1,2]));
 console.log(highestProduct([1,2,3,4]));
 console.log(highestProduct([1,2,3,4,5,6]));
 console.log(highestProduct([]));
 console.log(highestProduct([1]));
+console.log(highestProduct('Steve'));
+console.log(highestProduct([2,3,-4]));
 
 module.exports = highestProduct;
