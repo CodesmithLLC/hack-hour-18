@@ -14,7 +14,21 @@
  */
 
 function binToDec(binary) {
+<<<<<<< HEAD
+    let work = Array.from(binary)
+    let length = work.length;
+    let counter = 1;
+    let result = 0;
+    
+    for(var i = 0; i < length; i++){
+      result = result + (work.pop() * counter);
+      counter = counter * 2;
+    }
+    return result;
+    }
+=======
 
 }
+>>>>>>> b33238c32b6c7063099b69a3bf4b45f56137d11f
 
 module.exports = binToDec;
