@@ -16,17 +16,17 @@ function bestProfit(prices) {
   if (!Array.isArray(prices)) return 0;
   let minLeft = prices[0];
   let maxRight = prices[prices.length - 1];
-  let i = 1;
-  let j = prices.length - 1;
-  while (i <= j) {
-    if (prices[i+1] < minLeft) {
-      minLeft = prices[++i];
-    }
-  }
-  // for (let i = 1, j = prices.length - 1; i <= j; i++ , j--) {
-  //   minLeft = Math.min(minLeft, prices[i]);
-  //   maxRight = Math.max(maxRight, prices[j]);
+  // let i = 1;
+  // let j = prices.length - 1;
+  // while (i <= j) {
+  //   if (prices[i+1] < minLeft) {
+  //     minLeft = prices[++i];
+  //   }
   // }
+  for (let i = 1, j = prices.length - 1; i <= j; i++ , j--) {
+    minLeft = Math.min(minLeft, prices[i]);
+    maxRight = Math.max(maxRight, prices[j]);
+  }
   const maxProfit = maxRight - minLeft;
   return maxProfit > 0 ? maxProfit : 0;
 }
