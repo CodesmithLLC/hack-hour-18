@@ -14,10 +14,10 @@
 
 function bestProfit(stockPricesYesterday) {
   if (stockPricesYesterday.length < 2) return 0;
-  let buyPrice = stockPricesYesterday[0];
-  let highestProfit = Math.max(0, stockPricesYesterday[1] - buyPrice);
+  let buyPrice = Infinity;
+  let highestProfit = 0;
 
-  for (let i = 1; i < stockPricesYesterday.length; i += 1) {
+  for (let i = 0; i < stockPricesYesterday.length; i += 1) {
     const curPrice = stockPricesYesterday[i];
     const curProfit = curPrice - buyPrice;
     highestProfit = Math.max(highestProfit, curProfit);
