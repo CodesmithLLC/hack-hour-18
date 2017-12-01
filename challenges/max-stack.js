@@ -8,6 +8,7 @@
 
 function Stack() {
   // body...
+<<<<<<< HEAD
   stack = [];
   this.index = 0;
 
@@ -31,6 +32,8 @@ function Stack() {
     }
     return maxValue
   }
+=======
+>>>>>>> 0a052b9513b634983a3e1150c5382629aba4ffcc
 }
 
 module.exports = Stack;
