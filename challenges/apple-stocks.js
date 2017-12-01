@@ -21,7 +21,7 @@ function bestProfit(stockPricesYesterday) {
     const curPrice = stockPricesYesterday[i];
     const curProfit = curPrice - buyPrice;
     highestProfit = Math.max(highestProfit, curProfit);
-    if (curPrice < buyPrice) buyPrice = curPrice;
+    buyPrice = Math.min(buyPrice, curPrice);
   }
 
   return highestProfit;
