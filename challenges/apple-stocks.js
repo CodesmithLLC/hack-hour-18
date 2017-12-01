@@ -13,7 +13,17 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  if (!Array.isArray(stock_prices_yesterday)) return 0;
+  let highestPrice = 0;
+  let lowestPrice = 0;
 
+  Object.keys(stock_prices_yesterday).forEach((time) => {
+    if (stock_prices_yesterday[time] > highestPrice) highestPrice = stock_prices_yesterday[time];
+    if (!lowestPrice) lowestPrice = highestPrice;
+    if (stock_prices_yesterday[time] < lowestPrice) lowestPrice = stock_prices_yesterday[time];
+  });
+
+  return highestPrice - lowestPrice;
 }
 
 module.exports = bestProfit;
