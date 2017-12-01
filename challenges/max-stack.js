@@ -7,7 +7,26 @@
  */
 
 function Stack() {
-  // body...
+  let body = new Array(methods);
+  return body;
+}
+
+Stack.pop = push: function(ele){
+  this[this.length] = ele;
+};
+
+let methods = {
+  push: function(ele){
+    this[this.length] = ele;
+  },
+  pop: function() {
+   let popped = this[this.length-1];
+   this.length = this.length -1;
+   return popped;
+  },
+  getMax: function() {
+   return Math.max(this);
+  }
 }
 
 module.exports = Stack;
