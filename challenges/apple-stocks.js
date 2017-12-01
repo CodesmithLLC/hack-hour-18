@@ -13,7 +13,17 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  let maxProfit = 0;
 
+  stock_prices_yesterday.forEach((minute, idx) => {
+    for (let i = idx + 1; i < stock_prices_yesterday.length; i++) {
+      if (stock_prices_yesterday[i] - stock_prices_yesterday[idx] > maxProfit) {
+        maxProfit = stock_prices_yesterday[i] - stock_prices_yesterday[idx]; 
+      }
+    }
+  });
+  return maxProfit;
 }
 
+// console.log(bestProfit([100, 90, 80, 120, 70, 80, 200]));
 module.exports = bestProfit;
