@@ -13,7 +13,23 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    if (!Array.isArray(stock_prices_yesterday)) return 0;
+    let biggestDiff = -Infinity;
+    function recursion(array, i, f) {
+        if ((array[i] - array[f]) > biggestDiff) biggestDiff = array[i] - array[f];
+        if ((array[f] - array[i]) > biggestDiff) biggestDiff = array[f] - array[i];
 
+        //end cases
+        if (i === array.length - 2) return;
+        if (f === array.length - 1) recursion(array, i + 1, i + 2);
+        else recursion(array, i, f + 1);
+    }
+    recursion(stock_prices_yesterday, 0, 1);
+    if (biggestDiff < 0) return 0;
+    else return biggestDiff;
 }
+
+console.log(bestProfit([0,20,10,5,7,10,4,200,10,11,2,3,4,5,6,7,1,2,4]));
+// 200,10,11,2,3,4,5,6,7,1,2,4
 
 module.exports = bestProfit;
