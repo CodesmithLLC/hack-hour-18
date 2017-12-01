@@ -1,3 +1,5 @@
+import { WSAETOOMANYREFS } from "constants";
+
 /**
  *  I have an array stock_prices_yesterday where:
  *
@@ -12,8 +14,53 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+// function bestProfit(stock_prices_yesterday) {
+//   if(stock_prices_yesterday.constructor !== Array || stock_prices_yesterday.length < 2) return 0;
+//   let buyPrice = Infinity;
+//   // let sellPrice = -Infinity;
+//   let bestProfit = 0;
+//   // loop through array, 
+//   for(let i = 0; i < stock_prices_yesterday.length; i++){
+//     // if current index < buy price; set it as buy price
+//     if (stock_prices_yesterday[i] < buyPrice) { 
+//       buyPrice = stock_prices_yesterday[i];
+//       let remaining = stock_prices_yesterday.slice(i+1)
+//       // then loop through next elements,
+//       for(let j = 0; j < remaining.length; j++){
+//         // subtract following elements from current, to see makes a better bestProfit
+//         if(remaining[j] - buyPrice > bestProfit){
+//           bestProfit = remaining[j] - buyPrice;
+//         }
+//       }
+//     } else {
+//       continue;
+//     }
+//   }
+//   return (bestProfit <= 0) ? 0 : bestProfit;
+// }
 
+function bestProfit(stock_prices_yesterday) {
+  if(stock_prices_yesterday.constructor !== Array || stock_prices_yesterday.length < 2) return 0;
+  let buyPrice = Infinity;
+  // let sellPrice = -Infinity;
+  let bestProfit = 0;
+  // loop through array, 
+  for(let i = 0; i < stock_prices_yesterday.length; i++){
+    // if current index < buy price; set it as buy price, otherwise continue
+    if (stock_prices_yesterday[i] < buyPrice) { 
+      buyPrice = stock_prices_yesterday[i];
+      let remaining = stock_prices_yesterday.slice(i+1)
+      // then loop through next elements,
+      let bestOption = remaining.sort((a,b) => b-a)
+        if(bestOption[0] - buyPrice > bestProfit){
+          bestProfit = bestOption[0] - buyPrice;
+        }
+    } else {
+      continue;
+    }
+  }
+  return (bestProfit <= 0) ? 0 : bestProfit;
 }
 
+bestProfit([10, 7, 5, 8, 11, 9])
 module.exports = bestProfit;
