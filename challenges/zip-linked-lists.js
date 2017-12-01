@@ -33,25 +33,25 @@ function zip(l1, l2) {
 }
 
 
-let list1 = new Node(1);
-list1.next = new Node(2);
-list1.next.next = new Node(3);
-list1.next.next.next = new Node(4);
+// let list1 = new Node(1);
+// list1.next = new Node(2);
+// list1.next.next = new Node(3);
+// list1.next.next.next = new Node(4);
 
-let list2 = new Node('a');
-list2.next = new Node('b');
-list2.next.next = new Node('c');
-list2.next.next.next = new Node('d');
-list2.next.next.next.next = new Node('e');
+// let list2 = new Node('a');
+// list2.next = new Node('b');
+// list2.next.next = new Node('c');
+// list2.next.next.next = new Node('d');
+// list2.next.next.next.next = new Node('e');
 
 
-let zippedList = zip(list1, list2);
+// let zippedList = zip(list1, list2);
 
-let currentNode = zippedList;
-while(currentNode) {
-  console.log(currentNode);
-  currentNode = currentNode.next;
-}
-};
+// let currentNode = zippedList;
+// while(currentNode) {
+//   console.log(currentNode);
+//   currentNode = currentNode.next;
+// }
+// };
 
 module.exports = {Node: Node, zip: zip};
