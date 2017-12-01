@@ -11,6 +11,26 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    if(str === '' || ""){
+        return true;
+    }
+
+    let arr = str.split("");
+    let wordcollection = [];
+    let punccount = 0;
+    let closures = {};
+
+    for(let i=0; i<arr.length; i++){
+        let wordholder = "";
+        if (arr[i] === regex) {
+            wordholder = wordholder + arr[i];
+
+        } else if(arr[i] === " " || arr[i] === regex){
+            closures[wordholder] = "placeholder";
+            punccount++;
+        }
+    }
+
 
 }
 
