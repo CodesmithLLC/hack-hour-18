@@ -13,7 +13,14 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+  if (!Array.isArray(stock_prices_yesterday)) return 0
+  let small = 0
+  let big = 0
+  stock_prices_yesterday.forEach(price => {
+    small = Math.min(small, price)
+    big = Math.max(big, price)
+  })
+  return big-small
 }
 
 module.exports = bestProfit;
