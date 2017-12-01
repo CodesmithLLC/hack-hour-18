@@ -24,8 +24,30 @@
  *
  */
 
-function balancedParens(input){
+ function balancedParens(input){
+   const bracketsArr = '{} [] ()'.split(' ')
+   const brackets = '{}[]()'.split('')
+   const bracketsOnly = input.split('').filter(str=>{
+     return brackets.indexOf(str) !== -1
+   }).join('')
 
-}
+   const removeBrackets = (str) => {
+     if (!str.length) return true
+     let index = 0
+     let check = false
+     bracketsArr.forEach(ele => {
+       index = str.indexOf(ele)
+       if (index > -1) {
+         str = str.split('')
+         str.splice(index, 2)
+         str = str.join('')
+         check = true
+       }
+     })
+     if (!check) return false
+     return removeBrackets(str)
+   }
+   return removeBrackets(bracketsOnly)
+ }
 
 module.exports = balancedParens;

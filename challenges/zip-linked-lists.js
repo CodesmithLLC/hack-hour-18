@@ -10,7 +10,10 @@ function Node(val) {
   this.next = null;
 }
 
-function zip(l1, l2) {
+function zip(l1, l2, head) {
+
+
+
 };
 
 module.exports = {Node: Node, zip: zip};
