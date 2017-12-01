@@ -13,6 +13,7 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+  if (!Array.isArray(stock_prices_yesterday)) return 0;
   let maxProfit = 0;
 
   stock_prices_yesterday.forEach((minute, idx) => {
