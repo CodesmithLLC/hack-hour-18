@@ -13,22 +13,27 @@
  */
 
 function bestProfit(prices) {
-  if (prices.length < 2) return 0;
-  let maxProfit = prices[1] - prices[0];
-  let price1 = prices[0];
-  let price2;
-  for (let i = 0; i < prices.length; i++) {
-    if (prices[i + 1] < prices[i]) {
-      price2 = prices[i];
-      maxProfit = Math.max(maxProfit, price2 - price1);
-      price1 = prices[i + 1];
-    }
+  if (!Array.isArray(prices)) return 0;
+  let minLeft = prices[0];
+  let maxRight = prices[prices.length - 1];
+  // let i = 1;
+  // let j = prices.length - 1;
+  // while (i <= j) {
+  //   if (prices[i+1] < minLeft) {
+  //     minLeft = prices[++i];
+  //   }
+  // }
+  for (let i = 1, j = prices.length - 1; i <= j; i++ , j--) {
+    minLeft = Math.min(minLeft, prices[i]);
+    maxRight = Math.max(maxRight, prices[j]);
   }
-  return maxProfit;
+  const maxProfit = maxRight - minLeft;
+  return maxProfit > 0 ? maxProfit : 0;
 }
 
-// const profits = [1, 10, 2, 3, 0, 22, 23, 15];
-
-// console.log(bestProfit(profits));
+// const profits = [1, 10, 2, 3, 22, 23, 15];
+// const profits = [5, 4, 3, 2, 1];
+const profits = [500, 486, 490, 505, 523, 480, 440, 410, 511, 400, 310];
+console.log(bestProfit(profits));
 
 module.exports = bestProfit;
