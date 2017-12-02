@@ -8,6 +8,7 @@
 
 function Stack() {
   // body...
+<<<<<<< HEAD
   this.storage = {}; 
   this.index = 0; 
   this.length = 0; 
@@ -47,3 +48,8 @@ stack.push(100);
 stack.push(3);
 console.log(stack.push(500))
 console.log(stack)
+=======
+}
+
+module.exports = Stack;
+>>>>>>> 0a052b9513b634983a3e1150c5382629aba4ffcc
