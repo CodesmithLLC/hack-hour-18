@@ -14,9 +14,25 @@
 
 function bestProfit(stock_prices_yesterday) {
   if (!Array.isArray(stock_prices_yesterday) || stock_prices_yesterday.length < 2) return 0;
-  return stock_prices_yesterday.reduce((acc, price) => {
-    console.log(price);
-  }, 0)
+
+  let maxValue = 0;
+  let maxValueTime = 0;
+  let maxProfit = 0;
+
+  const sortedByvalue = stock_prices_yesterday.sort((a, b) => {
+    Object.values(a)[0] - Object.values(b)[0];
+  });
+  
+  for (let i = 0; i < sortedByvalue.length; i++) {
+    const currentVal = Object.values(sortedByValue[i])[0];
+    const currentTime = Object.keys(sortedByValue[i])[0];
+
+    if (currentTime > maxValueTime) {
+      maxValue = 
+    }
+  }
+
+  return maxProfit;
 }
 
 module.exports = bestProfit;
