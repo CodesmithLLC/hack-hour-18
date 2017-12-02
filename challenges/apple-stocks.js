@@ -30,6 +30,5 @@ function bestProfit(stock_prices_yesterday) {
 }
 
 console.log(bestProfit([0,20,10,5,7,10,4,200,10,11,2,3,4,5,6,7,1,2,4]));
-// 200,10,11,2,3,4,5,6,7,1,2,4
 
 module.exports = bestProfit;
