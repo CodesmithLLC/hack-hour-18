@@ -42,13 +42,13 @@ function mergeArrays(arr1, arr2) {
   return newArr;
 }
 
-const arr1 = [3,4,6,10,11,15,21];
-const arr2 = [1,5,8,12,14,19];
-const arr3 = [3,4];
-
-console.assert(String(mergeArrays(arr1, arr2)) === '1,3,4,5,6,8,10,11,12,14,15,19,21');
-console.assert(String(mergeArrays(arr2, arr1)) === '1,3,4,5,6,8,10,11,12,14,15,19,21');
-console.assert(String(mergeArrays(arr1, arr3)) === '3,3,4,4,6,10,11,15,21');
-console.assert(String(mergeArrays(arr3, arr1)) === '3,3,4,4,6,10,11,15,21');
+// const arr1 = [3,4,6,10,11,15,21];
+// const arr2 = [1,5,8,12,14,19];
+// const arr3 = [3,4];
+//
+// console.assert(String(mergeArrays(arr1, arr2)) === '1,3,4,5,6,8,10,11,12,14,15,19,21');
+// console.assert(String(mergeArrays(arr2, arr1)) === '1,3,4,5,6,8,10,11,12,14,15,19,21');
+// console.assert(String(mergeArrays(arr1, arr3)) === '3,3,4,4,6,10,11,15,21');
+// console.assert(String(mergeArrays(arr3, arr1)) === '3,3,4,4,6,10,11,15,21');
 
 module.exports = mergeArrays;
