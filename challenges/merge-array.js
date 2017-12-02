@@ -14,7 +14,11 @@
  */
 
 function mergeArrays(arr1, arr2) {
+if (!Array.isArray(arr1) || !arr1.length > 0) return arr2;
+if (!Array.isArray(arr2) || !arr1.length > 0) return arr1;
 
+arr1 = arr1.concat(arr2)
+return arr1.sort((a,b) => a - b)
 }
 
 module.exports = mergeArrays;
