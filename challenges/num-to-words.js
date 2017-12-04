@@ -60,6 +60,7 @@ function appendScale(chunk, exp) {
 }
 
 function numToWords(num) {
+  if (num === 0) return 'Zero';
   return toChunks(num)
     .map(toEnglish)
     .map(appendScale)
