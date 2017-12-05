@@ -14,7 +14,21 @@
 */
 
 function drawStairs(n) {
+<<<<<<< HEAD
+    if (typeof n !== 'number') {return 'Input is not a number.'}
+    if (n < 1) {return 'Input is too small.'}
+    if (n > 100) {return 'Input is too large'}
+    let returnString = '';
+    for (let i = 1; i <= n; i++) {
+        for (let j = 0; j < n-i; j++) {
+            returnString += ' ';
+        } for (let k = i; k > 0; k--)  {
+            returnString += '*' 
+        } if (i < n) {returnString += '\n'}
+    } return returnString;
+=======
 
+>>>>>>> 4279cb36c11220dee95d613583620ce192dff701
 }
 
 

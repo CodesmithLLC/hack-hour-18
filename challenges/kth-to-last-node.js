@@ -6,7 +6,7 @@
  * const b = new Node('B');
  * const c = new Node('C');
  * const d = new Node('D');
- * const e = new Node('E');
+ * const e = new Node('E'); 
  *
  * a.next = b;
  * b.next = c;
@@ -22,7 +22,21 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  if (k <= 0) return 'k is too low';
+  
+  let listLength = 1;
+  let currentNode = head;
+  const storage = {};
 
+  while (currentNode !== null) {
+    storage[listLength] = currentNode.value;
+    listLength ++;
+    currentNode = currentNode.next;
+  }
+  
+  if (k >= listLength) return 'k is too high';
+  
+  return storage[listLength - k]
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
