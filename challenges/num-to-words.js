@@ -55,31 +55,6 @@ const place = {
   5: 'Quadrillion',
 };
 
-// function hund(n, i) {
-//   return digitMap[0][n] + digitMap[i];
-// }
-
-// function hundred(num) {
-//   if (num === 0) return 'Zero';
-//   let ans = '';
-//   const digits = String(num).split('');
-//   digits.forEach((digit, i) => {
-//     if (digit !== '0' && digits.length - 1 - i >= 2) {
-//       return ans += hund(digit, digits.length - 1 - i);
-//     }
-//     else if (i === digits.length - 1 && digits[i - 1] === '1') {
-//       return ans += '';
-//     } else if (digits[i - 1] !== undefined && digit === '0') {
-//       return ans += '';
-//     } else if (digits.length - 1 - i === 1 && digit === '1') {
-//       ans += digitMap[digits.length - 1 - i][digit + digits[i + 1]];
-//     } else {
-//       ans += digitMap[digits.length - 1 - i][digit];
-//     }
-//   });
-//   return ans;
-// };
-
 function hundredPlace(numArr) {
   if (numArr.join('') === '000') return '';
   let ans = '';
@@ -99,6 +74,7 @@ function hundredPlace(numArr) {
 }
 
 function numToWords(num) {
+  console.log(num);
   const reversedNum = String(num).split('').reverse();
   const numParts = [];
   // Split num into hundred parts (3)
