@@ -13,6 +13,7 @@
  */
 
 function numToWords(num) {
+<<<<<<< HEAD
   if (num === 0) {return 'zero'};
   let length = num.toString().split("").length;
   let arr = num.toString().split("");
@@ -59,5 +60,9 @@ function numToWords(num) {
 	}
 }
 
+=======
+
+}
+>>>>>>> c419cccd3404616847f3063162be0198b0248314
 
 module.exports = numToWords;

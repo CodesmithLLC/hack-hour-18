@@ -15,6 +15,7 @@
 
 function mergeArrays(arr1, arr2) {
 
+<<<<<<< HEAD
 //you have two arrays arr1, arr2;
 //push item arr1 then arr2 and rotate
 //if the number of arr1 is greater than that of arr2, we will add the arr2 item to result. if not, then add item from arr1? but every time we have to splice it?
@@ -34,6 +35,8 @@ function mergeArrays(arr1, arr2) {
 		}
 	}
 	return result;
+=======
+>>>>>>> c419cccd3404616847f3063162be0198b0248314
 }
 
 module.exports = mergeArrays;
