@@ -13,7 +13,7 @@
  */
 
 function numToWords(num) {
-    if (num === 0) return 'zero';
+    if (num === 0) return 'Zero';
     //const scale that we're pulling from
     const ones = ['','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
     const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
