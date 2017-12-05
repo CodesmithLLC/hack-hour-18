@@ -46,18 +46,10 @@ function numToWords(num, first = true) {
     if (parseInt((num + '')[0].toString()) === 6) return 'Sixty' + numToWords(num - 60, false);
     if (parseInt((num + '')[0].toString()) === 7) return 'Seventy' + numToWords(num - 70, false);
     if (parseInt((num + '')[0].toString()) === 8) return 'Eighty' + numToWords(num - 80, false);
-    if (parseInt((num + '')[0].toString()) === 9) return 'Ninty' + numToWords(num - 90, false);
+    if (parseInt((num + '')[0].toString()) === 9) return 'Ninety' + numToWords(num - 90, false);
   }
   if (num < 1000) {
-    if (parseInt((num + '')[0].toString()) === 1) return 'OneHundred' + numToWords(num - 100, false);
-    if (parseInt((num + '')[0].toString()) === 2) return 'TwoHundred' + numToWords(num - 200, false);
-    if (parseInt((num + '')[0].toString()) === 3) return 'ThreeHundred' + numToWords(num - 300, false);
-    if (parseInt((num + '')[0].toString()) === 4) return 'FourHundred' + numToWords(num - 400, false);
-    if (parseInt((num + '')[0].toString()) === 5) return 'FiveHundred' + numToWords(num - 500, false);
-    if (parseInt((num + '')[0].toString()) === 6) return 'SixHundred' + numToWords(num - 600, false);
-    if (parseInt((num + '')[0].toString()) === 7) return 'SevenHundred' + numToWords(num - 700, false);
-    if (parseInt((num + '')[0].toString()) === 8) return 'EightHundred' + numToWords(num - 800, false);
-    if (parseInt((num + '')[0].toString()) === 9) return 'NineHundred' + numToWords(num - 900, false);
+    return numToWords(parseInt((num + '')[0].toString())) + 'Hundred' + numToWords(parseInt((num + '').substring(1)), false);
   }
   // Thousand
   if (num < 1000000) {
@@ -92,7 +84,7 @@ function numToWords(num, first = true) {
 }
 
 // console.log(numToWords(0));
-// console.log(numToWords(60));
+console.log(numToWords(194));
 // console.log(numToWords(2999));
 // console.log(numToWords(15));
 // console.log(numToWords(24835794114));
