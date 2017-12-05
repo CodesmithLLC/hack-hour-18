@@ -10,7 +10,6 @@
  */
 
 function permPalin(str) {
-    console.log('inputs: ', str);
     let string = str.toLowerCase();
     let storage = {};
     for (let i = 0; i < str.length; i++){
@@ -25,7 +24,5 @@ function permPalin(str) {
         return acc && true;
     }, true)
 }
-
-console.log(permPalin('cbac'));
 
 module.exports = permPalin;
