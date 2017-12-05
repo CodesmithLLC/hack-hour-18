@@ -22,9 +22,8 @@ function permPalin(str) {
 	}
 	if (!strToArray.length || strToArray.length === 1) return true;
 };
-
 // console.log(permPalin('abab'));
 // console.log(permPalin('cbaba'));
-console.log(permPalin('cbac'));
+// console.log(permPalin('cbac'));
 // console.log(permPalin('a'));
 module.exports = permPalin;
