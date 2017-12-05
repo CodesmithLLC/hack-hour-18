@@ -20,10 +20,12 @@ function permPalin(str) {
     let array = Object.values(storage);
     let counter = 0;
     return array.reduce((acc, curval) => {
-        if (counter === 1) return false && acc;
         if (curval === 1) counter++;
+        if (counter > 1) return false && acc;
         return acc && true;
     }, true)
 }
+
+console.log(permPalin('cbac'));
 
 module.exports = permPalin;
