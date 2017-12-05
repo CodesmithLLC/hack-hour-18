@@ -84,7 +84,7 @@ function numToWords(num, first = true) {
 }
 
 // console.log(numToWords(0));
-console.log(numToWords(194));
+// console.log(numToWords(194));
 // console.log(numToWords(2999));
 // console.log(numToWords(15));
 // console.log(numToWords(24835794114));
@@ -92,5 +92,5 @@ console.log(numToWords(194));
 // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
 // console.log(numToWords(300525151340440));
 // -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
-// * numToWords(92120000000000000) ->
+// console.log(numToWords(92120000000000000));
 module.exports = numToWords;
