@@ -16,7 +16,7 @@ function permPalin(str) {
         if (storage[str[i]]) storage[str[i]]++;
         else storage[str[i]] = 1;
     }
-    let array = Object.values(storage);
+    let array = Object.values(storage).map((elements) => elements % 2);
     let counter = 0;
     return array.reduce((acc, curval) => {
         if (curval === 1) counter++;
