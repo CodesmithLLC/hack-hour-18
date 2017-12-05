@@ -25,7 +25,23 @@
  */
 
 function balancedParens(input){
+    if (input.length === 0) return false;
 
+    const inputArr = input.split('');
+    const inputObj = {};
+    inputArr.forEach(element => {
+        if (inputObj[element]){
+            inputObj[element]++;
+        } else {
+            inputObj[element] = 1;
+        }
+    });
+
+    const curlyBrackets = inputObj['{'] === inputObj['}'] && inputArr.indexOf('{') < inputArr.indexOf('}');
+    const parens = inputObj['('] === inputObj[')'] && inputArr.indexOf('(') < inputArr.indexOf(')');
+    const squareBrackets = inputObj['['] === inputObj[']'] && inputArr.indexOf('[') < inputArr.indexOf(']');
+
+    return curlyBrackets && parens && squareBrackets;
 }
 
 module.exports = balancedParens;

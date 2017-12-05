@@ -14,7 +14,23 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+    // const largestLength = arr1.length > arr2.length ? arr1.length : arr2.length;
+    let index1 = 0;
+    let index2 = 0;
+    const returnArr = [];
+    for (let i = 0; i < arr1.length + arr2.length; i++){
+        if (!arr1[index1] && arr2[index2]) returnArr.push(arr2[index2++]);
+        if (!arr2[index2] && arr1[index1]) returnArr.push(arr1[index1++]);
+        if (arr1[index1] < arr2[index2]) returnArr.push(arr1[index1++]);
+        if (arr2[index2] < arr1[index1]) returnArr.push(arr2[index2++]);
+    }
+    return returnArr;
 }
+
+// var my_array = [3,4,6,10,11,15,21];
+// var another_array = [1,5,8,12,14,19];
+
+// console.log(mergeArrays(my_array, another_array)); //-> [1, 3, 4, 5, 6, 8, 10, 11, 12, 14, 15, 19, 21]
+
 
 module.exports = mergeArrays;

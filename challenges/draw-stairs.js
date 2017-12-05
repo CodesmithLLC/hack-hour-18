@@ -14,8 +14,17 @@
 */
 
 function drawStairs(n) {
-
-}
+    const size = n >= 1 && n <=100;
+    if (size){
+      for (let i = 1; i <= n; i++){
+        let builder = '';
+        builder +=  ' '.repeat(n-i)  +  '*'.repeat(i);
+        console.log(builder)
+      }
+    } else {
+      console.log('Your stairs are too big');
+    }
+  }
 
 
 module.exports = drawStairs;
