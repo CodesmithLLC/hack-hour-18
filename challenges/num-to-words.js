@@ -15,6 +15,7 @@
 function numToWords(num, first = true) {
   if (typeof num !== 'number') return undefined;
   if (num === 0 && first === true) return 'Zero';
+  if (num === 0 && first === false) return '';
   if (num < 10) {
     if (num === 1) return 'One';
     if (num === 2) return 'Two';
@@ -72,24 +73,32 @@ function numToWords(num, first = true) {
   }
   // Billion
   if (num < 1000000000000) {
-    if (num >= 100000000000) numToWords(parseInt((num + '').substring(3, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(3)), false);
-    if (num >= 10000000000) numToWords(parseInt((num + '').substring(2, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(2)), false);
-    if (num >= 1000000000) numToWords(parseInt((num + '').substring(1, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(1)), false);
+    if (num >= 100000000000) return numToWords(parseInt((num + '').substring(3, 0)), false) + 'Billion' + numToWords(parseInt((num + '').substring(3)), false);
+    if (num >= 10000000000) return numToWords(parseInt((num + '').substring(2, 0)), false) + 'Billion' + numToWords(parseInt((num + '').substring(2)), false);
+    if (num >= 1000000000) return numToWords(parseInt((num + '').substring(1, 0)), false) + 'BIllion' + numToWords(parseInt((num + '').substring(1)), false);
+  }
+  //Trillion
+  if (num < 1000000000000000) {
+    if (num >= 100000000000000) return numToWords(parseInt((num + '').substring(3, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(3)), false);
+    if (num >= 10000000000000) return numToWords(parseInt((num + '').substring(2, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(2)), false);
+    if (num >= 1000000000000) return numToWords(parseInt((num + '').substring(1, 0)), false) + 'Trillion' + numToWords(parseInt((num + '').substring(1)), false);
   }
   //Quadrillion
-  if (num < 1000000000000000) {
-    if (num >= 100000000000000) numToWords(parseInt((num + '').substring(3, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(3)), false);
-    if (num >= 10000000000000) numToWords(parseInt((num + '').substring(2, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(2)), false);
-    if (num >= 1000000000000) numToWords(parseInt((num + '').substring(1, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(1)), false);
+  if (num < 1000000000000000000) {
+    if (num >= 100000000000000000) return numToWords(parseInt((num + '').substring(3, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(3)), false);
+    if (num >= 10000000000000000) return numToWords(parseInt((num + '').substring(2, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(2)), false);
+    if (num >= 1000000000000000) return numToWords(parseInt((num + '').substring(1, 0)), false) + 'Quadrillion' + numToWords(parseInt((num + '').substring(1)), false);
   }
 }
 
 // console.log(numToWords(0));
-// console.log(numToWords(43));
+// console.log(numToWords(60));
 // console.log(numToWords(2999));
 // console.log(numToWords(15));
-// console.log(numToWords(2483579411));
+// console.log(numToWords(24835794114));
+// console.log(numToWords(1212483579));
 // -> 'TwoBillionFourHundredEightyThreeMillionFiveHundredSeventyNineThousandFourHundredEleven'
-// * numToWords(300525151340440) -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
+// console.log(numToWords(300525151340440));
+// -> 'ThreeHundredTrillionFiveHundredTwentyFiveBillionOneHundredFiftyOneMillionThreeHundredFortyThousandFourHundredForty'
 // * numToWords(92120000000000000) ->
 module.exports = numToWords;
