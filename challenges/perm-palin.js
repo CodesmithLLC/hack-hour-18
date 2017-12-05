@@ -15,11 +15,13 @@ function permPalin(str) {
 		let shifted = strToArray[0];
 		strToArray.shift();
 		let copyOfShifted = strToArray.indexOf(shifted);
-		if (copyOfShited > -1) strToArray.splice(copyOfShifted);
+		if (copyOfShifted > -1) strToArray.splice(copyOfShifted);
 		else if (strToArray.length === 0) return true;
 		else return false;
 	}
 	if (!strToArray.length || strToArray.length === 1) return true;
 };
+
+// console.log(permPalin('abab'));
 
 module.exports = permPalin;
