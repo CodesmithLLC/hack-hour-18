@@ -75,7 +75,6 @@ function hundredPlace(numArr) {
 
 function numToWords(num) {
   if (!Number.isInteger(num)) throw new Error('Not a number');
-  console.log(num);
   const reversedNum = String(num).split('').reverse();
   const numParts = [];
   // Split num into hundred parts (3)
