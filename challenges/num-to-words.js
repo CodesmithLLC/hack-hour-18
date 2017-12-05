@@ -52,12 +52,9 @@ function numToWords(num) {
   Math.floor(num % Math.pow(10, 12) / Math.pow(10, 9)) === 0 ? billions = '' : billions = parse(Math.floor(num % Math.pow(10, 12) / Math.pow(10, 9))) + 'Billion';
   Math.floor(num % Math.pow(10, 9) / Math.pow(10, 6)) === 0 ? millions = '' : millions = parse(Math.floor(num % Math.pow(10, 9) / Math.pow(10, 6))) + 'Million';
   Math.floor(num % Math.pow(10, 6) / Math.pow(10, 3)) === 0 ? thousands = '' : thousands = parse(Math.floor(num % Math.pow(10, 6) / Math.pow(10, 3))) + 'Thousand';
-  Math.floor(num % Math.pow(10, 3)) === 0 ? ones = '' : ones = parse(Math.floor(num % Math.pow(10, 3)));
+  num % Math.pow(10, 3) === 0 ? ones = '' : ones = parse(num % Math.pow(10, 3));
 
   return quintillions + quadrillions + trillions + billions + millions + thousands + ones;
-
 }
-
-console.log(numToWords(8192120301420561000)) // 'NintyTwoQuadrillionOneHundredTwentyTrillion'
 
 module.exports = numToWords;
