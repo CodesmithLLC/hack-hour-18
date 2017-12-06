@@ -22,7 +22,6 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-<<<<<<< HEAD
   let length = 0;
   let origin = head
   let currentIndex = 0
@@ -50,9 +49,6 @@ function kthToLastNode(k, head) {
     origin = origin.next
   }
   return result
-=======
-
->>>>>>> 0f6a8f50172c9a792500c914e92ddb30987ac4e7
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
