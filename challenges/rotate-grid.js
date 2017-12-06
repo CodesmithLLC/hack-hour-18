@@ -16,8 +16,31 @@
  * BONUS: Do this in place
  */
 
-function rotateGrid(grid, n) {
 
+//top row becomes right column
+//middle row becomes middle column
+//bottom row becomes left column
+
+function rotateGrid(grid, n) {
+	let newGrid = [];
+	let rowLength = Math.sqrt(n*n);
+	newGrid.length = (n*n);
+
+	for(let i=0; i<(n*n); i++){
+		//convert to x/y
+		let x = i % rowLength;
+		let y = Math.floor(i/rowLength);
+
+		//find new x/y
+		let newX = rowLength - y - 1;
+		let newY = x;
+
+		//convert back to index
+		let newPosition = newY * rowLength + newX;
+		newGrid[newPosition] = grid[i];
+	}
+
+	return newGrid;
 }
 
 module.exports = rotateGrid;
