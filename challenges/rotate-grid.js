@@ -24,7 +24,12 @@ function rotateGrid(grid, n) {
       grid[j][i] = temp;
     }
   }
-  return grid;
+  return grid.map(x => x.reverse());
 }
+
+// const grid = [[1, 2, 3],
+//               [4, 5, 6],
+//               [7, 8, 9]];
+// console.log(rotateGrid(grid, grid.length));
 
 module.exports = rotateGrid;
