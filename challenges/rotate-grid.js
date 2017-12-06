@@ -30,6 +30,4 @@ function rotateGrid(grid, n) {
   return array.map(arr => arr.reverse());
 }
 
-console.log(rotateGrid([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3));
-
 module.exports = rotateGrid;
