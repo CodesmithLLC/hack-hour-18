@@ -8,7 +8,6 @@
 
 function Stack() {
   // body...
-<<<<<<< HEAD
   this.storage = {}; 
   this.index = 0; 
   this.length = 0; 
@@ -31,12 +30,15 @@ Stack.prototype.pop = function(value) {
 
 
 Stack.prototype.getMax = function() {
-	const values = Object.values(this.storage);
-	const sort = values.sort((a,b) => b - a);
-	return sort[0];
+	// const values = Object.values(this.storage);
+	// const sort = values.sort((a,b) => b - a);
+	// return sort[0];
+	const arr = Object.values(this.storage);
+	return arr.reduce((a,b) => Math.max(a,b));
 }
 
-module.exports = Stack;
+
+// module.exports = Stack;
 
 
 var stack = new Stack();
@@ -47,9 +49,6 @@ stack.push(1);
 stack.push(100);
 stack.push(3);
 console.log(stack.push(500))
-console.log(stack)
-=======
-}
+console.log(stack.getMax())
 
-module.exports = Stack;
->>>>>>> 0a052b9513b634983a3e1150c5382629aba4ffcc
+// module.exports = Stack;
