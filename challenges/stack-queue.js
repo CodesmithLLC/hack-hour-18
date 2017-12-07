@@ -33,7 +33,10 @@ Queue.prototype.enqueue = function(val) {
 };
 
 Queue.prototype.dequeue = function() {
-  if (this.s2.length === 0) {
+  if (this.s1.length === 0 && this.s2.length === 0) {
+    return undefined;
+  }
+  else if (this.s2.length === 0) {
     while (this.s1.length) {
       this.s2.push(this.s1.pop());
     }
