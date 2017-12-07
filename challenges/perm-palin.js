@@ -28,7 +28,8 @@ console.log(permPalin('abab')) // => true
 console.log(permPalin('cbaba')) // => true
 console.log(permPalin('cbac')) // => false
 console.log(permPalin('a')) // => true
-console.log(permPalin('Race car')) // => true
+console.log(permPalin('Race Car')) // => true
 console.log(permPalin('ojnoajnsfnov')) // => false
+console.log(permPalin('hrhrhrhrhrttpphr')) // => true
 
 module.exports = permPalin;
