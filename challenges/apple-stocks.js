@@ -13,7 +13,14 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
-}
+  if(!Array.isArray(stock_prices_yesterday) || stock_prices_yesterday.length === 0) return [];
+  let smallest = Infinity;
+  let biggest = -Infinity;
+  stock_prices_yesterday.forEach((ele) => {
+    if(ele > biggest) biggest = ele;
+    if(ele < smallest) smallest = ele;
+  })
+  return biggest - smallest > 0 ? biggest - smallest : 0;
+  }
 
 module.exports = bestProfit;

@@ -25,7 +25,22 @@
  */
 
 function balancedParens(input){
-
+  if(typeof input !== 'string' || input.length === 0) return;
+  let charsArr = ["[", "]", "{", "}", "(", ")"];
+  var chars = [...input];
+  let balance;
+  chars.forEach(function(cv){
+    if(charsArr.includes(cv)){
+      charsArr.forEach(function(ele,i){
+        if(ele === cv && i % 2 === 0){
+          balance = true;
+        } else {
+          balance = false;
+        }
+      })
+    }       
+  })
+  return balance;
 }
 
 module.exports = balancedParens;

@@ -11,7 +11,18 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  if(typeof str !== 'string') return false;
+  
+  let keyWords = ['while','for', 'if'];
+  return keyWords.reduce((acc,ele) =>{
+    if(str.contains(ele) && str.contains(ele.split("").reverse().join(""))){
+        acc = true;
+    } else {
+        acc = false;
+    }
+    return acc;
+  },false)
 }
+
 
 module.exports = matchWord;

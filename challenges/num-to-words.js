@@ -13,7 +13,13 @@
  */
 
 function numToWords(num) {
-
+ if(typeof num !== 'number' || num < 0) return;
+ let words = ['Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+ let nums = [11,12,13,14,15,16,17,18,19];
+ 
+ for(let i = 0; i < nums.length;i++){
+     if(nums[i] === num) return words[i]
+ }
 }
 
 module.exports = numToWords;

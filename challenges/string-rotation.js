@@ -12,11 +12,33 @@
  */
 
 function isSubstring(s1, s2) {
+<<<<<<< HEAD
+  if(s1.length > s2.length){
+    return false;
+  }
+=======
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
   return s1.indexOf(s2) >= 0;
 }
 
 function stringRotation(s1, s2) {
+<<<<<<< HEAD
+  if(typeof s1 !== 'string' || typeof s2 !== 'string' || s1.length === 0 || s2.length === 0){
+    return '';
+  }
+  var start = '';
+  
+  for(var i = 0;i < s2.length;i++){
+    if(s2[i] === s1[0]){
+      start += s2.slice(i,s2.length);
+      start += s2.slice(0,i);
+      s2 = start;
+    }
+  }
+  return isSubstring(s1,s2);
+=======
 
+>>>>>>> d20d22f78050d9491b3d00b22c085605b8a3b8b1
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

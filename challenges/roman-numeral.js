@@ -18,7 +18,54 @@
  */
 
 function romanNumeral(n) {
+<<<<<<< HEAD
+  if(typeof n !== 'number' || n < 0) return;
+  
+  let values = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+  }
+  
+  let highest;
+  
+  for(let key in values){
+    if(values[key] > n){
+      highest = values[key];
+      break;
+    }
+  }
+  
+  function convert(n){
+    let converted = '';
+    let singles = '';
+    if(highest - n === 1 && n < 5){
+      return "IV";
+    } else if(n < 5){
+      while(n !== 0){
+        converted += "I";
+        n--;
+      }
+    } else if (n === 5){
+      return "V"
+    } else if (highest - n === 1 && n < 10){
+      return "IX"
+    } else if (n < 5){
+      while(n !== 0){
+      }
+    }
+    return converted;
+  }
+  
+  return convert(n);
+};
+=======
 
 }
+>>>>>>> eecff8fee2f92487161d86b4a3dbf8bb953a6daf
 
 module.exports = romanNumeral;
