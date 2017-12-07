@@ -14,14 +14,16 @@
 
 function numToWords(num) {
   let output = '';
-  const dictionary = {
-    edge: ['Zero'],
-    ones: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'],
-    tweens: ['Eleven', 'Twelve'],
-    teens: ['Thir', 'Fif'],
-    tens: ['Ten', 'Twenty', 'Thirty', 'Fourty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'],
-    suffixes: ['teen', 'Hundred', 'Thousand', 'Million', 'Billion', 'Trillion'],
-  };
+  // const dictionary = {
+  //   edge: ['Zero'],
+  //   ones: ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'],
+  //   tweens: ['Eleven', 'Twelve'],
+  //   teens: ['Thir', 'Fif'],
+  //   tens: ['Ten', 'Twenty', 'Thirty', 'Fourty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'],
+  //   suffixes: ['teen', 'Hundred', 'Thousand', 'Million', 'Billion', 'Trillion'],
+  // };
+
+  const dictionary = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thir'];
 
   const stringNum = num.toString();
   let number;
@@ -34,16 +36,18 @@ function numToWords(num) {
   if (num === 0) output += dictionary.edge[num];
 
   for (let i = 0; i < stringNum.length; i += 1) {
-    console.log('stringNum.length:  ', stringNum.length);
-    console.log('stringNum[i]:  ', stringNum[i]);
-    if (stringNum.length === 1) output += dictionary.ones[Number(stringNum - 1)];
+    // console.log('stringNum.length:  ', stringNum.length);
+    // console.log('stringNum[i]:  ', stringNum[i]);
   }
+  if (stringNum.length === 1) output += dictionary[Number(stringNum)];
+  if (stringNum.length === 2) output += dictionary[Number(stringNum)];
 
   return output;
 }
 console.log(numToWords(1));
 console.log(numToWords(2));
 console.log(numToWords(3));
+console.log(numToWords(10));
 // console.log(numToWords(-10));
 // console.log(numToWords(0)); // -> 'Zero'
 // console.log(numToWords(43)); // -> 'FortyThree'
