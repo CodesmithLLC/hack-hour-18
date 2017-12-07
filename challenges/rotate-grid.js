@@ -14,6 +14,7 @@
  *                                          [9, 6, 3]  ]
  *
  * BONUS: Do this in place
+<<<<<<< HEAD
  
  */
 
@@ -40,5 +41,12 @@ function rotateGrid(grid, n) {
   return results;
 };
 
+=======
+ */
+
+function rotateGrid(grid, n) {
+
+}
+>>>>>>> c1e4bd20e5cba5f467120c19c08ec8af3a674752
 
 module.exports = rotateGrid;
