@@ -8,6 +8,7 @@
  */
 
 function gcd(a, b) {
+  if(typeof a != 'number' || typeof b != 'number') return undefined
   let bigger, smaller;
   if (b > a){
     bigger = b;
