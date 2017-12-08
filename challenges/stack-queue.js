@@ -24,8 +24,8 @@ function Stack() {
 function Queue() {
   this.stack1 = new Stack();
   this.stack2 = new Stack();
-  this.push = x => this.stack1.push(x);
-  this.shift = () => {
+  this.enqueue = x => this.stack1.push(x);
+  this.dequeue = () => {
     for (let i = this.stack1.storage.length - 1; i >= 0; i--) {
       this.stack2.push(this.stack1.pop());
     }
