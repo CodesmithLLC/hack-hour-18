@@ -8,7 +8,13 @@
  */
 
 function gcd(a, b) {
-
+  if (typeof a !== 'number' || typeof b !== 'number') return;
+  const maxLength = Math.min(a, b);
+  let greatest = 1;
+  for (let i = 1; i <= maxLength; i++) {
+    if (a % i === 0 && b % i === 0 && i > greatest) greatest = i;
+  }
+  return greatest;
 }
 
 module.exports = gcd;
