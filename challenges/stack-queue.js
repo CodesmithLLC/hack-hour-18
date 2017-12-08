@@ -18,30 +18,25 @@ function Stack() {
 
 
 function Queue() {
-  this.storage = [];
-  this.line = [];
+  this.storage = new Stack();
+  this.line = new Stack();
 
   this.enqueue = (el) => {
-    let newArr = [];
     this.storage.push(el);
-    for (let i=this.storage.length - 1; i >= 0; i--) {
-      newArr.push(this.storage[i]);
-    }
-    this.line = newArr;
   }
   this.dequeue = () => {
-    let temp = this.line.pop();
-    let newArr = [];
-    for (let i=this.line.length - 1; i >= 0; i--) {
-      newArr.push(this.line[i]);
+    if (this.line.length() === 0) {
+      while (this.storage.length() > 0) {
+        this.line.push(this.storage.pop());
+      }
     }
-    this.storage = newArr;
-    return temp;
+    return this.line.pop();
   }
-  this.length = () => this.storage.length;
-  this.show = () => this.storage;
-
 }
-
+let q = new Queue;
+q.enqueue(1);
+q.enqueue(4);
+q.enqueue(5);
+console.log(q.dequeue());
 
 module.exports = {Stack: Stack, Queue: Queue};
