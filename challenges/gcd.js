@@ -8,6 +8,16 @@
  */
 
 function gcd(a, b) {
+	if (b===0){
+		return a;
+	} else {
+		return gcd(b, a%b);
+	}
+
+	//do recursively, OR
+	//get divisors of each as array?
+	//get shared divisors as new array
+	//then get keep dividing both until don
 
 }
 
