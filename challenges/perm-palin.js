@@ -16,7 +16,7 @@ function permPalin(str) {
     const odds = []
     for (keys in cache) {
       if (cache[keys] % 2 !== 0) odds.push(cache[keys])
-    }
+    } 
     return odds.length <= 1
 }
 
