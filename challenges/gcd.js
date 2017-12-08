@@ -22,7 +22,7 @@ function gcd(a, b) {
 
 function findDivisors(num) {
   let n = num - 1;
-  const divisors = [];
+  const divisors = [num];
   while (n > 0) {
     if (num % n === 0) divisors.push(n);
     n--;
