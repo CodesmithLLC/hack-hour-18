@@ -15,6 +15,31 @@
 
 function binToDec(binary) {
 
+    var newArray = binary.split(""), sum = 0;
+    console.log(newArray);
+
+    for (let i = newArray.length - 1, j = 0; i >= 0; i--, j++) {
+        if (newArray[i] == '1') {
+            sum += Math.pow(2, j);
+        }
+        else sum+=0;
+    }
+    return sum;    
 }
 
+function decToBin(num) {
+    
+    str = "";
+    
+    while (num != 1) {
+        str = str + (num % 2).toString();
+        num = num/2;
+    }
+
+    console.log("h");
+}
+
+
+//decToBin(5);
+//binToDec('0101');
 module.exports = binToDec;
