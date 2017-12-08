@@ -8,7 +8,14 @@
  */
 
 function gcd(a, b) {
-
+  let result = 1;
+  for (let i = 2; i <= Math.min(a, b); i++) {
+    if (a % i === 0 && b % i === 0) {
+      result = i;
+    }
+  }
+  return result;
 }
 
+// console.log(gcd(120, 20));
 module.exports = gcd;
