@@ -44,19 +44,19 @@ Queue.prototype.dequeue = function() {
   return this.s2.pop();
 }
 
-// const q = new Queue();
-// q.enqueue(1);
-// q.enqueue(2);
-// q.enqueue(3);
-// q.enqueue(4);
-// const one = q.dequeue();
-// const two = q.dequeue();
-// q.enqueue(5);
-// q.enqueue(6);
-// const three = q.dequeue();
-// const four = q.dequeue();
-// const five = q.dequeue();
-// const six = q.dequeue();
-// console.log(one, two, three, four, five, six);
+const q = new Queue();
+q.enqueue('first');
+q.enqueue('2nt');
+q.enqueue('third');
+q.enqueue('4th');
+const one = q.dequeue();
+const two = q.dequeue();
+q.enqueue('fifth');
+q.enqueue('6th');
+const three = q.dequeue();
+const four = q.dequeue();
+const five = q.dequeue();
+const six = q.dequeue();
+console.log(one, two, three, four, five, six);
 
 module.exports = {Stack: Stack, Queue: Queue};
