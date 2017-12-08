@@ -10,6 +10,7 @@ function Stack() {
     return ++this.length;
   };
   this.pop = function() {
+    if (this.length === 0) return undefined;
     const popped = this.values[this.length - 1];
     this.values.length = this.length - 1;
     this.length--;
@@ -27,7 +28,7 @@ function Stack() {
 function Queue() {
   this.mainStack = new Stack();
   this.tempStack = new Stack();
-  this.add = function(value) {
+  this.enqueue = function(value) {
     if (this.length === 0) {
       this.mainStack.push(value);
       return ++this.length;
@@ -42,7 +43,8 @@ function Queue() {
     }
     return ++this.length;
   };
-  this.remove = function() {
+  this.dequeue = function() {
+    if (this.length === 0) return undefined;
     this.length--;
     return this.mainStack.pop();
   }
