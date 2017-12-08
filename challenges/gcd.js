@@ -8,7 +8,25 @@
  */
 
 function gcd(a, b) {
+  if(typeof a !== "number" || typeof b !== "number") return;
 
+  let biggest;
+  if(a < b){
+     biggest = b;
+  } else {
+      biggest = a;
+  }
+
+  let match = false;
+  let highest = biggest;
+  while(match === false){
+    if(a % highest === 0 && b % highest === 0){
+        match = true;
+    } else {
+        highest--;
+    }
+  }
+  return highest;
 }
 
 module.exports = gcd;
