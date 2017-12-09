@@ -13,12 +13,13 @@
  *
  */
 
-function mergeArrays(arr1, arr2) {
-  return arr1.reduce((acc, num, index) => {
-    while (arr2[0] <= num && arr2.length) acc.push(arr2.shift())
-    if (arr1.length-1 === index && arr2.length) return acc.concat(num, arr2)
-    return acc.concat(num)
-  }, [])
-}
+ function mergeArrays(arr1, arr2) {
+   let index2 = 0
+   return arr1.reduce((acc, num, index) => {
+     while (arr2[index2] <= num && arr2[index2]) acc.push(arr2[index2++])
+     if (arr1.length-1 === index && arr2[index2]) return acc.concat(num, arr2.slice(index2))
+     return acc.concat(num)
+   }, [])
+ }
 
 module.exports = mergeArrays;
