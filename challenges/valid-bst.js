@@ -14,8 +14,22 @@ function BinaryTree(val) {
 
 function validBST(tree) {
     if (!this.value) return true;
-    if (!this.left.value) return true;
-    if (!this.right.value) return true;
+    if (!this.left.value) {
+        if (this.right.value > this.value) {
+            return true & validBST(this.right);
+        } else {
+            return false;
+        }
+    }
+    if (!this.right.value) {
+        if (this.left.value < this.value) {
+            return true & validBST(this.left);
+        } else {
+            return false;
+        }
+    }
+    if (this.left.value > this.value) return false;
+    if (this.right.value < this.value) return false;
     return true && validBST(this.left) && validBST(this.right);
 
 }
