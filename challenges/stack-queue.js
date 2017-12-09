@@ -1,7 +1,6 @@
 /**
  * Create a stack.Then create a queue using two stacks.
  */
-<<<<<<< HEAD
 function Stack() {
 	this.storage = {};
 	this.index = 0; 
@@ -29,22 +28,8 @@ Stack.prototype.pop = function() {
 // stack.push(2);
 // console.log(stack.pop());
 
-=======
-
-
-function Stack() {
-
-}
-
-
->>>>>>> b20b8dc05342f82bf58255d2d5ee26780c379fdb
-/**
-* Queue Class
-*/
-
 
 function Queue() {
-<<<<<<< HEAD
 	this.queue = [];
 	this.index = 0; 
 	this.size = 0; 
@@ -80,17 +65,3 @@ Queue.prototype.dequeue = function() {
 // console.log(queue)
 module.exports = {Stack: Stack, Queue: Queue};
 
-
-
-
-
-
-
-
-
-=======
-
-}
-
-module.exports = {Stack: Stack, Queue: Queue};
->>>>>>> b20b8dc05342f82bf58255d2d5ee26780c379fdb
