@@ -12,8 +12,20 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+ function bestProfit(stock_prices_yesterday) {
+   if (!Array.isArray(stock_prices_yesterday)) return 0
+   if (stock_prices_yesterday.length < 2) return 0
 
-}
+   let small = stock_prices_yesterday[0]
+   let big = 0
+   let current = 0
+   stock_prices_yesterday.forEach(price => {
+     if (current === price) return;
+     current = price
+     small = Math.min(small, price)
+     big = Math.max(big, price)
+   })
+   return big-small
+ }
 
 module.exports = bestProfit;
