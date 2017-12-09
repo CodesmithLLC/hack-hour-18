@@ -12,16 +12,28 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
+function validBST(tree, grandtree, side) {
     if (tree.left !== null) {
         if (tree.left.value >= tree.value ) return false;
+        if (side === 'left') {
+            if (tree.left.value >= grandtree.value) return false;
+        }
+        if (side === 'right') {
+            if (tree.left.value <= grandtree.value) return false;
+        }
     }
     if (tree.right !== null) {
         if (tree.right.value <= tree.value) return false;
+        if (side === 'left') {
+            if (tree.right.value >= grandtree.value) return false;
+        }
+        if (side === 'right') {
+            if (tree.right.value <= grandtree.value) return false;
+        }
     }
-    if (tree.left && !tree.right) return validBST(tree.left);
-    if (!tree.left && tree.right) return validBST(tree.right);
-    if (tree.left && tree.right) return validBST(tree.left) && validBST(tree.right);
+    if (tree.left && !tree.right) return validBST(tree.left, tree, 'left');
+    if (!tree.left && tree.right) return validBST(tree.right, tree, 'right');
+    if (tree.left && tree.right) return validBST(tree.left, tree, 'left') && validBST(tree.right, tree, 'right');
     if (!tree.left && !tree.right) return true;
 }
 
