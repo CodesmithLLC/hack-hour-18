@@ -13,7 +13,11 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-
+	if (tree.this.value == null) return true;
+	//return false if the max of the left is > than 
+	//return false if the min of the right is <= than 
+	//return false if the left or right are not a bst 
+	//passing all that is a bst
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
