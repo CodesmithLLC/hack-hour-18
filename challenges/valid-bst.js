@@ -12,6 +12,7 @@ function BinaryTree(val) {
     this.right = null;
 }
 
+<<<<<<< HEAD
 var tree = new BinaryTree(6);
 tree.add(3);
 tree.add(9);
@@ -30,6 +31,9 @@ function validBST(tree) {
 		return validBST(tree.left)
 	}
 	return validBST(tree.left) && validBST(tree.right);
+=======
+function validBST(tree) {
+>>>>>>> 54281340f4d14531d6717c60180fe8eddd11b887
 
 }
 
