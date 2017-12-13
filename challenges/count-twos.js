@@ -8,7 +8,22 @@
 
 
 function countTwos(num) {
-
+  let numArr = num.toString().split('').reverse();
+  let answer = 0;
+  if (numArr[0] >= 2) answer++
+  numArr.forEach((x, i) => {
+    answer += x * i * Math.pow(10, i - 1);
+    if (x === 2) answer += (Number(numArr.slice(0, i).reverse().join('')) + 1);
+    console.log(Number(numArr.slice(0, i).reverse().join('')) + 1)
+    if (x > 2) answer += Math.pow(10, i);
+  });
+  return answer;
 }
+
+console.log(countTwos(11420));
+
+// 10   100     1000    10000   100000
+// 1    20      300     4000    50000    
+ 
 
 module.exports = countTwos;
