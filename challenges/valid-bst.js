@@ -23,9 +23,9 @@ function validBST(tree) {
   const sortedArray = [...treeArray].sort((a, b) => a - b);
   return (
     treeArray.every((elem, index) => {
-        return elem === sortedArray[index];
-      })
-    );
+      return elem === sortedArray[index];
+    })
+  );
 };
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
