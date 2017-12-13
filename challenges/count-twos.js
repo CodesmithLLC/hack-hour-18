@@ -8,7 +8,26 @@
 
 
 function countTwos(num) {
-
+let calculatedtwos = 0;
+    if(num<2){
+        return 0;
+    }else if(num<10 && num>=2){
+        return 1;
+    }else if(num>10){
+        let numoftens = Math.floor(num/10);
+        let numtostring = "" + num;
+        let firstdigit = numtostring.charAt(0)
+        calculatedtwos += numoftens;
+    
+        if(firstdigit==="0"){
+          return calculatedtwos;
+        }else if(firstdigit!==0){
+          let numofsingles = parseInt(firstdigit);
+          let twocount = Math.floor(numofsingles/2);
+          calculatedtwos += twocount;
+          return calculatedtwos;
+        }
+    }
 }
 
 module.exports = countTwos;
