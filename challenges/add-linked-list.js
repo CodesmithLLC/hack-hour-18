@@ -35,13 +35,20 @@ function addLinkedList(l1, l2) {
       if (newArr[i - 1] >= 10) return newArr[i] - 10 + 1;
       return newArr[i] - 10;
     } 
-    if (newArr[i - 1] >= 10) return element + 1;
+    if (newArr[i - 1] >= 10){
+      if (element + 1 >= 10) {
+        newArr[i] = element + 1;
+        return element + 1 - 10;
+      }
+      else return element + 1
+    }
+    
     return element;
   });
   if (newArr[newArr.length-1] >= 10){
     ourArr.push(1);
   };
-  console.log(ourArr);
+  // console.log(ourArr);
   let initializeNode = new Node(ourArr[0]);
   let returnNode = initializeNode;
   for (let i = 1; i < ourArr.length; i++) {
@@ -51,15 +58,28 @@ function addLinkedList(l1, l2) {
   return initializeNode;
 }
 
+// it('should handle very large numbers', function() {
+//   expect(addLinkedList(makeNum(9 034 543 252 345), makeNum(345 623 453 245))).to.eql(makeNum(938 016 670 559 0));
+// }, ['large input']);
+// after(() => {
+//   report();
+
+// let list = '432523454309'.split('');
 // let node1 = new Node(5);
-// node1.next = new Node(5);
-// node1.next.next = new Node(5);
+// let temp = node1;
+// list.forEach(element => {
+//   temp.next = new Node(parseInt(element));
+//   temp = temp.next;
+// });
 
+// let list2 = '42354326543'.split('');
 // let node2 = new Node(5);
-// node2.next = new Node(5);
-// node2.next.next = new Node(5);
+// let temp2 = node2;
+// list2.forEach(element => {
+//   temp2.next = new Node(parseInt(element));
+//   temp2 = temp2.next;
+// });
 
-
-// console.log(addLinkedList(node1,node2).next.next);
+// console.log(addLinkedList(node1,node2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
