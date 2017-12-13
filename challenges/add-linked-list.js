@@ -22,28 +22,22 @@ function addLinkedList(l1, l2) {
   let val2 = l2;
   let arr = [];
   while (val1 || val2) {
-    let value1 = val1.value === null ? 0 : val1.value;
-    let value2 = val2.value === null ? 0 : val2.value;
+    let value1 = val1 === null ? 0 : val1.value;
+    let value2 = val2 === null ? 0 : val2.value;
     arr.push(value1 + value2);
-    val1 = val1.next;
-    val2 = val2.next;
+    val1 = val1 ? val1.next : null;
+    val2 = val2 ? val2.next : null;
   }
-  let newArr = [...arr];
+  let newArr = arr;
+  // console.log(newArr);
   let ourArr = arr.map((element, i) => {
-    if (newArr[i - 1] >= 10){
-      if (element + 1 >= 10) {
-        return element + 1 - 10
-      } else {
-        return element + 1;
-      }
-    }
-    if (element >= 10) return element - 10;    
+    if (newArr[i] >= 10) return newArr[i] - 10;
+    if (newArr[i - 1] >= 10) return element + 1;
+    return element;
   });
   if (newArr[newArr.length-1] >= 10){
     ourArr.push(1);
-  }
-
-  // console.log(ourArr);
+  };
   let initializeNode = new Node(ourArr[0]);
   let returnNode = initializeNode;
   for (let i = 1; i < ourArr.length; i++) {
@@ -53,14 +47,14 @@ function addLinkedList(l1, l2) {
   return initializeNode;
 }
 
-// let node1 = new Node(5);
-// node1.next = new Node(5);
-// node1.next.next = new Node(5);
+let node1 = new Node(5);
+node1.next = new Node(5);
+node1.next.next = new Node(5);
 
-// let node2 = new Node(5);
-// node2.next = new Node(5);
-// node2.next.next = new Node(5);
+let node2 = new Node(5);
+node2.next = new Node(2);
 
-// console.log(addLinkedList(node1,node2));
+
+console.log(addLinkedList(node1,node2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
