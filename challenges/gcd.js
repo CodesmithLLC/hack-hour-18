@@ -8,6 +8,7 @@
  */
 
 function gcd(a, b) {
+<<<<<<< HEAD
   let ints = [a, b].sort(function(a, b) {
     return a - b;
   });
@@ -17,6 +18,9 @@ function gcd(a, b) {
       return i;
     }
   }
+=======
+
+>>>>>>> ae02edd2f7cd7a16b9c6d1f04c3c1d145b6a5dd0
 }
 
 module.exports = gcd;

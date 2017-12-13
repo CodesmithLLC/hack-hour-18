@@ -13,7 +13,10 @@
  */
 
 function numToWords(num) {
+<<<<<<< HEAD
   
+=======
+>>>>>>> ae02edd2f7cd7a16b9c6d1f04c3c1d145b6a5dd0
 
 }
 
