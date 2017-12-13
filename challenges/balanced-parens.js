@@ -24,8 +24,18 @@
  *
  */
 
-function balancedParens(input){
-
-}
+ function balancedParens(input){
+   let newInput = input.split('').filter((el) => (
+     el === '{' || el === '}' || el === '[' || el === ']' || el ==='(' || el === ')'
+     )).join('')
+   const length = newInput.length
+   for (let i = 0; i < length/2; i++) {
+     if (newInput === '') return true
+       newInput = newInput.replace('[]', '')
+       newInput = newInput.replace('{}', '')
+       newInput = newInput.replace('()', '')
+   }
+   return newInput === ''
+ }
 
 module.exports = balancedParens;
