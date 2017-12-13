@@ -17,8 +17,65 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
-
+function LinkedList() {
+  this.head = null;
 }
+
+LinkedList.prototype.add = function(val) {
+  if (!this.head) {
+    this.head = new Node(val);
+  } else {
+    let curr = this.head;
+    while (curr.next) {
+      curr = curr.next;
+    }
+    curr.next = new Node(val);
+  }
+}
+
+function addLinkedList(l1, l2) {
+  const list = new LinkedList();
+  let curr1 = l1.head;
+  let curr2 = l2.head;
+  let carry = 0;
+
+  while (curr1 && curr2) {
+    let total = curr1.value + curr2.value + carry;
+    if (total < 10) {
+      list.add(new Node(total))
+      carry = 0;
+    } else {
+      let currTotal = total - 10;
+      carry = 1;
+      list.add(new Node(currTotal))
+    }
+    curr1 = curr1.next;
+    curr2 = curr2.next;
+  }
+
+  while (curr1 || curr2 || carry) {
+    let currTotal = curr1.value || curr2.value
+    if (carry) {   
+      list.add(new Node(currTotal + carry));
+      carry = 0;
+    } else {
+      list.add(currTotal);
+    }
+    curr1 = curr1.next;
+    curr2 = curr2.next;
+  }
+  return list;
+}
+
+const list1 = new LinkedList();
+const list2 = new LinkedList();
+list1.add(6);
+list1.add(3);
+list1.add(6);
+list2.add(3);
+list2.add(0);
+list2.add(9);
+
+console.log(addLinkedList(list1, list2));
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};

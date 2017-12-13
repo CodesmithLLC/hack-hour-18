@@ -23,5 +23,6 @@ console.log(countTwos(1000)); // -> 300
 console.log(countTwos(11420)); // -> 4483
 console.log(countTwos()); // -> 0
 console.log(countTwos('kittens')); // -> 0
+console.log(countTwos(301613312)) // -> 
 
 module.exports = countTwos;
