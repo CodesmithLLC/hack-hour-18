@@ -6,9 +6,7 @@
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
-
 function countTwos(num) {
-<<<<<<< HEAD
   let counter = 0;
   for (let i = 1; i <= num; i += 1) {
     const testArr = i.toString().split('');
@@ -26,9 +24,3 @@ console.log(countTwos(1000)); // -> 300
 console.log(countTwos(11420)); // -> 4483
 
 module.exports = countTwos;
-=======
-
-}
-
-module.exports = countTwos;
->>>>>>> 54281340f4d14531d6717c60180fe8eddd11b887
