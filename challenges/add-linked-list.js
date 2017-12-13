@@ -27,13 +27,12 @@ function addLinkedList(l1, l2) {
   let curAns;
 
   while (cur1 !== null) {
-    num1 = num1 + cur1.value;
-    console.log(num1);
+    num1 = cur1.value + num1;
     cur1 = cur1.next;
   }
 
   while (cur2 !== null) {
-    num2 = num2 + cur2.value;
+    num2 = cur2.value + num2;
     cur2 = cur2.next;
   }
 
@@ -53,16 +52,19 @@ function addLinkedList(l1, l2) {
   return result;
 }
 
-// let ll1 = new Node(1);
+// let ll1 = new Node(5);
 // ll1.next = new Node(1);
-// ll1.next.next = new Node(1);
+// ll1.next.next = new Node(2);
 
 // let ll2 = new Node(2);
-// ll2.next = new Node(2);
+// ll2.next = new Node(9);
+// ll2.next.next = new Node(5);
 
 // let tester = addLinkedList(ll1, ll2);
 
 // console.log(tester.value);
 // console.log(tester.next.value);
+// console.log(tester.next.next.value);
+// console.log(tester.value + tester.next.next.value);
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
