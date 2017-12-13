@@ -35,7 +35,9 @@
      temp = temp.next
    }
 
-   let sumListFormat = (parseInt(l1vals.join('')) + parseInt(l2vals.join(''))).toString().split('')
+
+   let sumListFormat = (parseInt(l1vals.reverse().join('')) + parseInt(l2vals.reverse().join(''))).toString().split('')
+
    const answer = new Node(sumListFormat.pop())
    temp = answer
    while (sumListFormat.length) {
