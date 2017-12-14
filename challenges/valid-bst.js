@@ -12,6 +12,7 @@ function BinaryTree(val) {
     this.right = null;
 }
 
+//not correct bc could have a grandchild node with a value that is larger/smaller incorrrectly than grandparent node
 function validBST(tree) {
     debugger;
     let isValidTree = true;
