@@ -17,11 +17,16 @@
  */
 
  function rotateGrid(grid, n) {
-   while (n--) {
-     [grid[0][2], grid[2][2], grid[2][0], grid[0][0]] = [grid[0][0], grid[0][2], grid[2][2], grid[2][0]];
-     [grid[1][2], grid[2][1], grid[1][0], grid[0][1]] = [grid[0][1], grid[1][2], grid[2][1], grid[1][0]];
+   const answer = []
+   for (let i = 0; i < n; i++) {
+     answer.push([])
    }
-   return grid
+   for (let i = n-1; i >= 0; i--) {
+     for (let j = 0; j < n; j++) {
+       answer[j].push(grid[i][j])
+     }
+   }
+   return answer
  }
 
 module.exports = rotateGrid;
