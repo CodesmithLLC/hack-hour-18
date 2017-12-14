@@ -6,7 +6,6 @@
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
-
 function countTwos(num) {
   let counter = 0;
   for (let i = 1; i <= num; i += 1) {
