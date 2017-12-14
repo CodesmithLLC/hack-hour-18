@@ -18,7 +18,7 @@
 
    const ones = ' One Two Three Four Five Six Seven Eight Nine'.split(' ')
    const teens = ' Eleven Twelve Thirteen Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen'.split(' ')
-   const tens = ' Ten Twenty Thirty Fourty Fifty Sixty Seventy Eighty Ninety'.split(' ')
+   const tens = ' Ten Twenty Thirty Forty Fifty Sixty Seventy Eighty Ninety'.split(' ')
    const manyZeroes = ' Thousand Million Billion Trillion Quadrillion Quintillion Sextillion'.split(' ')
    const hundreds = [ones, teens.concat(tens), 'Hundred']
 
