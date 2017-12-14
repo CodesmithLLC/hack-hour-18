@@ -42,15 +42,15 @@ function addLinkedList(l1, l2) {
   return outputNode;
 }
 
-
-const node1 = new Node(2)
-node1.next = new Node(1)
-node1.next.next = new Node(5)
-
-const node2 = new Node(5)
-node2.next = new Node(9)
-node2.next.next = new Node(2)
-
-console.log(addLinkedList(node1, node2))
+//
+// const node1 = new Node(2)
+// node1.next = new Node(1)
+// node1.next.next = new Node(5)
+//
+// const node2 = new Node(5)
+// node2.next = new Node(9)
+// node2.next.next = new Node(2)
+//
+// console.log(addLinkedList(node1, node2))
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
