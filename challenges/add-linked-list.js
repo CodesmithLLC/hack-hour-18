@@ -82,4 +82,19 @@ function addLinkedList(l1, l2) {
 
 // console.log(addLinkedList(node1,node2));
 
+newPromise = ((x) => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(x), 1000);
+  })
+});
+
+async function buddo(x){
+  let a = 1;
+  a = await newPromise(4);
+  return x + a;
+}
+
+buddo(3).then(ele => {console.log(ele)});
+
+
 module.exports = {Node: Node, addLinkedList: addLinkedList};
