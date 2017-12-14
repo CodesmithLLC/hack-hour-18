@@ -12,13 +12,39 @@
  *
  */
 
-function Node(val) {
-  this.value = val;
-  this.next = null;
-}
+ function Node(val) {
+   this.value = val;
+   this.next = null;
+ }
 
-function addLinkedList(l1, l2) {
+ function addLinkedList(l1, l2) {
+   const l1vals = []
+   const l2vals = []
+   let temp;
 
-}
+   temp = l1
+   l1vals.push(temp.value)
+   while (temp.next) {
+     l1vals.push(temp.next.value)
+     temp = temp.next
+   }
+   temp = l2
+   l2vals.push(temp.value)
+   while (temp.next) {
+     l2vals.push(temp.next.value)
+     temp = temp.next
+   }
+
+
+   let sumListFormat = (parseInt(l1vals.reverse().join('')) + parseInt(l2vals.reverse().join(''))).toString().split('')
+
+   const answer = new Node(sumListFormat.pop())
+   temp = answer
+   while (sumListFormat.length) {
+     temp.next = new Node(sumListFormat.pop())
+     temp = temp.next
+   }
+   return answer
+ }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
