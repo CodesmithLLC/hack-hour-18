@@ -14,7 +14,7 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
-  if (tree === undefined || tree.left === null && tree.right === null) return true;
+  if (tree === null || (tree.left === null && tree.right === null)) return true;
 
   function height(tre) {
     if (!tre.left && !tre.right) return 0;
@@ -26,7 +26,7 @@ function superbalanced(tree) {
   } 
 
   if (Math.abs(height(tree.left) - height(tree.right)) <= 1) {
-    return true;
+    return true && superbalanced(tree.left) && superbalanced(tree.right);
   } else {
     return false;
   }
