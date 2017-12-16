@@ -8,7 +8,15 @@
 
 
 function countTwos(num) {
-
-}
+    if (typeof num !== 'number'){ return undefined}
+    let work = Math.abs(num)
+    let count = 0;
+  for (i = 0; i <= work; i++){
+    y = i.toString()
+    x = Array.from(y);
+    x.map((elem) => {if (elem === '2'){count = count + 1}})
+  }
+  return count
+  }
 
 module.exports = countTwos;
