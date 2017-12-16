@@ -13,7 +13,7 @@
 function repeatNumbers(array) {
   const storage = {};
   array.forEach((num) => {
-    if (storage[num] === false) {
+    if (storage[num] === undefined) {
       storage[num] = true;
     } else {
       return num;
