@@ -4,7 +4,6 @@
  *      at any given node, the value of all the nodes in its right tree must be > its value
  * Assume that each value in the tree is unique.
  */
- 
 
 function BinaryTree(val) {
     this.value = val;
@@ -13,25 +12,56 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-  let failtest = 0;
-
-  while(tree.left !== null && tree.right !== null){
-    if(tree.left.value > tree.value || tree.right.value < tree.value){
-      failtest++;
-    }else{
-      if (failtest !== 0){
-      return false;
-      }else{
-        validBST(tree.left);
-        validBST(tree.right);
-      } 
-    }
-  }
-
-   if(this.left === null || this.right === null && failtest === 0){
-      return true;
-  }
-
+  
 }
+
+ 
+
+
+
+///Solution without using infinities:
+
+// function BinaryTree(val) {
+//     this.value = val;
+//     this.left = null;
+//     this.right = null;
+// }
+
+// function validBST(tree) {
+//   function createArray(node){
+//     if(!node) return [];
+//     return [...createArray(node.left), node.value, ...createArray(node.right)];
+//   }
+
+//   const combinedArray = createArray(tree);
+//   for(let i=1; i<combinedArray.length; i++){
+//     if (entireArray[i] < entireArray[i-1]) return false;
+//   } 
+// return true;
+// }
+
+///Unfinished original solution:
+
+
+//   let failtest = 0;
+
+//   while(tree.left !== null && tree.right !== null){
+//     if(tree.left.value > tree.value || tree.right.value < tree.value){
+//       failtest++;
+//     }else{
+//       if (failtest !== 0){
+//       return false;
+//       }else{
+//         validBST(tree.left);
+//         validBST(tree.right);
+//       } 
+//     }
+//   }
+
+//    if(this.left === null || this.right === null && failtest === 0){
+//       return true;
+//   }
+
+// }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
