@@ -14,6 +14,7 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+<<<<<<< HEAD
   const heights = [];
   recur = (tree, height=0) => {
     if (tree.left) {
@@ -44,5 +45,9 @@ function superbalanced(tree) {
 
 // console.log(bst);
 
+=======
+
+}
+>>>>>>> 6c037cd60bfc2b5c27802e8ff553981b105cbd2d
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
