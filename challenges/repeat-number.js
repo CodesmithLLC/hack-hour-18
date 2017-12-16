@@ -11,7 +11,14 @@
  */
 
 function repeatNumbers(array) {
-
+  const storage = {};
+  array.forEach((num) => {
+    if (storage[num] === false) {
+      storage[num] = true;
+    } else {
+      return num;
+    }
+  });
 }
 
 module.exports = repeatNumbers;
