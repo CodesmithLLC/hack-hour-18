@@ -11,14 +11,8 @@
  */
 
 function repeatNumbers(array) {
-  const storage = {};
-  array.forEach((num) => {
-    if (storage[num] === undefined) {
-      storage[num] = true;
-    } else {
-      return num;
-    }
-  });
+  let n = array.length - 1;
+  return array.reduce((a, b) => a + b, 0) - (.5 * (n * (n + 1)));
 }
 
 module.exports = repeatNumbers;
