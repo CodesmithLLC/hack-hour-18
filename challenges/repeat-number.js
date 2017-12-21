@@ -11,7 +11,13 @@
  */
 
 function repeatNumbers(array) {
-
+  let max = Math.max(...array);
+  let number = 0;
+  while (max >= 0) {
+    number += max;
+    max -= 1;
+  }
+  return array.reduce((acc, cur) => acc + cur) - number;
 }
 
 module.exports = repeatNumbers;
