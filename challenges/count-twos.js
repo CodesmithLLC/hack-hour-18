@@ -8,7 +8,14 @@
 
 
 function countTwos(num) {
-
+  if (typeof num !== 'number') return undefined;
+  let count = 0;
+  for (let i=0; i<=num; i++) {
+    i.toString().split("").forEach(val=>{ 
+      if (val == 2) count++;
+    })
+  }
+  return count
 }
 
 module.exports = countTwos;
