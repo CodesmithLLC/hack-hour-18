@@ -18,7 +18,6 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-<<<<<<< HEAD
   let head1 = l1;
   let head2 = l2;
   
@@ -33,9 +32,6 @@ function addLinkedList(l1, l2) {
   }
 
   return l1;
-=======
-
->>>>>>> 6c037cd60bfc2b5c27802e8ff553981b105cbd2d
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
