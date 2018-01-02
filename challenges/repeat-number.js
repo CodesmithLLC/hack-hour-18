@@ -12,7 +12,7 @@
 
 function repeatNumbers(array) {
   let obj = {}
-  for (let i = array.length-1; i > 0; i--) {
+  for (let i = array.length-1; i >= 0; i--) {
     if (obj[array[i]]) return array[i]
     obj[array.pop()] = true
   }

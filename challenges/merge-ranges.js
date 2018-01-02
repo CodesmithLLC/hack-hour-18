@@ -10,8 +10,17 @@
  */
 
 
-function mergeRanges(array) {
-
-}
+ function mergeRanges(array) {
+   array.sort((a, b) => a[0] - b[0])
+   return array.reduce((ans, arr, i) => {
+     if (!ans.length) ans.push(arr)
+     if (ans[ans.length-1][1] >= arr[0]) {
+       ans[ans.length-1][1] = Math.max(ans[ans.length-1][1], arr[1])
+       return ans
+     }
+     ans.push(arr)
+     return ans 
+   }, [])
+ }
 
 module.exports = mergeRanges;
