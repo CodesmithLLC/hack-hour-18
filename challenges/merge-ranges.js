@@ -18,10 +18,10 @@ function mergeRanges(array) {
     let merged = false;
     mergedArray.forEach(mergedRange => {
       if (range[0] >= mergedRange[0] && range[0] <= mergedRange[1]) {
-        mergedRange[1] = range[1];
+        if (range[1] > mergedRange[1]) mergedRange[1] = range[1];
         merged = true;
       } else if (range[1] >= mergedRange[0] && range[1] <= mergedRange[1]) {
-        mergedRange[0] = range[0];
+        if (range[0] < mergedRange[0]) mergedRange[0] = range[0];
         merged = true;
       }
     });
