@@ -36,6 +36,22 @@ function superbalanced(tree) {
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
 
 
+const one = new BinaryTree(5);
+one.left = new BinaryTree(5);
+one.right = new BinaryTree(5);
+one.left.left = new BinaryTree(5);
+one.right.right = new BinaryTree(5);
+one.right.right.right = new BinaryTree(5);
+one.left.left.left = new BinaryTree(5);
+one.right.right.right.right = new BinaryTree(5);
+one.left.left.left.right = new BinaryTree(5);
+one.left.left.left.right.left = new BinaryTree(5);
+one.left.left.left.right.left.right = new BinaryTree(5);
+one.left.left.left.right.left.right.left = new BinaryTree(5);
+one.right.right.right.right.right = new BinaryTree(5);
+
+console.log(superbalanced(one));
+
 // const queue = [];
 
 //   // tranverses the tree by breadth first (as opposed to in-order or postorder)
