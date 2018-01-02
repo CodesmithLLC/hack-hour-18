@@ -21,4 +21,6 @@ function countTwos(num) {
   return count;
 }
 
+
+  console.log(countTwos(25));
 module.exports = countTwos;
