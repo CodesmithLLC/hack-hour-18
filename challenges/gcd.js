@@ -18,6 +18,10 @@ function gcd(a, b) {
     }
   } 
   else return max % min === 0 ? min : 1
+
+  // Efficient answer
+  // if (b === 0) return a;
+  // return gcd (b, a % b)
 }
 
 module.exports = gcd;
