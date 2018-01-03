@@ -11,7 +11,13 @@
 
 
 function mergeRanges(array) {
-
+  if(!Array.isArray(array) || !array.length) return;
+  let flat = times.reduce((acc,ele) => {
+    if(Array.isArray(ele)){
+      ele.forEach(item => acc.push(item));
+    }
+    return acc.sort((a,b) => a-b);
+  },[])
 }
 
 module.exports = mergeRanges;
