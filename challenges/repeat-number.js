@@ -11,7 +11,14 @@
  */
 
 function repeatNumbers(array) {
-
+  const obj = {};
+  let result;
+  array.forEach(num => {
+    if (obj[num] === num) result = num;
+    else obj[num] = num;
+  });
+  return result;
 }
+
 
 module.exports = repeatNumbers;

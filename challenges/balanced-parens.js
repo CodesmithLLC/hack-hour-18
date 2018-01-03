@@ -25,7 +25,19 @@
  */
 
 function balancedParens(input){
+  const openArray = ['[','(','{'];
+  const closeArray = [']',')','}'];
+  const lastArray = [];
 
+  for (let i = 0; i < input.length; i++) {
+    if (openArray.includes(input[i])) {
+      lastArray.push(input[i]);
+    } else if (closeArray.includes(input[i])) {
+      if (openArray.indexOf(lastArray[lastArray.length - 1]) === closeArray.indexOf(input[i])) {
+        lastArray.pop();
+      } else return false;
+    }
+  } return lastArray.length === 0 ? true : false;
 }
 
 module.exports = balancedParens;

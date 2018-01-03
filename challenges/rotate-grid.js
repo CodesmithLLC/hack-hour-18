@@ -14,10 +14,31 @@
  *                                          [9, 6, 3]  ]
  *
  * BONUS: Do this in place
+ 
  */
 
 function rotateGrid(grid, n) {
+  const results = [];
+  for (let i = 0; i < n; i++) {
+    let temp = [];
+    for (let j = 0; j < n; j++) {
+      temp.push(null);
+    };
+    results.push(temp);
+  };
+  grid.forEach((array, index) => {
+    array.forEach((elem, ind) => {
+      if (index < array.length / 2 - 0.5) results[ind][index + array.length - 1] = elem;
+      if (index >= array.length / 2 - 0.5) {
+        if (index === array.length / 2 - 0.5) {
+          results[ind][index] = elem;
+        }
+        else results[ind][index - array.length + 1] = elem;
+      } 
+    });
+  });
+  return results;
+};
 
-}
 
 module.exports = rotateGrid;

@@ -13,7 +13,19 @@ function BinaryTree(val) {
 }
 
 function validBST(tree) {
-
-}
+  const treeArray = [];
+  const getValues = (bst) => {
+    if (bst.left) getValues(bst.left);
+    treeArray.push(bst.value);
+    if (bst.right) getValues(bst.right);
+  };
+  getValues(tree);
+  const sortedArray = [...treeArray].sort((a, b) => a - b);
+  return (
+    treeArray.every((elem, index) => {
+      return elem === sortedArray[index];
+    })
+  );
+};
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
