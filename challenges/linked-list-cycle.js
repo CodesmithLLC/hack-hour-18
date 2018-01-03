@@ -47,6 +47,7 @@ var Node = function(value) {
 // Floyd's Tortoise and Hare solution. Idea is that the hare moves faster than the tortoise
 // so the hare will eventrally catch up to the tortoise if it is a circle
 function hasCycle(head) {
+  if (!head) return false;
   let tortoise = head;
   let hare = head.next;
   while (tortoise && hare) {
@@ -67,3 +68,4 @@ var node5 = node4.next = new Node('5');
 console.log(hasCycle(node1)); // => false
 node5.next = node2;
 console.log(hasCycle(node1)); // => true
+console.log(hasCycle()); // => false
