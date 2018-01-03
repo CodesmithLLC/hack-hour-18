@@ -19,7 +19,7 @@
        return ans
      }
      ans.push(arr)
-     return ans 
+     return ans
    }, [])
  }
 
