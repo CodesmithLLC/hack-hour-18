@@ -27,13 +27,19 @@
  *
  */
 
-var Node = function(value) {
-  this.value = value;
-  this.next = null;
-}
+ var Node = function(value) {
+   this.value = value;
+   this.next = null;
+ }
 
-function hasCycle(head) {
+ function hasCycle(head) {
+   let temp = head
+   for (let i = 0; i < 10000000; i++) {
+     if (!temp.next) return false
+     temp = temp.next
+   }
+   return true
+ }
 
-}
 
 module.exports = {Node: Node, hasCycle: hasCycle}
