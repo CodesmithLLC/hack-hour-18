@@ -16,7 +16,8 @@ function mergeRanges(array) {
   .reduce((ranges, meeting) => {
     if (!ranges.length) ranges.push(meeting);
     if (meeting[0] <= ranges[ranges.length - 1][1]) {
-      ranges[ranges.length - 1][1] = meeting[1];
+      if (meeting[1] > ranges[ranges.length - 1][1])
+        ranges[ranges.length - 1][1] = meeting[1];
     } else {
       ranges.push(meeting);
     }
@@ -25,7 +26,9 @@ function mergeRanges(array) {
 }
 
 
-// var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]];
-// console.log(mergeRanges(times)); // -> [[0, 1], [3, 8], [9, 12]]
+var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]];
+var times2 = [[0,1], [2,8], [4,5], [9,10]]
+console.log(mergeRanges(times)); // -> [[0, 1], [3, 8], [9, 12]]
+console.log(mergeRanges(times2)); // -> [[0, 1], [2, 8], [9, 10]]
 
 module.exports = mergeRanges;
