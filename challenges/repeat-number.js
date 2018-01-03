@@ -11,6 +11,7 @@
  */
 
 function repeatNumbers(array) {
+<<<<<<< HEAD
   let sorted = array.sort(function(a, b) {
     return a - b;
   });
@@ -20,6 +21,9 @@ function repeatNumbers(array) {
       return sorted[i];
     }
   }
+=======
+
+>>>>>>> 7f40f2ab6fdff1468d5da1897b524b6141c42871
 }
 
 module.exports = repeatNumbers;
