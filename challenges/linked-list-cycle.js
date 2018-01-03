@@ -44,7 +44,6 @@ function hasCycle(head) {
 
     if (a === b) return true;
   }
-  return false;
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
