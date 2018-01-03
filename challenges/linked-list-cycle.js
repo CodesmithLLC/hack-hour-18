@@ -33,6 +33,7 @@
  }
 
  function hasCycle(head) {
+   if (!head) return false
    let temp = head
    for (let i = 0; i < 10000000; i++) {
      if (!temp.next) return false
