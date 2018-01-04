@@ -23,21 +23,29 @@ function sumMultiples3Or5Below1000() {
 
 // extension make it dynamic function that takes input x,y,z
 // and returns the sum of multiples of x and y below z
-function sumMultiplesXOrYBelowZ(x, y, z) {
-  const xs = Math.floor((z - 1) / x);
-  const ys = Math.floor((z - 1) / y);
-  let xSum = 0;
-  let ySum = 0;
-  for (let i = 1; i <= xs; i++) {
-    xSum += x * i;
-  }
-  for (let i = 0; i <= ys; i++) {
-    ySum += y * i;
-  }
-  return xSum + ySum;  
+// function sumMultiplesXOrYBelowZ(x, y, z) {
+//   const xs = Math.floor((z - 1) / x);
+//   const ys = Math.floor((z - 1) / y);
+//   let xSum = 0;
+//   let ySum = 0;
+//   for (let i = 1; i <= xs; i++) {
+//     xSum += x * i;
+//   }
+//   for (let i = 0; i <= ys; i++) {
+//     ySum += y * i;
+//   }
+//   return xSum + ySum;  
+// }
+
+function sumMultiplesXOrYBelowZ(x, y, z, sum=0) {
+  z -= 1;
+  if (z === 0) return sum;
+  if (z % x === 0) sum += z;
+  else if (z % y === 0) sum += z;
+  return sumMultiplesXOrYBelowZ(x, y, z, sum);
 }
 
-// console.log(sumMultiplesXOrYBelowZ(3, 5, 10));
+// console.log(sumMultiplesXOrYBelowZ(3, 5, 1000));
 
 const objectToExport = {
   sumMultiples3Or5Below1000,
