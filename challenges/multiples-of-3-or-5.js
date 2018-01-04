@@ -22,6 +22,7 @@ function sumMultiplesXOrYBelowZ(x, y, z) {
     if (i % x === 0 || i % y === 0) {
       sum += i
     }
+  }
   return sum;
 }
 
