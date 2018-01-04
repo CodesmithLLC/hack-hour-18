@@ -9,8 +9,10 @@ function sumMultiples3Or5Below1000() {
   let sum = 0;
   let threes = 0;
   let fives = 0;
+  let multi = 0
   while ((threes += 3) < 1000) sum += threes;
   while ((fives += 5) < 1000) sum += fives;
+  while ((multi += 15) < 1000) sum -= multi;
   return sum;
 }
 
@@ -20,8 +22,11 @@ function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
   let xSum = 0;
   let ySum = 0;
+  const intersection = x * y
+  let iSum = 0;
   while ((xSum += x) < z) sum += xSum;
   while ((ySum += y) < z) sum += ySum;
+  while ((iSum += intersection) < z) sum -= iSum
   return sum;
 }
 
