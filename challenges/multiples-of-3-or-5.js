@@ -5,16 +5,11 @@
 // write a function that will find the sum of all the multiples of 3 or 5
 // below 1000 and return that sum.
 
+
 function sumMultiples3Or5Below1000() {
   let sum = 0;
   for (let i = 3; i < 1000; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      sum += i;
-    }
-    else if (i % 3 === 0) {
-      sum += i;
-    }
-    else if (i % 5 === 0) {
+    if (i % 3 === 0 || i % 5 === 0) {
       sum += i;
     }
   }
@@ -28,17 +23,10 @@ function sumMultiples3Or5Below1000() {
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
   for (let i = 0; i < z; i++) {
-    if (i % x === 0 && i % y === 0) {
-      sum += i;
-    }
-    else if (i % x === 0) {
-      sum += i;
-    }
-    else if (i % y === 0) {
+    if (i % x === 0 || i % y === 0) {
       sum += i;
     }
   }
-
   return sum;
 }
 
