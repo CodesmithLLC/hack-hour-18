@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+<<<<<<< HEAD
   if (head.next === head) return true;
   const store = [];
   let current = head;
@@ -43,6 +44,9 @@ function hasCycle(head) {
     current = current.next;
   }
   return false;
+=======
+
+>>>>>>> 8011f642ea6282bfde3045386a6136b59039d4dd
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
