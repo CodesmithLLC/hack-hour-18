@@ -7,7 +7,7 @@
 
 function sumMultiples3Or5Below1000() {
   let sum = 0;
-  for (let i=0; i <=1000; i++) {
+  for (let i=0; i < 1000; i++) {
     if (i % 15 === 0) {
       sum += i;
     } else if (i % 3 === 0) {
@@ -24,7 +24,7 @@ function sumMultiples3Or5Below1000() {
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
-  for (let i=0; i <=z; i++) {
+  for (let i=0; i < z; i++) {
     if (i % (x*y) === 0) {
       sum += i;
     } else if (i % x === 0) {
@@ -35,7 +35,8 @@ function sumMultiplesXOrYBelowZ(x, y, z) {
   }
   return sum;
 }
-console.log(sumMultiplesXOrYBelowZ(3, 5, 100));
+console.log(sumMultiplesXOrYBelowZ(3, 5, 10));
+console.log(sumMultiples3Or5Below1000());
 const objectToExport = {
   sumMultiples3Or5Below1000,
   sumMultiplesXOrYBelowZ,
