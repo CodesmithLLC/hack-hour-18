@@ -31,6 +31,7 @@ function mergeRanges(array) {
 	  }
 	}
 	return result;
+
 }
 
 module.exports = mergeRanges;
