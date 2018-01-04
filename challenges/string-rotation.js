@@ -16,7 +16,24 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if(s1.length != s2.length) return false;  // if different length just return false;
+  var count = 0, checked = false;
+  while(checked === false){
+    count++;
+    checked = true;
+    var startMaybe = s2.indexOf(s1[0]); // Find the indexOf "h2 === h1[0]"
+    var comparer = s2.slice(startMaybe) + s2.slice(0,startMaybe); // reorder h2 to make that value h2[0]
+    for(let i = 0; i<s2.length;i++){
+      if(comparer[startMaybe+i] === s1[i]){
+        continue;
+      }else{  // next is not the same - rotate 1 spot and check again
+        console.log('next is not the same')
+        if(count <= s1.length) checked = false; // run while loop until every rotation checked
+        s2 = comparer.slice(1)+comparer.slice(0,1);
+      }
+    }
+  }
+  return isSubstring(s1,comparer) // compare in isSubstring to see if they're the same
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
