@@ -9,14 +9,14 @@
 function sumMultiples3Or5Below1000() {
   const arr = [];
   let sum = 0;
-  for (let i = 1; i * 3 < 10 || i * 5 < 10; i++) {
+  for (let i = 1; i * 3 < 1000 || i * 5 < 1000; i++) {
     const threes = i * 3;
     const fives = i * 5;
-    if (threes < 10 && !arr.includes(threes)) {
+    if (threes < 1000 && !arr.includes(threes)) {
       arr.push(threes);
       sum += threes;
     }
-    if (fives < 10 && !arr.includes(fives)) {
+    if (fives < 1000 && !arr.includes(fives)) {
       arr.push(fives);
       sum += fives;
     }
