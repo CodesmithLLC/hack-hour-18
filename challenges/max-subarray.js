@@ -8,29 +8,15 @@
  */
 
 function maxSubarray(arr) {
-  let start = arr[0];
-  let end = arr[arr.length - 1];
+  let maxComb = -Infinity;
   for (let i = 0; i < arr.length; i++) {
-      if (start > 0 && arr[1] > 0) {
-      start = i;
-      break;
-    }
-    else if (arr[i] > start) {
-      start = i;
-      break;
+    let sum = 0;
+    for (let y = i; y < arr.length; y++) {
+      sum += arr[y];
+      if (sum > maxComb) maxComb = sum;  
     }
   }
-  for (let y = arr.length - 1; y > 0; y--) {
-    if (arr[y] > 0) {
-      end = y;
-      break;
-    }
-  }
-  let toSum = (arr.slice(start, end + 1));
-  console.log(toSum);
-  return toSum.reduce(function(accum, currVal) {
-    return accum + currVal;
-  })
+  return maxComb;
 }
 
 module.exports = maxSubarray;
