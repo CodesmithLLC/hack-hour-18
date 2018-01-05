@@ -32,6 +32,7 @@ function maxSubarray(arr) {
     if (sum(arr.slice(j)) < sum(arr.slice(end + 1))) {
       end = j;
     }
+    if (end <= start) return Math.max(...arr);
   }
   // console.log(start, end);
   return sum(arr.slice(start, end+1));
