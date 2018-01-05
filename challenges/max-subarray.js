@@ -9,7 +9,7 @@
 
 function maxSubarray(arr) {
   if (!Array.isArray(arr)) return;
-  let maxSum = 0;
+  let maxSum = -Infinity;
 
   for (let i = 0; i < arr.length; i += 1) {
     let sum = 0;
