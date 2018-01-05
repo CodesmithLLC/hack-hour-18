@@ -38,13 +38,13 @@ function maxSubarray(arr) {
       subarr = [];
       sum = 0;
     }
-    console.log(subarr)
+    console.log(subarr);
   }
-  return maxSubarr;
+  return maxSubarr.length ? maxSubarr : subarr;
 }
 
 // const array1 = [1, -2, 3, 10, -4, 7, 2, -5];
-// const array2 = [15,20,-5,10];
-// console.log(maxSubarray(array1));
+const array2 = [15,20,-5,10];
+console.log(maxSubarray(array2));
 
 module.exports = maxSubarray;
