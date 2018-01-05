@@ -13,7 +13,40 @@
  */
 
 function numToWords(num) {
+    var digit = {
+        0:      'Zero',
+        1:      'One',
+        2:      'Two',
+        3:      'Three',
+        4:      'Four',
+        5:      'Five',
+        6:      'Six',
+        7:      'Seven',
+        8:      'Eight',
+        9:      'Nice',
+        10:     'Ten',
+        11:     'Eleven',
+        12:     'Twelve',
+        13:     'Thirteen',
+        15:     'Fifteen',
+        20:     'Twenty'
+    },
+    temp,
+    numStr = num + "";
 
+    if (num <= 13 || num == 15 || num == 20) {
+        return digit[num];
+    }
+    else {  
+        temp = Number(numStr.charAt(1));      
+        if (numStr.charAt(0) == 1) {            
+            return digit[temp] + "teen";
+        }
+        else if (numStr.charAt(0) == 2) {
+            return "twenty" + digit[temp];
+        }
 }
+
+numToWords(21);
 
 module.exports = numToWords;

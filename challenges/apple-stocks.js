@@ -13,7 +13,14 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    //get the min and the max and then calculate the most profit
+    var minStock = Math.min(...stock_prices_yesterday);
+    var maxStock = Math.max(...stock_prices_yesterday);
+    var theDiff = maxStock - minStock;
+    console.log(theDiff);
 
 }
+
+bestProfit([580, 394, 600, 520, 220, 550]);
 
 module.exports = bestProfit;

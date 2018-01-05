@@ -17,7 +17,25 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+    
 
+    for (var newArray = []; num > 0; num--) {
+      
+      if (num%5 === 0 && num%3 === 0) 
+          newArray.push("fizzbuzz");
+
+      else if (num%3 === 0)
+          newArray.push("fizz");
+
+      else if (num%5 === 0)
+          newArray.push("buzz");
+
+      else 
+          newArray.push(num);
+    }
+    
+    return newArray.reverse();
 }
 
-module.exports = fizzbuzz;
+
+console.log(fizzbuzz(32));

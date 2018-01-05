@@ -18,7 +18,17 @@
  */
 
 function romanNumeral(n) {
-
-}
-
+    
+    var symbol = [I, V, X, L, C, D, M];
+    var value = [1, 5, 10, 50, 100, 500, 1000];
+    
+    while (n > value.length) {
+        n 
+          
+    }
+  
+  }
+  
+  romanNumeral(26);
+  
 module.exports = romanNumeral;
