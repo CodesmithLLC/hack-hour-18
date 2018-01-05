@@ -8,7 +8,33 @@
  */
 
 function maxSubarray(arr) {
+  if (!Array.isArray(arr)) return undefined;
+  if (arr.length === 1) return arr[0];
+  let start = 0;
+  let end = arr.length - 1;
 
+  function sum(array) {
+    // console.log(array)
+    let total = 0;
+    for (let i=0; i<array.length; i++) {
+      total += array[i];
+    }
+    return total;
+  }
+
+  for (let i=1; i < arr.length; i++) {
+    if (sum(arr.slice(0, i)) < sum(arr.slice(0, start))) {
+      start = i;
+    }
+  }
+
+  for (let j=arr.length-2; j >= 0; j--) {
+    if (sum(arr.slice(j)) < sum(arr.slice(end + 1))) {
+      end = j;
+    }
+  }
+  // console.log(start, end);
+  return sum(arr.slice(start, end+1));
 }
-
+// console.log(maxSubarray([15,20,-5,10]));
 module.exports = maxSubarray;
