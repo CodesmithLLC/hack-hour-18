@@ -8,6 +8,9 @@
  */
 
 function maxSubarray(arr) {
+  if (arr.every((num) => {return num < 0})) {
+    return Math.max.apply(this,arr)
+  }
   var curr = 0; 
   var prev = 0; 
   for (let i = 0 ; i < arr.length; i++) {
