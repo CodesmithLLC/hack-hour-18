@@ -7,8 +7,23 @@
  *
  */
 
-function maxSubarray(arr) {
+ function arrSum(arr) {
+   return arr.reduce((acc, num) => acc += num)
+ }
 
-}
+ function maxSubarray(arr) {
+   let fullPositive = true;
+   for (let i = 0; i < arr.length; i++) if (arr[i] < 0) fullPositive = false;
+   if (fullPositive) return arrSum(arr)
+
+   const storage = []
+   for (let i = 0; i < arr.length; i++) {
+     for (let j = 1; j+i <= arr.length; j++) {
+       storage.push(arrSum(arr.slice(i,j+i)))
+     }
+   }
+
+   return storage.reduce((acc, num) => Math.max(acc, num))
+ }
 
 module.exports = maxSubarray;
