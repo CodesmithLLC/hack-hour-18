@@ -13,7 +13,7 @@ function maxSubarray(arr) {
     let sum = arr.slice(start, end).reduce((sum, curVal) => {return sum + curVal}, 0);
     if (sum >= maxSum) maxSum = sum;
     if (start === arr.length - 1 && end === arr.length) return
-    if (end === arr.length && start !== arr.length - 1) recursion(start + 1, start + 1);
+    if (end === arr.length && start !== arr.length - 1) recursion(start + 1, start + 2);
     else if (end !== arr.length) recursion(start, end + 1);
   }
   recursion(0,1,arr);
