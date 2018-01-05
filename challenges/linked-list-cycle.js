@@ -64,3 +64,19 @@ console.log(hasCycle(node1)); // => false
 // node5.next = node2;
 // console.log(hasCycle(node1)); // => true
 // module.exports = {Node: Node, hasCycle: hasCycle}
+
+
+//more efficient
+
+function findCycle(tortoise, hare) {
+  if (tortoise === hare) {
+    return true
+  }
+  return (tortoise.next !== null && tortoise !== null && findCycle(tortoise.next, hare.next.next))
+}
+
+
+
+
+
+
