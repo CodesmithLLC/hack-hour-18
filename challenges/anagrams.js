@@ -12,8 +12,24 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
-
-}
+  function anagrams(string) {
+    var combinations = [];
+  
+  //if there's only one letter in the string, return it out in the array.
+    if (string.length === 1) {
+      combinations.push(string);
+      return combinations;
+    }
+  
+    for (var i = 0; i < string.length; i++) {
+      var firstChar = string[i];
+      var charsLeft = string.substring(0, i) + string.substring(i + 1);
+      var innerPermutations = anagrams(charsLeft);
+      for (var j = 0; j < innerPermutations.length; j++) {
+        combinations.push(firstChar + innerPermutations[j]);
+      }
+    }
+    return combinations;
+  }
 
 module.exports = anagrams;
