@@ -13,6 +13,7 @@
   */
 
 function anagrams(string) {
+  if (string.length === 0) return [''];
   const obj = {};
   const length = string.length;
   const getGrams = (subString, positions) => {
