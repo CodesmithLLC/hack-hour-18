@@ -8,6 +8,7 @@
  */
 
 function maxSubarray(arr) {
+<<<<<<< HEAD
   let maxComb = -Infinity;
   for (let i = 0; i < arr.length; i++) {
     let sum = 0;
@@ -17,6 +18,9 @@ function maxSubarray(arr) {
     }
   }
   return maxComb;
+=======
+
+>>>>>>> 86dc30b2f61f125c69915a2c8806dde48138606d
 }
 
 module.exports = maxSubarray;
