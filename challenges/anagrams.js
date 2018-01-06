@@ -16,7 +16,7 @@
     var combinations = [];
   
   //if there's only one letter in the string, return it out in the array.
-    if (string.length === 1) {
+    if (string.length === 0 || string.length === 1) {
       combinations.push(string);
       return combinations;
     }
