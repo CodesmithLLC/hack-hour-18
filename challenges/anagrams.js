@@ -14,8 +14,12 @@
 
 function anagrams(string) {
   if (typeof string !== 'string') return;
-  if (string.length === 1) return string;
   const perms = [];
+
+  if (string.length === 1) {
+    perms.push(string);
+    return perms;
+  };
 
   for (let i = 0; i < string.length; i += 1) {
     let char = string[i];
