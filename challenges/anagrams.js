@@ -16,7 +16,7 @@ function anagrams(string) {
   if (typeof string !== 'string') return;
   const perms = [];
 
-  if (string.length === 1) {
+  if (string.length < 2) {
     perms.push(string);
     return perms;
   };
