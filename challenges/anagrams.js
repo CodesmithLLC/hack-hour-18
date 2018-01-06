@@ -13,7 +13,19 @@
   */
 
 function anagrams(string) {
+  if (typeof string !== 'string') return;
+  if (string.length === 1) return string;
+  const perms = [];
 
+  for (let i = 0; i < string.length; i += 1) {
+    let char = string[i];
+    let remainingString = `${string.slice(0, i)}${string.slice(i + 1, string.length)}`;
+
+    for (let subPerm of anagrams(remainingString)) {
+      perms.push(char + subPerm)
+    }
+  }
+  return perms;
 }
 
 module.exports = anagrams;
