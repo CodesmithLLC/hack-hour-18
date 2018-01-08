@@ -16,22 +16,30 @@ function Node(val) {
 }
 
 function deleteDups(head) {
-  let current = head;
   const store = {};
-  while (current) {
-    if (current.next) {
-      if (!store[current.next.value]) store[current.next.value] = 1;
-      else current.next = current.next.next;
+  if (head) store[head.value] = head.value;
+  let current = head;
+
+  while (current.next) {
+    if (!store[current.next.value]) {
+      store[current.next.value] = 1;
+      console.log('hit ', store)
     }
-    current = current.next;
+    else {
+      console.log('else hit', current);
+      current.next = current.next.next;
+    }
+    if (current.next) current = current.next;
   }
 }
 // const node = new Node(1);
 // node.next = new Node(2);
 // node.next.next = new Node(3);
 // node.next.next.next = new Node(3);
+// node.next.next.next.next = new Node(3);
 //
 // deleteDups(node);
 // console.log(node);
+// console.log(node.next);
 
 module.exports = deleteDups;
