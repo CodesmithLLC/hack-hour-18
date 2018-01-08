@@ -10,10 +10,16 @@
   * example:
   * var result = anagrams('abc');
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
+*/
 
 function anagrams(string) {
+  const splitStr = string.split('');
+  const arr = [];
+  function recursion() {
 
+  }
+  recursion(splitStr);
+  return arr;
 }
-
+  
 module.exports = anagrams;
