@@ -22,19 +22,25 @@
  */
 
 function EventEmitter() {
-  this.event = null;
-  this.func = null;
+  // this.event = null;
+  // this.func = null;
+  this.store = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
   if (!funcName || !func) return;
-  this.event = funcName;
-  this.func = func;
+  // this.event = funcName;
+  // this.func = func;
+  this.store[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
   if (!funcName) return;
-  if (funcName === this.event) this.func(...args);
+  if (this.store.hasOwnProperty(funcName)) {
+    const storedFunc = this.store[funcName];
+    storedFunc(...args);
+  }
+  // if (funcName === this.event) this.func(...args);
 };
 
 module.exports = EventEmitter;
