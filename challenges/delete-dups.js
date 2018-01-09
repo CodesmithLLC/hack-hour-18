@@ -9,10 +9,10 @@
  * Extra:
  * How would you solve this problem if a temporary buffer is not allowed?
  */
-function Node(value) {
-  this.value = value;
-  this.next = null;
-}
+// function Node(value) {
+//   this.value = value;
+//   this.next = null;
+// }
 
 
 function deleteDups(head) {
@@ -21,13 +21,16 @@ function deleteDups(head) {
   const storage = {};
 
   while (cur) {
+    // console.log(cur);
     if (storage[cur.value] === false) {
       storage[cur.value] = true;
       prev = cur;
       cur = cur.next;
     } else if (storage[cur.value] === true) {
-      cur = cur.next;
       prev = cur;
+      cur = cur.next;
+    } else {
+      cur = cur.next;
     }
   }
 
@@ -39,5 +42,6 @@ function deleteDups(head) {
 // newList.next = new Node(2);
 // newList.next.next = new Node(3);
 // newList.next.next.next = new Node(3);
+// console.log(deleteDups(newList));
 
 module.exports = deleteDups;
