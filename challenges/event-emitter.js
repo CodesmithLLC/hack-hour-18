@@ -22,15 +22,33 @@
  */
 
 function EventEmitter() {
-
+  this.events = {};
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  this.events[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+  this.events[funcName].apply(this, args);
 };
+
+/**
+ * vvv Below be tests vvv
+ */
+
+// const e = new EventEmitter();
+// let counter = 0;
+// e.on('add', function() {
+//   const args = Array.from(arguments);
+//   args.forEach(num => counter += num);
+// });
+// console.log(e);
+// e.trigger('add', 1);
+// console.log(counter);
+// e.trigger('add', 1);
+// console.log(counter);
+// e.trigger('add', 1, 2, 1);
+// console.log(counter);
 
 module.exports = EventEmitter;
