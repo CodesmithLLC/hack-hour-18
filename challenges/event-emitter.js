@@ -26,7 +26,8 @@
  }
 
  EventEmitter.prototype.on = function(funcName, func) {
-   this.events[funcName] = func
+   const ref = func
+   this.events[funcName] = ref
  };
 
  EventEmitter.prototype.trigger = function(funcName, ...args) {
