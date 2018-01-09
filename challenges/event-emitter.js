@@ -26,12 +26,16 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-  this.store[funcName] = func;
+  if (this.store[funcName]) {
+    this.store[funcName].push(func);
+  } else {
+    this.store[funcName] = [func];
+  }
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
   if(this.store[funcName]) {
-    this.store[funcName](...args);
+    this.store[funcName].forEach(x => x(...args));
   }
 };
 
