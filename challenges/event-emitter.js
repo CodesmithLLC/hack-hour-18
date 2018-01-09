@@ -30,7 +30,7 @@ EventEmitter.prototype.on = function(funcName, func) {
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-  this.events[funcName](args);
+  this.events[funcName](...args);
 };
 
 // const instance = new EventEmitter();
@@ -39,7 +39,12 @@ EventEmitter.prototype.trigger = function(funcName, ...args) {
 //   counter++;
 // })
 //
-// instance.trigger('increment');
-// instance.trigger('increment');
+// instance.on('add', function(num1, num2, num3) {
+//   counter = counter + num1 + num2 + num3
+// })
+//
+// instance.trigger('increment', 1, 2, 3);
+// instance.trigger('add', 2,3,5);
+// console.log(counter);
 
 module.exports = EventEmitter;
