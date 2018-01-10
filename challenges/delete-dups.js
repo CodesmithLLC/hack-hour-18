@@ -16,14 +16,18 @@ function Node(value) {
 }
 
 function deleteDups(head) {
-  const array = [];
+  const data = {};
   let current = head;
+  let prev;
 
   while (current) {
-    if (array.includes(current.value)) {
-      current.next = current.next.next;
+    if (current.value in data) {
+      prev.next = current.next;
+      current = current.next;
+    } else {
+      data[current.value] = true;
+      prev = current;
     }
-    array.push(current.value);
   }
 }
 
