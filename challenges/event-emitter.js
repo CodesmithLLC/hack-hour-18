@@ -22,6 +22,7 @@
  */
 
 function EventEmitter() {
+<<<<<<< HEAD
   this.store = {};
 }
 
@@ -36,6 +37,17 @@ EventEmitter.prototype.trigger = function(funcName, ...args) {
       storedFunc(...args);
     }
   }
+=======
+
+}
+
+EventEmitter.prototype.on = function(funcName, func) {
+
+};
+
+EventEmitter.prototype.trigger = function(funcName, ...args) {
+
+>>>>>>> f1ee80825a2379cc2cd748b21b96f40164829bbf
 };
 
 module.exports = EventEmitter;
