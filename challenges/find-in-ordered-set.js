@@ -14,6 +14,6 @@ function findInOrderedSet(arr, target) {
   arr.forEach(val=> { if(val === target) result = val});
   return result ? true : false
 }
-console.log(findInOrderedSet(nums, 4))
+// console.log(findInOrderedSet(nums, 4))
 
 module.exports = findInOrderedSet;
