@@ -16,15 +16,30 @@ function Node(value) {
 }
 
 function deleteDups(head) {
-  const array = [];
+  const data = {};
   let current = head;
+  let prev;
 
   while (current) {
-    if (array.includes(current.value)) {
-      current.next = current.next.next;
+    if (current.value in data) {
+      prev.next = current.next;
+      current = current.next;
+    } else {
+      data[current.value] = true;
+      prev = current;
     }
-    array.push(current.value);
   }
 }
+
+const node1 = new Node(1);
+const node2 = new Node(2);
+const node3 = new Node(2);
+const node4 = new Node(3);
+node1.next = node2;
+node2.next = node3;
+node3.next = node4;
+console.log(node2)
+deleteDups(node1)
+console.log(node2);
 
 module.exports = deleteDups;
