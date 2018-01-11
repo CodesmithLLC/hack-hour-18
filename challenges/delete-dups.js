@@ -27,6 +27,7 @@ function deleteDups(head) {
     } else {
       data[current.value] = true;
       prev = current;
+      current = current.next
     }
   }
 }
