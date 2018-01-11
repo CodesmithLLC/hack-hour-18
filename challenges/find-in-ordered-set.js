@@ -21,6 +21,7 @@ function findInOrderedSet(arr, target) {
       continue;
     }
   }
+  return false;
 }
 
 
