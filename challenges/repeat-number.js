@@ -9,9 +9,14 @@
  * Do this in O(1) space
  *
  */
-
 function repeatNumbers(array) {
-
+let x;
+let t = array.length;
+  for(var i = 0; i < t; i++){
+    x = array.shift();
+    if(array.indexOf(x) >= 0){break;}
+   }
+return x;
 }
 
 module.exports = repeatNumbers;
