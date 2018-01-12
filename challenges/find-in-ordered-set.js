@@ -9,7 +9,7 @@ findInOrderedSet(nums, 2);  -> false
 
  */
 
-
+// non working solution
 function findInOrderedSet(arr, target) {
   const half = Math.round(arr.length / 2);
   if ( target === arr[half] ) return true;
