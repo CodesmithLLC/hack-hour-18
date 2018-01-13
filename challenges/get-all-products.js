@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array, len = array.length - 1, result = []) {
+  if (array.length === 0) return [0];
   if (array.length === len) {
     const prod = array.reduce((a, b) => a * b);
     result.push(prod);
@@ -24,5 +25,6 @@ function getAllProducts(array, len = array.length - 1, result = []) {
 }
 
 // console.log(getAllProducts([1, 7, 3, 4]));
+// console.log(getAllProducts([]));
 
 module.exports = getAllProducts;
