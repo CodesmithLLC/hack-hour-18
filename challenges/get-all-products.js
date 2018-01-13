@@ -9,8 +9,35 @@
  * do not use division, becuase zero might be in the array and you cannot divide by zero
  */
 
-function getAllProducts(array) {
+// This solution works but has too many array methods...
+// function product(x, y) {
+//   return x * y;
+// }
 
+// function getAllProducts(array) {
+//   const products = [];
+//   for (let i = 0; i < array.length; i++) {
+//     const tempArray = array.slice();
+//     tempArray.splice(i, 1);
+//     products.push(tempArray.reduce(product));
+//   }
+//   return products;
+// }
+
+// Works but is O(n^2) is there a better way?
+function getAllProducts(array) {
+  const products = [];
+  for (let i = 0; i < array.length; i++) {
+    let product = 1;
+    for (let j = 0; j < array.length; j++) {
+      if (j === i) continue;
+      product *= array[j];
+    }
+    products.push(product);
+  }
+  return products;
 }
+
+// console.log(getAllProducts([1, 7, 3, 4])); // -> [84, 12, 28, 21]
 
 module.exports = getAllProducts;
