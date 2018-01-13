@@ -10,11 +10,13 @@
  */
 
 function getAllProducts(array) {
+  if (!array.length) return [0];
   return arraysArray = array.map((elem, ind, arr) => {
     const newArr = arr.slice();
     newArr.splice(ind, 1);
     return newArr;
   }).map(arr => arr.reduce((a, b) => a * b));
 }
+// console.log(getAllProducts([1, 7,6, 20, 900, 1, 84, 3, 4]));
 
 module.exports = getAllProducts;
