@@ -26,7 +26,7 @@
 
 // Works but is O(n^2) is there a better way?
 function getAllProducts(array) {
-  if (!array.length) return 0;
+  if (!array.length) return [0];
   const products = [];
   for (let i = 0; i < array.length; i++) {
     let product = 1;
