@@ -12,6 +12,7 @@
 function getAllProducts(array) {
   let total = array.reduce((acc, cur) => acc * cur);
   let result = [];
+  if (array.length === 0) return [0];
   for (let i=0; i<array.length; i++) {
     let prod;
     if (array[i] === 0) {
