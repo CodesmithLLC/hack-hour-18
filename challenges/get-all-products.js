@@ -10,7 +10,20 @@
  */
 
 function getAllProducts(array) {
+  if (!Array.isArray(array)) return;
 
+  const result = [];
+  for (let i = 0; i < array.length; i += 1) {
+    let firstHalf = array.slice(0, i);
+    let secHalf = array.slice(i + 1, array.length);
+    let nums = firstHalf.concat(secHalf);
+
+    let product = nums.reduce((a, b) => a * b);
+    result.push(product);
+  }
+  return result;
 }
+
+console.log(getAllProducts([1, 7, 3, 4]));
 
 module.exports = getAllProducts;
