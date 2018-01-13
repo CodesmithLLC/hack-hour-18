@@ -5,7 +5,11 @@
 
 
 function insertionSort(array) {
-
-}
+    let result = [];
+    while(array.length >= 1){
+    result.push(array.splice(array.indexOf(Math.min(...array)), 1)[0])
+    }
+    return result;
+    }
 
 module.exports = insertionSort;

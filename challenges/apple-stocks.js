@@ -13,7 +13,26 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
-}
+    let y = stock_prices_yesterday;
+    let highIndex = 0;
+    let lowIndex = 0;
+    
+    y.reduce((acc, elem, index) => {
+     
+     if (elem > acc){highIndex = index; return elem} 
+    
+     return acc;
+    })
+    y.reduce((acc, elem, index) => {
+     
+     if (elem < acc){lowIndex = index; return elem} 
+    
+     return acc;
+    })
+    
+    if(stock_prices_yesterday[highIndex] - stock_prices_yesterday[lowIndex] > 0) {
+      return stock_prices_yesterday[highIndex] - stock_prices_yesterday[lowIndex]};
+      return 0;
+    }
 
 module.exports = bestProfit;
