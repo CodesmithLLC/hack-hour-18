@@ -10,7 +10,26 @@
  */
 
 function getAllProducts(array) {
-
+  let total = array.reduce((acc, cur) => acc * cur);
+  let result = [];
+  for (let i=0; i<array.length; i++) {
+    let prod;
+    if (array[i] === 0) {
+      prod = array.reduce((acc, cur, ind) => {
+        if (ind !== i) {
+          return acc * cur;
+        } else {
+          return acc;
+        }
+      });
+    } else {
+      prod = total / array[i];
+    }
+    result.push(prod);
+  }
+  return result;
 }
+
+// console.log(getAllProducts([1, 7, 3, 4, 0]));
 
 module.exports = getAllProducts;
