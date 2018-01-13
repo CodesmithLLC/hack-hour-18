@@ -10,7 +10,15 @@
  */
 
 function getAllProducts(array) {
-
+  if(!Array.isArray(array) || !array.length) return;
+  let temp1 = array.slice();
+  let sumArr = [];
+  for(let i=0; i < array.length;i++){
+    temp1.splice(i,1);
+    sumArr.push(temp1.reduce((acc,ele) => acc * ele));
+    temp1 = array.slice();
+  }
+  return sumArr;
 }
 
 module.exports = getAllProducts;
