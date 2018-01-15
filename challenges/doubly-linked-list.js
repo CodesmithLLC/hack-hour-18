@@ -40,20 +40,21 @@ LinkedList.prototype.remove = function (val) {
     while (current) {
       if (current.val === val) {
         current.prev.next = current.next;
-        current.next.prev = current.prev;
+        if (current !== this.tail) current.next.prev = current.prev;
+        else this.tail = current.prev;
       }
       current = current.next;
     }
   }
 };
 
-// const ll = new LinkedList();
-// ll.add(1);
-// ll.add(2);
-// ll.add(3);
-// ll.add(4);
-// ll.remove(2);
-// console.log(ll);
+const ll = new LinkedList();
+ll.add(1);
+ll.add(2);
+ll.add(3);
+ll.add(4);
+ll.remove(4);
+console.log(ll);
 
 
 module.exports = LinkedList;
