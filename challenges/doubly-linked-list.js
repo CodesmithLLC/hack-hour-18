@@ -37,7 +37,10 @@ LinkedList.prototype.remove = function(val) {
     current = current.next;
     if (current === null) return undefined;
   }
-  if (current === this.head) this.head = current.next;
+  if (current === this.head) {
+    this.head = current.next;
+    this.head.prev = null;
+  }
   else if (current === this.tail) {
     current.prev.next = null;
     this.tail = current.prev;
@@ -54,7 +57,7 @@ list.add(2);
 list.add(3);
 list.add(4);
 
-list.remove(7);
+list.remove(1);
 
 console.log(list);
 
