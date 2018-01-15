@@ -10,7 +10,11 @@
  *
  */
 function uniqueNumber(array) {
-
+  let res;
+  for (let i = 0; i < array.length; i++) {
+    res = res ^ array[i]
+  }
+  return res
 }
 
 module.exports = uniqueNumber;
