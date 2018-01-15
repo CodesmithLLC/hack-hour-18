@@ -39,22 +39,27 @@ LinkedList.prototype.remove = function(val) {
     prev = curr;
     curr = curr.next;
   }
+  if (curr === this.head) {
+    this.head = curr.next;
+  }
   if (curr === this.tail) {
     this.tail = prev;
   }
-  prev.next = curr.next;
+  if (prev) {
+    prev.next = curr.next;
+  }
   curr.next.prev = prev;
   curr.prev = null;
   curr.next = null;
   return curr.val;
 };
 
-// const l = new LinkedList();
-// l.add(1);
-// l.add(2);
-// l.add(3);
-// l.add(4);
-// l.remove(3);
-// console.log(l.tail.prev);
+const l = new LinkedList();
+l.add(1);
+l.add(2);
+l.add(3);
+l.add(4);
+l.remove(1);
+console.log(l.head);
 
 module.exports = LinkedList;
