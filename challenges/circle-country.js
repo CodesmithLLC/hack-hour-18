@@ -23,7 +23,15 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  //count all circles that surround start and end
+  let result = 0;
+  for (let i = 0; i < x.length; i += 1) {
+    let distanceStart = Math.sqrt(Math.pow((start_x - x[i]), 2) + Math.pow((start_y - y[i]), 2))
+    let distanceEnd = Math.sqrt(Math.pow((end_x - x[i]), 2) + Math.pow(end_y - y[i]), 2))
+    if (distanceStart < r[i]) result += 1;
+    if (distanceEnd < r[i]) result += 1;
+  }
+  return result;
 }
 
 module.exports = circleCountry;
