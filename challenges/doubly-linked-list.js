@@ -8,7 +8,7 @@ function LinkedList() {
 }
 
 function Node(val) {
-  this.value = val;
+  this.val = val;
   this.next = null;
   this.prev = null;
 }
@@ -22,9 +22,10 @@ LinkedList.prototype.add = function(val) {
   if (!this.head) {
     this.head = this.tail = node;
   } else {
-    this.tail.next = node;
-    node.prev = this.tail;
+    let current = this.tail;
     this.tail = node;
+    this.tail.prev = current;
+    current.tail = node;
   }
 };
 
@@ -34,24 +35,21 @@ Removes the first node with the inputted value
 LinkedList.prototype.remove = function(val) {
   let current = this.head;
 
-  if (current.value === val) {
-    this.head = current.next;
-    if (!this.head) {
-      this.tail = null;
+  while (current && current.val !== val) {
+    current = current.next
+  }
+
+  if (current) {
+    if (current === this.head) {
+      current.next.prev = null;
+      this.head = current.next;
     } else {
-      this.head.prev = null;
-    }
-  } else if (this.tail.value = val) {
-    current = this.tail;
-    this.tail = current.prev;
-    this.tail.next = null;
-  } else {
-    while (current) {
-      if (current.value = val) {
-        current.prev.next = current.next;
-        return;
+      current.prev.next = current.next;
+      if (current.next) {
+        current.next.prev = current.prev;
+      } else {
+        this.tail = current.prev;
       }
-      current = current.next;
     }
   }
 };
