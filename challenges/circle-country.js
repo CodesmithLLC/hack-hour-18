@@ -30,15 +30,15 @@ function circleCountry(xArr, yArr, rArr, start_x, start_y, end_x, end_y) {
   // Use pythagorean theroem for each circle find inside/outside for each point
   xArr.forEach((x, i) => {
     const startXDiff = Math.pow((x - start_x), 2);
-    const startYDiff = Math.pow((y[i] - start_y), 2);
+    const startYDiff = Math.pow((yArr[i] - start_y), 2);
     const startDist = Math.sqrt(startXDiff + startYDiff);
-    if (startDist < r[i]) startStats.push(true);
+    if (startDist < rArr[i]) startStats.push(true);
     else startStats.push(false);
 
     const endXDiff = Math.pow((x - end_x), 2);
-    const endYDiff = Math.pow((y[i] - end_y), 2);
+    const endYDiff = Math.pow((yArr[i] - end_y), 2);
     const endDist = Math.sqrt(endXDiff + endYDiff);
-    if (endDist < r[i]) endStats.push(true);
+    if (endDist < rArr[i]) endStats.push(true);
     else endStats.push(false);
   });
 
@@ -47,5 +47,7 @@ function circleCountry(xArr, yArr, rArr, start_x, start_y, end_x, end_y) {
     return acc;
   }, 0)
 }
+
+console.log(circleCountry([0], [0], [10], 1, 2, 20, 20));
 
 module.exports = circleCountry;
