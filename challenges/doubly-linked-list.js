@@ -41,18 +41,19 @@ LinkedList.prototype.remove = function(val) {
     if (curr === this.head) this.head = curr.next;
     if (curr === this.tail) this.tail = curr.prev;
     if (curr.prev && curr.next) curr.prev.next = curr.next.prev;
+    else if (curr.next) curr.next.prev = null;
+    else if (curr.prev) curr.prev.next = null;
     curr.prev = null;
     curr.next = null;
-    return curr.val;
   }
 };
 
-const l = new LinkedList();
-l.add(1);
-l.add(2);
-l.add(3);
-l.add(4);
-l.remove(4);
-console.log(l);
+// const l = new LinkedList();
+// l.add(1);
+// l.add(2);
+// l.add(3);
+// l.add(4);
+// l.remove(1);
+// console.log(l);
 
 module.exports = LinkedList;
