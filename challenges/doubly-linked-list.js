@@ -38,11 +38,18 @@ LinkedList.prototype.remove = function(val) {
     curr = curr.next;
   }
   if (curr) {
+    // Catch head and tail edge cases
     if (curr === this.head) this.head = curr.next;
     if (curr === this.tail) this.tail = curr.prev;
-    if (curr.prev && curr.next) curr.prev.next = curr.next.prev;
+    
+    if (curr.prev && curr.next) {
+      curr.prev.next = curr.next;
+      curr.next.prev = curr.prev;
+    }
     else if (curr.next) curr.next.prev = null;
     else if (curr.prev) curr.prev.next = null;
+
+    // Dereference current node
     curr.prev = null;
     curr.next = null;
   }
@@ -52,8 +59,7 @@ LinkedList.prototype.remove = function(val) {
 // l.add(1);
 // l.add(2);
 // l.add(3);
-// l.add(4);
-// l.remove(1);
+// l.remove(2);
 // console.log(l);
 
 module.exports = LinkedList;
