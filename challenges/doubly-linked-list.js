@@ -43,7 +43,6 @@ LinkedList.prototype.remove = function(val) {
     if (curr.prev && curr.next) curr.prev.next = curr.next.prev;
     curr.prev = null;
     curr.next = null;
-    return curr.val;
   }
 };
 
@@ -52,7 +51,7 @@ LinkedList.prototype.remove = function(val) {
 // l.add(2);
 // l.add(3);
 // l.add(4);
-// l.remove(4);
+// l.remove(1);
 // console.log(l);
 
 module.exports = LinkedList;
