@@ -23,7 +23,20 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  let counter = 0;
+  for (let i = 0; i < x.length; i++) {
+    let inOne = contains(x[i], y[i], r[i], start_x, start_y);
+    let inTwo = contains(x[i], y[i], r[i], end_x, end_y);
+    if ((inOne && inTwo) || (!inOne && !inTwo)) {
 
+    }
+    else if (inOne || inTwo) counter++;
+  }
+  function contains(originX, originY, r, x, y) {
+    let distance = (originX - x) * (originX - x) + (originY - y) + (originY - y);
+    if (distance > r * r) return false
+    else return true;
+  }
 }
 
 module.exports = circleCountry;
