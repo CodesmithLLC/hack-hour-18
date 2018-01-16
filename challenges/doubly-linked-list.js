@@ -47,12 +47,12 @@ LinkedList.prototype.remove = function(val) {
   }
 };
 
-const l = new LinkedList();
-l.add(1);
-l.add(2);
-l.add(3);
-l.add(4);
-l.remove(4);
-console.log(l);
+// const l = new LinkedList();
+// l.add(1);
+// l.add(2);
+// l.add(3);
+// l.add(4);
+// l.remove(4);
+// console.log(l);
 
 module.exports = LinkedList;
