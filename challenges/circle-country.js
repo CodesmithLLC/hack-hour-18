@@ -23,7 +23,10 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-
+  console.log('CIRCLECOUNTRY');
+  console.log('x', x, 'y', y, 'r', r);
+  console.log('startx', start_x, 'starty', start_y, 'endx', end_x, 'endy', end_y);
+  console.log('END');
 }
 
 module.exports = circleCountry;
