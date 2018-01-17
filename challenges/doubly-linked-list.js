@@ -56,12 +56,13 @@ LinkedList.prototype.remove = function(val) {
   }
   return undefined;
 };
-// let newLL = new LinkedList();
-// newLL.add(1);
+let newLL = new LinkedList();
+newLL.add(1);
 // newLL.add(2);
 // newLL.add(3);
+newLL.remove(1);
 // newLL.add(4);
-// console.log(newLL);
+console.log(newLL);
 // console.log(newLL.head.next.val)
 
 module.exports = LinkedList;
