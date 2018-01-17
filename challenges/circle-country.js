@@ -24,6 +24,13 @@
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 
+  // Count how many circles inside of start
+  // for (let i=0; i<x.length; i++) {
+  //   if (r < Math.sqrt(Math.pow( , 2) + Math.pow( , 2)))
+  // }
+
+  // Count number at end
+
 }
 
 module.exports = circleCountry;
