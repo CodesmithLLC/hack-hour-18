@@ -5,6 +5,7 @@
 
 
 function bubbleSort(array) {
+  if (!array.length) return [];
   for (let i = 0; i < array.length; i++) {
     let swapped = false;
     for (let j = 0; j < array.length; j++) {
