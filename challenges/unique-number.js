@@ -11,9 +11,8 @@
  */
 function uniqueNumber(array) {
 	const obj = {}
-	array.forEach(val=> {obj[val] ? obj[val]++ : obj[val]=1})
-	for (keys in obj) {
-		if (obj[keys] === 1) return keys
-	}
+	array.forEach(val=> {obj[val] ? delete obj[val] : obj[val] = true})
+	return Object.keys(obj)[0]
 }
+// console.log(uniqueNumber([1,2,1,3,3]))
 module.exports = uniqueNumber;
