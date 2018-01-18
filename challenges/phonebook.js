@@ -35,28 +35,29 @@ function findName(jazbook, name) {
 }
 
 // return an object literal representing the jazbook
+const store = {
+  add : function(entry) {
+    this[entry[0]] = entry[1];
+  },
+
+  lookup : function(entry) {
+    return this[entry[0]]; 
+  },
+
+  remove : function(name) {
+    const temp = this[name];
+    delete this[name];
+    return temp;
+  },
+}
 function makePhoneBookObject(jazbook){
-  const book = {};
+  const book = Object.create(store);
 
   jazbook.forEach(entry => {
-    this.book[entry[0]] = entry[1];
+    book[entry[0]] = entry[1];
   });
 
-  this.book.add = function(entry) {
-    this.book[entry[0]] = entry[1];
-  }
-
-  this.book.lookup = function(entry) {
-    return this.book[entry[0]]; 
-  }
-
-  this.book.remove = function(name) {
-    const temp = this.book[name];
-    delete this.book[name];
-    return temp;
-  }
-
-  return this.book;
+  return book;
 }
 
 const objectToExport = {
