@@ -78,6 +78,7 @@ const book = [
 
 const objectToExport = {
   findName,
+  makePhoneBookObject,
   Phonebook,
 };
 
