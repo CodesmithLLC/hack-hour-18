@@ -25,14 +25,50 @@
 */
 
 //  return the number associated with the name in the jazbook
-function findName(jazbook, name) {
+class PhoneBook {
+  constructor() {
+    this.entries = {};
+  }
+  lookup(name) {
+    return this.entries[name];
+  }
+  add(name, number) {
+    this.entries[name] = number;
+  }
+  remove(name) {
+    const temp = this.entries[name];
+    delete this.entries[name];
+    return temp;
+  }
+}
 
+function findName(jazbook, name) {
+  for (let i = 0; i < jazbook.length; i++) {
+    if (jazbook[i][0] === name) return jazbook[i][1];
+  }
+  return false;
 }
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-
+  const phonebook = new PhoneBook();
+  for (let i = 0; i < jazbook.length; i++) {
+    phonebook.add(jazbook[i][0], jazbook[i][1]);
+  }
+  return phonebook;
 }
+
+const jb = [
+  ['alex','301-844-3421'],
+  ['jae','301-844-1211'],
+  ['david','301-844-0978'],
+  ['travis','301-844-8505'],
+  ['jasmine','1800-974-4539'],
+];
+
+const pb = makePhoneBookObject(jb);
+pb.add('ryan', '310-470-2883')
+console.log(pb.lookup('ryan'));
 
 const objectToExport = {
   findName,
