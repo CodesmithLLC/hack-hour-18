@@ -31,7 +31,7 @@ function findName(jazbook, name) {
       return jazbook[i][1];
     }
   }
-  return undefined;
+  return false;
 }
 
 // return an object literal representing the jazbook
