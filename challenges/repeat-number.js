@@ -11,7 +11,12 @@
  */
 
 function repeatNumbers(array) {
-  
-}
+    for(let i=0; i < array.length;i++){
+      let copy = array.slice();
+      let value = copy.splice(i,1);
+      if(copy.indexOf(value[0]) !== -1) return value[0];
+    }
+    return "Number not found!"
+  }
 
 module.exports = repeatNumbers;

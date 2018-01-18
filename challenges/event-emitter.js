@@ -21,12 +21,15 @@
  * - It is not necessary to write a way to remove listeners.
  */
 
+var counter = 0;
+var instance = new EventEmitter();
+ 
 function EventEmitter() {
-
+  var ele = document.getElementById(this.id);
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+  
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {

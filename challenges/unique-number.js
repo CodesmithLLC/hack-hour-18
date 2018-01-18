@@ -9,15 +9,14 @@
  * Complete the challenge in O(1) space
  *
  */
+
 function uniqueNumber(array) {
-    if(!Array.isArray(array) || array.length === 0) return;
-    let unique;
-    for(let i=0,j=1;i < array.length;i++,j++){
-      unique = array.slice(j);
-      if(unique.indexOf(array[i]) === -1){
-        return array[i];
-      }
+    if(!Array.isArray(array) || array.length === 0) return 0;
+    for(let i=0; i < array.length;i++){
+      let temp = array.slice();
+      let value = temp.splice(i,1);
+      if(temp.indexOf(value[0]) === -1) return value[0];
     }
-  }
+}
 
 module.exports = uniqueNumber;
