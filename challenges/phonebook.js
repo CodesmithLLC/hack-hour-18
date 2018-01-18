@@ -32,23 +32,23 @@ function findName(jazbook, name) {
 }
 
 // return an object literal representing the jazbook
-function makePhoneBookObject(jazbook) {
-  this.phonebook = {};
+function makePhoneBookObject (jazbook) {
+  const phonebook = {};
+  phonebook.people = {};
   for (let i = 0; i < jazbook.length; i++) {
-    this.phonebook[jazbook[i][0]] = jazbook[i][1];
+    phonebook.people[jazbook[i][0]] = jazbook[i][1];
   }
-}
-
-makePhoneBookObject.prototype.add = function (entry) {
-  this.phonebook[entry[0]] = entry[1];
-}
-
-makePhoneBookObject.prototype.remove = function (name) {
-  delete this.phonebook[name];
-}
-
-makePhoneBookObject.prototype.lookup = function (name) {
-  return this.phonebook[name];
+  phonebook.add = function (entry) {
+    phonebook.people[entry[0]] = entry[1];
+  }
+  phonebook.remove = function (name) {
+    delete phonebook.people[name];
+  }
+  phonebook.lookup = function (name) {
+    if (phonebook.people[name]) return phonebook.people[name];
+    else return undefined;
+  }
+  return phonebook;
 }
 
 const objectToExport = {
