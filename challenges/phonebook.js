@@ -41,15 +41,20 @@ const store = {
   },
 
   lookup : function(entry) {
-    return this[entry[0]]; 
+    if (this[entry[0]] !== undefined) {
+      return this[entry[0]]; 
+    } else return false;
   },
 
   remove : function(name) {
-    const temp = this[name];
-    delete this[name];
-    return temp;
+    if (this[name] !== undefined) {
+      const temp = this[name];
+      delete this[name];
+      return temp;
+    } else return false;
   },
 }
+
 function makePhoneBookObject(jazbook){
   const book = Object.create(store);
 
