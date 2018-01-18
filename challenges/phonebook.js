@@ -59,12 +59,4 @@ const objectToExport = {
   makePhoneBookObject,
 };
 
-const jazbook = [
-  ['alex','301-844-3421'],
-  ['jae','301-844-1211'],
-  ['david','301-844-0978'],
-  ['travis','301-844-8505'],
-  ['jasmine','1800-974-4539'],
-];
-
 module.exports = objectToExport;
