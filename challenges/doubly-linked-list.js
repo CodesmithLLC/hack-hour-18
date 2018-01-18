@@ -13,11 +13,12 @@ function Node(val) {
   this.prev = null;
 }
 
+
 /*
 Adds a node to the end of the list
  */
 LinkedList.prototype.add = function(val) {
-  
+ 
 };
 
 /*
