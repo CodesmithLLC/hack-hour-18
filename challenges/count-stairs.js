@@ -18,7 +18,7 @@ function countStairs(n) {
   let result = 0;
   if (n <= 1) {
     result++;
-    return;
+    return result;
   }
 
   const helper = (num) => {
