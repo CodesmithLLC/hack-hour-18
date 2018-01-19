@@ -15,7 +15,23 @@
  */
 
 function countStairs(n) {
+  let result = 0;
+  if (n <= 1) result++;
 
+  const helper = (num) => {
+    if (num <= 1) {
+      result++;
+      return;
+    }
+    helper(num - 1);
+    helper(num - 2);
+  }
+
+  helper(n);
+
+  return result;
 }
+
+// console.log(countStairs(5));
 
 module.exports = countStairs;
