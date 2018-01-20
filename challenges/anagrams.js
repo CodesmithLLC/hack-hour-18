@@ -13,7 +13,11 @@
   */
 
 function anagrams(string) {
-
+  const arr = string.split('');
+  function find(array) {
+    if (array.length === 1) return array;
+    
+  }
 }
 
 module.exports = anagrams;

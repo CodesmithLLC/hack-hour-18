@@ -9,8 +9,11 @@
  *
  */
 
+
 function permPalin(str) {
-	
+  return permut(str.split(''));
 }
+
+console.log(permPalin('cbaba'));
 
 module.exports = permPalin;

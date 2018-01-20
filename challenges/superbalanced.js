@@ -13,8 +13,17 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
-
+function superbalanced(tree, depth = 0, cache = []) {
+  if (tree.left && tree.right) {
+    return superbalanced(tree.left, depth + 1, cache) && superbalanced(tree.right, depth + 1, cache);
+  } else if (tree.left) {
+    return superbalanced(tree.left, depth + 1, cache);
+  } else if (tree.right) {
+    return superbalanced(tree.right, depth + 1, cache);
+  } else {
+    cache.push(depth);
+    return cache.every(num => Math.abs(num - depth) <= 1);
+  }
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
