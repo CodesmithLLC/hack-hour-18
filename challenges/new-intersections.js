@@ -18,7 +18,14 @@
  */
 
 function newIntersections(x, y){
-  console.log(x, y);
+  let count = 0;
+  const minX = Math.min(...x), maxX = Math.max(...x), minY = Math.min(...y), maxY = Math.max(...y);
+  for (let i = minX; i <= MaxX; i++) {
+    for (let j = minY; j <= MaxY; j++) {
+      if (i >= minX && i <= maxX && j >= minY && j <= maxY) count++;
+    }
+  }
+  return count;
 }
 
 module.exports = newIntersections;
