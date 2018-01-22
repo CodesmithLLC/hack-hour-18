@@ -11,7 +11,21 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  if (typeof str !== 'string') return;
+  const x = parseFloat(str[1]);
+  const y = parseFloat(str[3]);
 
+  let moves = 0;
+  let j = 2;
+
+  for (let i = 1; i <= 2; i += 1) {
+    if (x + i <= 8 && y + j <= 8) moves += 1;
+    if (x + i <= 8 && y - j > 0) moves += 1;
+    if (x - i > 0 && y + j <= 8) moves += 1;
+    if (x - i > 0 && y - j >= 0) moves += 1;
+    j -= 1;
+  }
+  return moves;
 }
 
 module.exports = knightjumps;
