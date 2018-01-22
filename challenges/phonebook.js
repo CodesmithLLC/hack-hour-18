@@ -62,8 +62,8 @@ function makePhoneBookObject(jazbook){
  phoneBook.lookup = function(name) {
    for(let key in phoneBook){
      if(key === name) return key + ":  " + phoneBook[key];
-     else console.log('Person not found.');
    }
+   console.log('Person not found.');
  }
  
  phoneBook.remove = function(name){
