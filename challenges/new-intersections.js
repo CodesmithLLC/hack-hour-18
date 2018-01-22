@@ -19,6 +19,8 @@
 
 function newIntersections(x, y){
 
+  // for (let i=0; i < x.length; i++)
+
 }
 
 module.exports = newIntersections;
