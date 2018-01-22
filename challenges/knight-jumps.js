@@ -11,7 +11,23 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  const arr = str.slice(1, str.length - 1).split(' ');
+  const x = parseInt(arr[0]);
+  const y = parseInt(arr[1]);
+  let possibleMoves = 0;
+  const inBoard = (posx, posy) => {
+    if (posx >= 1 && posx <= 8 && posy >= 1 && posx <= 8) return true;
+    return false;
+  }
+  if (inBoard(x + 2, y + 1)) possibleMoves += 1;
+  if (inBoard(x + 2, y - 1)) possibleMoves += 1;
+  if (inBoard(x - 2, y + 1)) possibleMoves += 1;
+  if (inBoard(x - 2, y - 1)) possibleMoves += 1;
+  if (inBoard(x + 1, y + 2)) possibleMoves += 1;
+  if (inBoard(x + 1, y - 2)) possibleMoves += 1;
+  if (inBoard(x - 1, y + 2)) possibleMoves += 1;
+  if (inBoard(x - 1, y - 2)) possibleMoves += 1;
+  return possibleMoves;
 }
-
+// console.log(knightjumps('(4 5)'));
 module.exports = knightjumps;
