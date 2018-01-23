@@ -33,7 +33,25 @@
 */
 
 function pascalTriangle(numRows) {
+  let counter = 1;
+  const array = [];
 
+  while (counter <= numRows) {
+    if (array.length === 0) {
+      array.push([1]);
+    } else {
+      const lastInArray = array[array.length - 1];
+      let row = [];
+      row.push(1);
+      for (let i = 0; i < array.length - 1; i += 1) {
+        row.push(lastInArray[i] + lastInArray[i + 1])
+      }
+      row.push(1);
+      array.push(row);
+    }
+    counter += 1;
+  }
+  return array;
 }
 
 module.exports = pascalTriangle;
