@@ -11,7 +11,16 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
+  if (str === '') return true;
+  const words = str.toLowerCase().replace(new RegExp(/[^a-z]/g), ' ').trim().split(' ').filter(char => char !== '');
+  if (words.length % 2 !== 0) return false;
+  if (words.length === 0) return true;
+  const compareArray = [words[0]];
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].split('').reverse().join('') === compareArray[compareArray.length - 1]) compareArray.pop();
+    else compareArray.push(words[i]);
+  }
+  return compareArray.length === 0;
 }
 
 module.exports = matchWord;
