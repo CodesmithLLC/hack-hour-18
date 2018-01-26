@@ -20,7 +20,11 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
-
+  // have an object store possible hands
+  // parse each hand and store each value into an object
+  // where value = key and value = count of how many are in hand
+  // determine the hand
+  // compare hands
 }
 
 module.exports = poker;
