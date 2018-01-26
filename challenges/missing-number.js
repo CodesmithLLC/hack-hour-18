@@ -25,7 +25,15 @@ Challange:
   ** cannot use additional storage, variables are okay not any TYPE of object
   ** keep in mind time complexity
 */
-function missingNum(Array) {
-}
+ function missingNum(Array) {
+ 
+   let maxNum = Math.max.apply(null, Array)
+   let minNum = Math.min.apply(null, Array)
+   let total = 0;
+   for(var i = minNum; i <= maxNum; i++){
+     total += i;
+   }
+   return total - Array.reduce((acc,elem) => acc + elem) 
+ }
 
 module.exports = missingNum;
