@@ -73,6 +73,4 @@ function getPINs(observed) {
   return combinations;
 }
 
-console.log(getPINs('369'));
-
 module.exports = getPINs
