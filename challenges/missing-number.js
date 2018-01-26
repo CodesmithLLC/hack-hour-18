@@ -26,6 +26,16 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  let missing = Array.sort((a,b) => a-b);
+  let max = missing[missing.length-1];
+  let min = missing[0];
+  let complete = [];
+  missing = missing.reduce((acc,ele) => acc + ele);
+  for(let i = min; i <= max;i++){
+    complete.push(i);
+  }
+  complete = complete.reduce((acc,ele) => acc + ele);
+  return complete - missing;
 }
 
 module.exports = missingNum;
