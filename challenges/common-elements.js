@@ -34,12 +34,12 @@ function commonElements(array1, array2, array3, array4){
       storage[array2[i]] = 2;
     }
   }
-  for (let i=0; i<array2.length; i++) {
+  for (let i=0; i<array3.length; i++) {
     if (storage[array3[i]] === 2) {
       storage[array3[i]] = 3;
     }
   }
-  for (let i=0; i<array2.length; i++) {
+  for (let i=0; i<array4.length; i++) {
     if (storage[array4[i]] === 3) {
       result.push(array4[i]);
     }
