@@ -33,7 +33,18 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+var current = head;
+var store = [];
+while(current.next){
+  //console.log(current)
+  current = current.next
+  if(!current.next){ return false}
+  if (store.indexOf(current) < 0){
+    store.push(current)
+    }else{ return true
+  }
+  
+}
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
