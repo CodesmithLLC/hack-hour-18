@@ -18,7 +18,11 @@
  */
 
 function newIntersections(x, y){
-
+let a = (Math.min.apply(null,x))
+let b = (Math.max.apply(null,x))
+let c = (Math.min.apply(null,y))
+let d = (Math.max.apply(null,y) - 1)
+return (b - a)*(d - c)
 }
 
 module.exports = newIntersections;
