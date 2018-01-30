@@ -11,7 +11,43 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  const startX = parseInt(str[1]);
+  const startY = parseInt(str[3]);
 
+  if (isNaN(startX) || isNaN(startY)) return undefined;
+
+  let moves = 0;
+
+  function checkY() {
+    if (startY + 1 <= 8) moves++;
+    if (startY - 1 > 0) moves++;
+  }
+
+  function checkX() {
+    if (startX + 1 <= 8) moves++;
+    if (startX - 1 > 0) moves++;
+  }
+
+  if (startX + 2 <= 8) {
+    checkY();
+  }
+
+  if (startX - 2 > 0) {
+    checkY()
+  }
+
+  if (startY + 2 <= 8) {
+    checkX();
+  }
+
+  if (startY - 2 > 0) {
+    checkX();
+  }
+
+  return moves;
 }
+
+// console.log(knightjumps('(4 5)')); // --> 8
+// console.log(knightjumps('(1 1)')); // --> 2
 
 module.exports = knightjumps;

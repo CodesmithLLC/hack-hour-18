@@ -18,7 +18,28 @@
  */
 
 function romanNumeral(n) {
+  const values = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+  const numerals = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+  let romanStr = '';
 
+  values.reduce((total, value, i) => {
+    while (total >= value) {
+      romanStr += numerals[i];
+      total -= value;
+    }
+    return total;
+  }, n);
+  return romanStr;
 }
 
+// romanNumeral(1);
+// romanNumeral(4);
+// romanNumeral(11);
+// romanNumeral(99);
+// romanNumeral(134);
+// romanNumeral(500);
+// romanNumeral(1000);
+// romanNumeral(899);
+// romanNumeral(5);
 module.exports = romanNumeral;
+

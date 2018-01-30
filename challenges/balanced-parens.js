@@ -24,8 +24,25 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input, pos = 0) {
+	if (input.length <= 1) return false;
+	const newInput = input.replace(/[^\(\)\[\]\{\}]/g, '');
+	
+	
+	while (pos < newInput.length) {
 
+		if (input.charAt(pos) === '(') {
+			
+			return balancedParens(newInput, pos++);
+    }
+    pos++;
+	}
 }
+var t = 20;
+
+balancedParens('(');  // false
+// balancedParens('()'); // true
+// balancedParens(')(');  // false
+// balancedParens('(())');  // true
 
 module.exports = balancedParens;
