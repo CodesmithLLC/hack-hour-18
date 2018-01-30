@@ -9,8 +9,25 @@
   solveKnapsack(items, 5); // returns 9 (from items[1] and items[2])
 */
 
-function solveKnapsack(items, weightAvailable) {
+function getAllCombs(array) {
+  let items = [];
 
+  items = items.concat([array.slice()]);
+  console.log(items);
+
+  let first = array.splice(0, 1);
+  items.push(first);
+  array.forEach(elem => {
+    let temp = [[first[0], elem]]
+    items = items.concat(temp);
+  });
+  return items;
 };
+
+function solveKnapsack(items, weightAvailable) {
+  const combs = getAllCombs(item)
+};
+
+console.log(getAllCombs([0, 1, 2]));
 
 module.exports = solveKnapsack;
