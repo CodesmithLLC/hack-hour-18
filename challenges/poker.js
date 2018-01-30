@@ -19,7 +19,63 @@
  * BONUS: Account for suits and add in Flush & Straight Flush/Royal Flush.
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
+const ranks = {
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  10: 10,
+  'Jack': 11,
+  'Queen': 12,
+  'King': 13,
+  'Ace': 14,
+};
+function countElems(array, val) {
+  let result = 0;
+  for (let i=0; i<array.length; i++) {
+    if (array[i] === val) result++;
+  }
+  return result;
+}
+
+function handEval(hand) {
+  const counts = {};
+  const maxRank = Math.max(...hand);
+
+  for (let i=0; i<hand.length; i++) {
+    if (!counts[i]) {
+      counts[i] = countElems(hand, hand[i]);
+    }
+  }
+  //Check 4 of kind
+  if (Object.values(counts).includes(4)) return 6;
+
+  //Check full house
+  if (Object.values(counts).includes(3) && Object.values(counts).includes(2)) {
+    return 5;
+  }
+
+  //Check straight
+
+  //Check 3 of kind
+  if (Object.values(counts).includes(3)) return 3;
+
+  //Check Two Pair
+  // if (Object.values(counts).includes(2)) return 2;
+
+  //Check Pair
+  if (Object.values(counts).includes(2)) return 1;
+
+  //Check Card
+  return 0;
+}
+
 function poker(hand1, hand2) {
+
 
 }
 
