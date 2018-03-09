@@ -20,6 +20,4 @@ function reverseInPlace(array) {
 	return array
 }
 
-console.log(reverseInPlace([0,1,2]));
-
-// module.exports = reverseInPlace;
+module.exports = reverseInPlace;
