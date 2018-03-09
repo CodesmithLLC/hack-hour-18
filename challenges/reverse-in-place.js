@@ -14,11 +14,10 @@
  */
 
 function reverseInPlace(array) {
-    //if the array length is odd, switch positions except middle
-    for (let i = 0; i < array.length - 1; i++){
-        array.shift(array.pop())
-    }
-    return array;
+	for (let i = 0, f = array.length - 1; i < f; i++, f--) {
+		[array[i], array[f]] = [array[f], array[i]];
+	}
+	return array
 }
 
 console.log(reverseInPlace([0,1,2]));
