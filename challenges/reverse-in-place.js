@@ -13,18 +13,11 @@
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
 
-function findInOrderedSet(arr, target) {
-  //initialize low and high
-  let low = 0;
-  let high = arr.length - 1;
-  //while loop to iterate through
-  while (low !== high) {
-    let mid = Math.floor((low + high) / 2);
-    if (arr[mid] === target) return true;
-    else if (arr[mid] > target) high = mid - 1;
-    else if (arr[mid] < target) low = mid + 1;
-  }
-  return false;
+function reverseInPlace(array) {
+	for (let i = 0, f = array.length - 1; i < f; i++, f--) {
+		[array[i], array[f]] = [array[f], array[i]];
+	}
+	return array
 }
 
 module.exports = reverseInPlace;
