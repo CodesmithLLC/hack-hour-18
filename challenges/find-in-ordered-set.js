@@ -15,7 +15,7 @@ function findInOrderedSet(arr, target) {
   let low = 0;
   let high = arr.length - 1;
   //while loop to iterate through
-  while (low !== high) {
+  while (low <= high) {
     let mid = Math.floor((low + high) / 2);
     if (arr[mid] === target) return true;
     else if (arr[mid] > target) high = mid - 1;
