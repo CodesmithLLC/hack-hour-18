@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+  if (array.length === 0) return [0];
   const productArray = [];
   const bottomArray = [];
   const topArray = [];
