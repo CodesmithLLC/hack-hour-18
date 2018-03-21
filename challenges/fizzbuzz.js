@@ -3,7 +3,7 @@
 
 function fizzbuzz(num){
   const result = [];
-  for (let i = 1; i <=16; i++){
+  for (let i = 1; i <= num; i++){
     let str = '';
     (i % 3 === 0) ? str += 'fizz' : str;
     (i % 5 === 0) ? str += 'buzz' : str;
@@ -12,7 +12,7 @@ function fizzbuzz(num){
   return result;
 }
 
-console.log(fizzbuzz(16));
+console.log(fizzbuzz(31));
 module.exports = fizzbuzz;
 
 
