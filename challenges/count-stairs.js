@@ -15,6 +15,7 @@
  */
 
 function countStairs(n) {
+  if (n === 0) return 0
   if (n === 1) return 1;
   let first = 1;
   let second = 2;
