@@ -4,11 +4,10 @@
  *
  * For example: maxSubarray([1, -2, 3, 10, -4, 7, 2, -5]) -> 18 from [3, 10, -4, 7, 2]
  *              maxSubarray([15,20,-5,10])  -> 40
- *
+ *              maxSubarray([-8,-6,-5,-1])
  */
 
 function maxSubarray(arr) {
-  while(arr[arr.length-1] < 0) arr.pop();
   let currentMax = Number.NEGATIVE_INFINITY;
   let finalMax = arr[0];
 
@@ -24,12 +23,12 @@ function maxSubarray(arr) {
       finalMax = currentMax;
     }
   }
-  console.log(finalMax);
   return finalMax;
 }
 
 maxSubarray([1, 1, -2, 3, 10, -4, 7, 2, -5])
 maxSubarray([15,20,-5,10])
+maxSubarray([-8,-6,-5,-1])
 module.exports = maxSubarray;
 
 
