@@ -14,17 +14,14 @@
  */
 
 function mergeArrays(arr1, arr2) {
-    // const largestLength = arr1.length > arr2.length ? arr1.length : arr2.length;
-    let index1 = 0;
-    let index2 = 0;
-    const returnArr = [];
-    for (let i = 0; i < arr1.length + arr2.length; i++){
-        if (!arr1[index1] && arr2[index2]) returnArr.push(arr2[index2++]);
-        if (!arr2[index2] && arr1[index1]) returnArr.push(arr1[index1++]);
-        if (arr1[index1] < arr2[index2]) returnArr.push(arr1[index1++]);
-        if (arr2[index2] < arr1[index1]) returnArr.push(arr2[index2++]);
-    }
-    return returnArr;
+  const returnArr = [];
+  let tracker1 = 0;
+  let tracker2 = 0;
+  while (tracker1 < arr1.length && tracker2 < arr2.length) {
+    if (arr1[tracker1] <= arr2[tracker2]) returnArr.push(arr1[tracker1++]);
+    else if (arr1[tracker1] > arr2[tracker2]) returnArr.push(arr2[tracker2++]);
+  }
+  return returnArr.concat(arr1.slice(tracker1)).concat(arr2.slice(tracker2))
 }
 
 // var my_array = [3,4,6,10,11,15,21];
