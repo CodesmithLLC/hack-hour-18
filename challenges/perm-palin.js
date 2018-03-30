@@ -10,20 +10,17 @@
  */
 
 function permPalin(str) {
-    console.log(str);
-    // let string = str.toLowerCase();
-    // let storage = {};
-    // for (let i = 0; i < str.length; i++){
-    //     if (storage[str[i]]) storage[str[i]]++;
-    //     else storage[str[i]] = 1;
-    // }
-    // let array = Object.values(storage).map((elements) => elements % 2);
-    // let counter = 0;
-    // return array.reduce((acc, curval) => {
-    //     if (curval === 1) counter++;
-    //     if (counter > 1) return false && acc;
-    //     return acc && true;
-    // }, true)
+	const map = {};
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    map[str[i]] = 1 + map[str[i]] || 1;
+  }
+	for (key in map) {
+		count += map[key] % 2;
+  }
+	return count <= 1;
 }
+
+
 
 module.exports = permPalin;
