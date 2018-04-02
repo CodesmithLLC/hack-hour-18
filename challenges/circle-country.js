@@ -75,10 +75,10 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
   return crosses;
 }
 
-console.log(circleCountry([2,8], [3,2], [2,1], 9, 5, 1, 4)); // 1 ; x in 1 circle, tyus outside but not in a circle
-console.log(circleCountry([2,8,3], [3,2,2], [2,1,1], 3, 2, 1, 4)); // 1 ; x in same circle as tyus, but tyus in an additional circle
-console.log(circleCountry([2,8,3], [3,2,2], [2,1,1], 3, 2, 5, 6)); // 2 ; x outside circles, tyus enclosed in two
-
+console.log(circleCountry([2,8, 6.5], [3,2, 4.5], [2,1], 9, 5, 1, 4), ' should be: 1'); // 1 ; x in 1 circle, tyus outside but not in a circle
+console.log(circleCountry([2,8,3, 6.5], [3,2,2, 4.5], [2,1,1], 3, 2, 1, 4), ' should be: 1'); // 1 ; x in same circle as tyus, but tyus in an additional circle
+console.log(circleCountry([2,8,3], [3,2,2], [2,1,1], 3, 2, 5, 6), ' should be: 2'); // 2 ; x outside circles, tyus enclosed in two
+console.log(circleCountry([2,8,3, 6.5], [3,2,2, 4.5], [2,1,1,1], 3, 2, 6.5, 4.5), ' should be: 3'); // 3; tyus enclosed in two circles, x in separate circle 
 //function crossCheck()
 //function insideCircle
 
