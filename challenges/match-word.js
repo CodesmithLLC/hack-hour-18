@@ -11,22 +11,15 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-  let stack =[];
+  let stack = [];
   let temp = str.toLowerCase().split(/[^a-zA-Z]/)
-  let wordArr = temp.filter(word => {
-    return (word.length);
-  });
+  let wordArr = temp.filter( word => (word.length) );
 
-  wordArr.forEach(word => {
+  wordArr.forEach( word => {
     let reversed = word.split('').reverse().join('');
-    if(!stack.length){
-      stack.push(word);
-    }
-    else if(reversed === stack[stack.length-1]){
-      stack.pop();
-    }else{
-      stack.push(word);
-    }
+    if (!stack.length) stack.push(word);
+    else if (reversed === stack[stack.length-1]) stack.pop();
+    else stack.push(word);
   });
   return !stack.length;
 }
