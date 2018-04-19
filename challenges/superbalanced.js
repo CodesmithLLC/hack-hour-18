@@ -13,7 +13,7 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalance(bt) {
+function superbalanced(bt) {
   if (!bt.value) return true;
   
   function getHeight(bt) {
