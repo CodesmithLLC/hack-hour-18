@@ -13,32 +13,14 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
-  let leftDepth = 0;
-  let rightDepth = 0;
-  function checkHeight(branch, counter){
-    if (counter > leftDepth) leftDepth = counter;
-    if (!branch.left && !branch.right) return
-    if (branch.left){
-      checkHeight(branch.left, counter + 1);
-    }
-    if (branch.right){
-      checkHeight(branch.right, counter + 1);
-    }
+function superbalance(bt) {
+  if (!bt.value) return true;
+  
+  function getHeight(bt) {
+    if (bt === null) return 0;
+    return 1 + Math.max(getHeight(bt.left), getHeight(bt.right));
   }
-  function checkHeight2(branch, counter){
-    if (counter > rightDepth) rightDepth = counter;
-    if (!branch.left && !branch.right) return
-    if (branch.left){
-      checkHeight2(branch.left, counter + 1);
-    }
-    if (branch.right){
-      checkHeight2(branch.right, counter + 1);
-    } 
-  }
-  checkHeight(tree.left, 0);
-  checkHeight2(tree.right, 0);
-  if (Math.abs(leftDepth - rightDepth) > 1 ) return false;
+  if (Math.abs(getHeight(bt.left) - getHeight(bt.right)) > 1) return false;
   else return true;
 }
 
