@@ -13,6 +13,8 @@
 */
 
 function anagrams(string) {
+  console.log(string);
+  if (string.length === 0) return '';
   let returnArray = [];
 
   function swap(str, l, i) {
