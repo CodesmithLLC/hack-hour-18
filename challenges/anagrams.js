@@ -15,6 +15,14 @@
 function anagrams(string) {
   let returnArray = [];
 
+  function swap(str, l, i) {
+    let arr = str.split('');
+    let tmp = arr[l];
+    arr[l] = arr[i];
+    arr[i] = tmp
+    return arr.join('');
+  }
+
   function permute(returnArray, string, start, end) {
     if (start === end) {
       returnArray.push(string);
@@ -33,16 +41,5 @@ function anagrams(string) {
   return returnArray;
 }
 
-
-function swap(str, l, i) {
-  let arr = str.split('');
-  let tmp = arr[l];
-  arr[l] = arr[i];
-  arr[i] = tmp
-  return arr.join('');
-}
   
-module.exports = {
-  anagrams,
-  swap,
-};
+module.exports = anagrams;
