@@ -22,7 +22,27 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-
+  // handling edge cases
+  if(arguments.length === 1 || k === 0) return undefined
+  if(head.next === null){
+    return undefined;
+  }
+  // edge cases done
+  let pastVals = [];
+  let currentNode = head;
+  while(currentNode.next != null){
+    pastVals.push(currentNode.value)
+    currentNode = currentNode.next;
+    if(currentNode.next === null){
+      pastVals.push(currentNode.value)
+    }
+  }
+  let value;
+  if(k > pastVals.length) return undefined;
+  for(let i = 0; i < k; i++){
+    value = pastVals.pop();
+  }
+  return value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
